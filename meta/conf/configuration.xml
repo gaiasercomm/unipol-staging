@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <!-- Relay Server Configuration -->
+    <entry key="SERV.APACHE.PROTOCOL">http</entry>
+    <entry key="SERV.APACHE.HTTPPORT">8080</entry>
+
+    <entry key="SERV.APACHE.HTTPSPORT">8443</entry>
+    <entry key="SERV.APACHE.MAX_THREAD">500</entry>
+    <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>    
+    <entry key="SERV.KEY_STORE.PASSWORD">zaq12wsx</entry>
+    <!-- NFS information -->
+    <entry key ="NFS.MOUNT.PATH">/var/media</entry>
+    
+    <!-- mutible(two-way) authenticate -->
+    <entry key="SERV.APACHE.MUTIBLE.AUTH">0</entry><!-- 0:disable, 1:enable -->
+    <entry key="SERV.APACHE.MUTIBLE.HTTPSPORT">8444</entry>
+    <entry key="SERV.TRUST_STORE.PASSWORD">zaq12wsx</entry>
+    
+    <!-- White list of proxy location to allow to pass invoking BMSi -->
+    <entry key ="BMS.LOCATION.CHECK">Y</entry>
+    <entry key ="BMS.LOCATION">neutral_web;neutral_web_2</entry>
+    
+    <entry key="ENABLE.SESSION.CONTROL">N</entry>
+
+    <!-- Reduce size of clip file size to ? percentage, the range is 50 ~ 100 -->
+    <entry key="REDUCE.CLIP.FILE">100</entry>
+</properties>

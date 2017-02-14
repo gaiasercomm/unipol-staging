@@ -1,0 +1,1970 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    /**************************************** 
+     * Event Option Configuration 
+     ****************************************/
+    <event_option_list>: event option object list
+        <option>: option object
+            <code>: event code
+            <origin>: event origin from
+                        0=Server
+                        1=Gateway
+                        2=Camera
+            <severity>: event severity
+                        1=high (send Email & SMS)
+                        2=medium (send Email)
+                        3=low
+            <alarm>: force to change the event's severity to HIGH if HMG is in 'alarm' mode.
+                        0=OFF
+                        1=ON
+            <visible>: determine that clients will receive the event log or not
+                        0=false
+                        1=true
+            <status>: an short text string to describe the event 
+            <mail_subject>: Email subject
+            <mail_fmt>: Email format string
+                        where
+                            ${SENSOR_NAME} : u_name of the sensor
+                            ${DEVICE_NAME} : device_name of an IP-device or user_name of a user
+                            ${TIMESTAMP}   : timestamp of the event
+                            ${TIMEZONE}    : timezone of the event
+                            ${STATUS}      : same as the text of <status> tag
+            <sms_fmt>: SMS format string
+                        where
+                            ${SENSOR_NAME} : u_name of the sensor
+                            ${DEVICE_NAME} : device_name of an IP-device or user_name of a user
+                            ${TIMESTAMP}   : timestamp of the event
+                            ${TIMEZONE}    : timezone of the event
+                            ${STATUS}      : same as the text of <status> tag
+-->
+
+<event_option_list>
+    <option>
+        <!-- ZigBee module error -->
+        <code>10001</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Module Error</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Z-wave module error -->
+        <code>10101</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Module Error</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Battery Low -->
+        <code>11001</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Battery Low</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Battery High -->
+        <code>11002</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Battery High</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Tamper ON -->
+        <code>11003</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Tamper</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Tamper OFF -->
+        <code>11004</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Recover</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device online -->
+        <code>11005</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Online</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device offline -->
+        <code>11006</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Offline</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device join -->
+        <code>11007</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Join</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device leave -->
+        <code>11008</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Leave</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device operation fail -->
+        <code>11009</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Unknown RF-Device event -->
+        <code>11010</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device configuration changed -->
+        <code>11011</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device disable -->
+        <code>11012</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>device disable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device enable -->
+        <code>11013</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>device enable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device ignored -->
+        <code>11014</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>device ignored</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device bypass -->
+        <code>11015</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>device bypass</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device fixed -->
+        <code>11016</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>device fixed</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- RF-Device forced -->
+        <code>11017</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>device forced</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Door/Windows sensor open -->
+        <code>11101</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>1</alarm>
+        <visible>1</visible>
+        <status>Open</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Door/Windows sensor close -->
+        <code>11102</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Close</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- PIR ON -->
+        <code>11201</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>1</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- PIR OFF -->
+        <code>11202</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- COD ON -->
+        <code>11301</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- COD OFF -->
+        <code>11302</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Smoke ON -->
+        <code>11401</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Smoke OFF -->
+        <code>11402</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Power switch OFF -->
+        <code>11501</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Power switch OFF -->
+        <code>11502</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Energy switch ON -->
+        <code>11601</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Energy switch OFF -->
+        <code>11602</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Energy switch accumulation hourly report -->
+        <code>11603</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Door lock open -->
+        <code>11701</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Door lock close -->
+        <code>11702</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Door lock pin code set -->
+        <code>11703</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Set PIN</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Dimmer change value to certain value -->
+        <code>11801</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Set</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Curtain open -->
+        <code>11901</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Open</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Curtain close -->
+        <code>11902</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Close</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Curtain stop -->
+        <code>11903</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Stop</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren ON -->
+        <code>12001</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren OFF -->
+        <code>12002</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren Burg -->
+        <code>12003</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Burg</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren Fire -->
+        <code>12004</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Fire</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren Emergency -->
+        <code>12005</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Emergency</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren Strobe -->
+        <code>12006</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Strobe</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Siren Alarm -->
+        <code>12007</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Alarm</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat mode OFF -->
+        <code>12101</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat mode cool -->
+        <code>12102</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Cool</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat mode heat -->
+        <code>12103</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Heat</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat mode fan -->
+        <code>12104</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Fan</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat fan mode auto -->
+        <code>12105</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Fan Auto</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat fan mode on -->
+        <code>12106</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Fan On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat change cool target temperature to certain value (°F) -->
+        <code>12107</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Cool Target</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Thermostat change heat target temperature to certain value (°F) -->
+        <code>12108</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Cool Target</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Water sensor ON -->
+        <code>12201</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Water sensor OFF -->
+        <code>12202</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- DC power ON -->
+        <code>12301</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>On</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- DC power OFF -->
+        <code>12302</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Off</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Remaing battery percentage -->
+        <code>12303</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Keyfob disarm pressed -->
+        <code>12401</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Keyfob Press</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Keyfob away arm pressed -->
+        <code>12402</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Keyfob Press</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Keyfob stay arm pressed -->
+        <code>12403</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Keyfob Press</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Keyfob reserve pressed -->
+        <!-- <code>12404</code> -->
+        <code>12408</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Keyfob Press</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    
+    <!-- add by Jason@20140814 -->
+    <option>
+        <!-- Keyfob State Emergency -->
+        <code>12405</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Keyfob Emergency</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System away arm successfully -->
+        <code>20001</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>ARM</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System disarm successfully -->
+        <code>20002</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>DisARM</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System stay arm successfully -->
+        <code>20003</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>StayARM</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Quick Exit successfully -->
+        <code>20004</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>QuickExit</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Bypass successfully -->
+        <code>20005</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>ByPass</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System away arm failed -->
+        <code>20006</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>ARM Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System disarm failed -->
+        <code>20007</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>DisARM Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System stay arm failed -->
+        <code>20008</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>StayARM Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Quick Exit failed -->
+        <code>20009</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Q-Exit Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Bypass failed -->
+        <code>20010</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>ByPass Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Security configuration changed -->
+        <code>20011</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System alarms (enter delay expires with no disarm) -->
+        <code>20012</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>System Alarm</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Enter delay -->
+        <code>20013</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Enter Delay</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Exit delay -->
+        <code>20014</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Exit Delay</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <!-- added a new event code{20016} by Jason@20140718 -->
+    <option>
+        <!-- PIN code is forced changed -->
+        <code>20016</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>PIN code change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Home control configuration changed -->
+        <code>20101</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Setting Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation configuration changed -->
+        <code>20201</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Setting Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation ID executed -->
+        <code>20202</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Executed</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation notification -->
+        <code>20203</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Message Send</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation rule removed -->
+        <code>20210</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Remove</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation added(and enabled by default) -->
+        <code>20211</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Add</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation rule enabled -->
+        <code>20212</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Enable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation rule disabled -->
+        <code>20213</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Disable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation rule schedule changed -->
+        <code>20214</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Schedule Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation not executed due to rule disabled -->
+        <code>20220</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Discard</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Automation not executed due to not in schedule -->
+        <code>20221</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Rule Discard</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- HTTP notify IP-camera successfully -->
+        <code>20301</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>HTTP Notify OK</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- HTTP notify IP-camera failed -->
+        <code>20302</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>HTTP Notify Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- HTTP Notify configuration changed -->
+        <code>20303</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Send email successfully -->
+        <code>20401</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Send OK</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Send email failed -->
+        <code>20402</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Send Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Email configuration changed -->
+        <code>20403</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SSLVPN connect -->
+        <code>20501</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>VPN OK</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SSLVPN disconnect -->
+        <code>20502</code>
+        <origin>1</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>VPN Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SSLVPN certification error -->
+        <code>20503</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SSLVPN configuration changed -->
+        <code>20504</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SSLVPN certification updated -->
+        <code>20505</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System information report failed -->
+        <code>20601</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- CMS configuration changed -->
+        <code>20602</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- HTTP username/password changed -->
+        <code>20701</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Start live streaming -->
+        <code>20801</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Stop live streaming -->
+        <code>20802</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Upload video clip to server -->
+        <code>20803</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Motion detected -->
+        <code>20804</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Motion Detected</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Firmware upgrade successfully -->
+        <code>30001</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>FW Upgraded</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Firmware upgrade failed -->
+        <code>30002</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Upgraded Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Configuration file restore successfully -->
+        <code>30003</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Configuration file restore failed -->
+        <code>30004</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Configuration backup successfully -->
+        <code>30005</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Configuration backup failed -->
+        <code>30006</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- System bootup -->
+        <code>30007</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Bootup</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Firmware Upgrade Stage Code -->
+        <code>30008</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Firmware Upgrade Stage Code</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Firmware Upgrade Status Code -->
+        <code>30009</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Firmware Upgrade Status Code</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+	    <option>
+        <!-- Firmware Upgrade Status Code -->
+        <code>30010</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>RF Sensor Firmware Upgrade Status Code</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Time configuration changed -->
+        <code>30101</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- NTP synced -->
+        <code>30102</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- NTP sync failed -->
+        <code>30103</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- WAN connected -->
+        <code>30201</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>WAN OK</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- WAN disconnected -->
+        <code>30202</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>WAN Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- WAN configuration changed -->
+        <code>30203</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- LAN configuration changed -->
+        <code>30301</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Firewall configuration changed -->
+        <code>30401</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- TR069 configuration changed -->
+        <code>30501</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status></status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- xG module error -->
+        <code>30601</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Mobile Error</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SIM Error -->
+        <code>30602</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>SIM Error</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- No SIM Card -->
+        <code>30603</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>No SIM Card</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- xG Up -->
+        <code>30604</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Mobile OK</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- xG Down -->
+        <code>30605</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Mobile Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <!-- added by Jason@20140718 -->
+    <option>
+        <!-- Internet access service switch to Ethernet -->
+        <code>30610</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <!-- <status>Internet access service switch to Ethernet</status> -->
+        <status>Switched to Wired Access</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <!-- added by Jason@20140718 -->
+    <option>
+        <!-- Internet access service switch to 2/3/4G --> 
+        <code>30611</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Switched to 2/3/4G Access</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Send SMS successfully -->
+        <code>30701</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>SMS Send</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Send SMS failed -->
+        <code>30702</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>SMS Fail</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- SMS configuration changed -->
+        <code>30703</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Setting Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+    	<!-- add by Jason@20141009 -->
+        <!-- SMS from SIM Card -->
+        <code>30704</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>0</visible>
+        <status>SMS from SIM Card</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Scene Add -->
+        <code>30801</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Scene Add</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Scene Remove -->
+        <code>30802</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Scene Remove</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Scene Setting Change -->
+        <code>30803</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Scene Setting Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Scene Enable -->
+        <code>30804</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Scene Enable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Scene Disable -->
+        <code>30805</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Scene Disable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Scene Disable -->
+        <code>30806</code>
+        <origin>1</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Scene Executed</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Schedule Add -->
+        <code>30901</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Schedule Add</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Schedule Remove -->
+        <code>30902</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Schedule Remove</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Schedule Setting Change -->
+        <code>30903</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Schedule Setting Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Schedule Enable -->
+        <code>30904</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Schedule Enable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Schedule Disable -->
+        <code>30905</code>
+        <origin>1</origin>
+        <severity>3</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Schedule Disable</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Portal login fail over 3 times -->
+        <code>99001</code>
+        <origin>0</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Login Failure</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- The owner changes password -->
+        <code>99002</code>
+        <origin>0</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>PWD Change</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Camera Offline -->
+        <code>99003</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Camera Offline</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- HMG Offline -->
+        <code>99004</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>HMG Offline</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Click the "emergency: Fire" button via Portal -->
+        <code>99005</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Fire</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Click the "emergency: Police" button via Portal -->
+        <code>99006</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Police</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Click the "emergency: Hospital" button via Portal -->
+        <code>99007</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Hospital</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Click the "emergency: Panic" button via Portal -->
+        <code>99008</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Panic</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Receive clip media upload from camera -->
+        <code>99009</code>
+        <origin>0</origin>
+        <severity>2</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Recording</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- Camera is back to online -->
+        <code>99010</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>Camera Online</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+    <option>
+        <!-- HMG is back to online -->
+        <code>99011</code>
+        <origin>0</origin>
+        <severity>1</severity>
+        <alarm>0</alarm>
+        <visible>1</visible>
+        <status>HMG Online</status>
+        <mail_subject>EyesInHome Mail Notification</mail_subject>
+        <mail_fmt><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><h1>EyesInHome Message</h1><br>Status=${STATUS}<br>Device Name=${DEVICE_NAME}<br>Sensor Name=${SENSOR_NAME}<br>Time Stamp=${TIMESTAMP}<br>Time Zone=${TIMEZONE}<br></body></html>]]></mail_fmt>
+        <sms_fmt><![CDATA[EyesInHome Alert Message\nStatus: ${STATUS}\nDevice Name: ${DEVICE_NAME}\nSensor Name: ${SENSOR_NAME}\nTime: ${TIMESTAMP}\nTime Zone: ${TIMEZONE}]]></sms_fmt>
+    </option>
+</event_option_list>

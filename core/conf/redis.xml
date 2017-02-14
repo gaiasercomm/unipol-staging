@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	<entry key="redis.host">neutral_db</entry>
+	
+
+	<entry key="redis.port">6379</entry>
+	<entry key="redis.password"></entry>
+
+	<!-- int REDIS_DEPLOY_TYPE_SINGLE = 1; int REDIS_DEPLOY_TYPE_CLUSTER = 2; int REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE = 3; -->
+    <entry key="redis.deploymentModel">1</entry>
+
+    <!-- attributes for REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE -->
+    <entry key="redis.sentinel.address">192.168.99.151;192.168.99.152;192.168.99.35</entry>
+    <entry key="redis.sentinel.port">7379</entry>
+    <entry key="redis.sentinel.master">gaia_redis_master</entry>
+    <!-- end attributes for REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE -->
+
+	<entry key="redis.conn.timeout">2000</entry>
+
+	<entry key="redis.pool.max.active">50</entry>
+	<entry key="redis.pool.max.idle">10</entry>
+	<entry key="redis.pool.max.wait">10000</entry>
+	
+</properties>
