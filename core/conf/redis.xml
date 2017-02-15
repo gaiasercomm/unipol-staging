@@ -3,7 +3,7 @@
 
 <properties>
 
-	<entry key="redis.host">neutral_db</entry>
+	<entry key="redis.host">neutral_redis</entry>
 	
 
 	<entry key="redis.port">6379</entry>
