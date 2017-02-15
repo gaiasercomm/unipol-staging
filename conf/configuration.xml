@@ -12,29 +12,28 @@
     <!-- CMS service configuration -->
     <entry key="SERV.APACHE.HTTPPORT">8080</entry>
     <entry key="SERV.APACHE.MAX_THREAD">500</entry>
-    <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>  
-    <entry key="SERV.KEY_STORE.PASSWORD">zaq12wsx</entry>  
+    <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>    
     <!-- Portal service information -->
-    <entry key="SERV.PORTAL.ADDR">isbu-rd.no-ip.org</entry>
+    <entry key="SERV.PORTAL.ADDR">neutral_web</entry>
     <entry key="SERV.PORTAL.PORT">80</entry>
     <entry key="SERV.PORTAL.SECURE_PORT">443</entry>
     <entry key="SERV.PORTAL.PROTOCOL">http</entry>
     <!-- Media service information -->
-    <entry key="SERV.MEDIA.ADDR">192.168.99.171</entry>
+    <entry key="SERV.MEDIA.ADDR">192.168.99.97</entry>
     <entry key="SERV.MEDIA.PORT">80</entry>
     <entry key="SERV.MEDIA.SECURE_PORT">443</entry>
     <entry key="SERV.MEDIA.PROTOCOL">http</entry>
     <!-- Storage service information -->
-    <entry key="SERV.STORAGE.ADDR">192.168.99.170</entry>
+    <entry key="SERV.STORAGE.ADDR">192.168.99.97</entry>
     <entry key="SERV.STORAGE.PORT">80</entry>
     <entry key="SERV.STORAGE.SECURE_PORT">-1</entry>
     <entry key="SERV.STORAGE.PROTOCOL">http</entry>
     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">127.0.0.1</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">neutral_db</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">wade</entry>
-    <entry key="MYSQL.CMS_CORE.PASSWORD">123456789</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
     <!-- entry key="MYSQL.CMS_CORE.SCHEMA">EASY_CMS_CORE</entry> -->
     <!-- entry key="MYSQL.CMS_CORE.ADDR">52.17.63.161</entry> -->
     <!-- entry key="MYSQL.CMS_CORE.PORT">3306</entry> -->
@@ -55,16 +54,18 @@
     <!-- User attribute configuration -->
     <entry key="USER.TIMEOUT.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
     <entry key="USER.TIMEOUT.INTERVAL">1800000</entry> <!-- millisecond -->
-	<!-- set the elasticSearch location -->
-    <entry key="ES.ADDR">neutral.dev.smartgaiacloud.com</entry>
-    <entry key="ES.PORT">9300</entry>
+
     <!-- device layer location  -->
-    <entry key="DL.ADDR">http://neutral.dev.smartgaiacloud.com:8080</entry>
+    <entry key="DL.ADDR">http://neutral_dl:8080</entry>
     <entry key="DL.PORT">8080</entry>
     <!-- Redis connection information -->
-    <entry key="REDIS.HOST">127.0.0.1</entry> <!-- "1:ON; 0:OFF;" -->
-    <entry key="REDIS.PORT">6379</entry> <!-- millisecond -->
-    
-    <!-- LOCAL or NOT for database-connection user/password-->
-    <entry key="LOCAL">Y</entry>
+    <entry key="REDIS.HOST">neutral_redis</entry> 
+    <entry key="REDIS.PORT">6379</entry>  
+    <!-- set the elasticSearch locaition -->
+    <entry key="ES.ADDR">neutral_elasticsearch</entry>
+    <entry key="ES.PORT">9300</entry>
+	
+    <!-- White list of meta location to allow to pass invoking BMSi -->
+    <entry key ="META.LOCATION">neutral_sl;neutral_sl_2</entry>
+	
 </properties>

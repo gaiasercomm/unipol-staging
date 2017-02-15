@@ -92,9 +92,9 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     </servlet-mapping>
      <servlet-mapping>
         <servlet-name>DelRoom</servlet-name>
-        <url-pattern>/cgi/del_room</url-pattern>
-        <url-pattern>/cgi/del_room.cgi</url-pattern>
-        <url-pattern>/cgi/del_room.php</url-pattern>
+        <url-pattern>/cgi/delete_room</url-pattern>
+        <url-pattern>/cgi/delete_room.cgi</url-pattern>
+        <url-pattern>/cgi/delete_room.php</url-pattern>
     </servlet-mapping>
     <!-- site room servlets finish -->
     
@@ -1294,8 +1294,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/get_activity_detail.cgi</url-pattern>
         <url-pattern>/cgi/get_activity_detail.php</url-pattern>
     </servlet-mapping>
-    
-     <servlet>
+    <servlet>
         <servlet-name>ServiceLayerGetActivityLogSummary</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.GetActivityLogSummary</servlet-class>
     </servlet>              
@@ -1305,7 +1304,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/get_activity_log_summary.cgi</url-pattern>
         <url-pattern>/cgi/get_activity_log_summary.php</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>ServiceLayerGetDiagResult</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.GetDiagResult</servlet-class>
@@ -1391,68 +1389,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/user/verifycode</url-pattern>
     </servlet-mapping>
     
-    <!-- Alexa demo -->
-    <servlet>
-       <servlet-name>AlexaSetRoomLight</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaSetRoomLight</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>AlexaSetRoomLight</servlet-name>
-        <url-pattern>/cgi/alexa/set_room_light_bulbs</url-pattern>
-     </servlet-mapping>
-
-    <!-- Alexa demo -->
-    <servlet>
-       <servlet-name>AlexaSetLightColor</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaSetLightColor</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>AlexaSetLightColor</servlet-name>
-        <url-pattern>/cgi/alexa/set_room_light_colorbulbs</url-pattern>
-     </servlet-mapping>
-    
-    <!-- Alexa demo -->
-    <servlet>
-       <servlet-name>AlexaSetSingleTempLight</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaSetTemperLightState</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>AlexaSetSingleTempLight</servlet-name>
-        <url-pattern>/cgi/alexa/set_single_temper_light</url-pattern>
-     </servlet-mapping>
-    
-     <!-- Alexa logon -->
-    <servlet>
-       <servlet-name>AlexaLogon</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaLogOnServ</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>AlexaLogon</servlet-name>
-        <url-pattern>/cgi/alexa/logon</url-pattern>
-     </servlet-mapping>
-    
-      <!-- Alexa setState -->
-    <servlet>
-       <servlet-name>AlexaSecurity</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaStatusSetting</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>AlexaSecurity</servlet-name>
-        <url-pattern>/cgi/alexa/set_security</url-pattern>
-     </servlet-mapping>
-
-      <!-- Alexa Contro RF device State -->
-    <servlet>
-       <servlet-name>AlexaControlRfDevice</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaControlRfDevice</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>AlexaControlRfDevice</servlet-name>
-        <url-pattern>/cgi/alexa/control_rf_device</url-pattern>
-     </servlet-mapping>
-    
-    
-    
     <!-- filters -->
     <filter>
         <filter-name>OperatorAuthFilter</filter-name>
@@ -1492,23 +1428,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
-    <!-- 
-    <filter>
-        <filter-name>XssFilter</filter-name>
-        <filter-class>com.sercomm.cms.filter.XssFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>XssFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    -->
-    
-    
-    
-    
-    
-    
     
     
 </web-app>

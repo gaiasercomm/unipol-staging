@@ -9,13 +9,13 @@
     <!--<entry key="PROFILE.ID">0</entry> -->
     <!-- SMTP configuration -->
     <entry key="SMTP.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
-    <entry key="SMTP.ADDR">mail.eyesinhome.com</entry>
+    <entry key="SMTP.ADDR">mail.smartgaiacloud.com</entry>
     <entry key="SMTP.PORT">25</entry>
     <entry key="SMTP.USE_SSL">false</entry>
-    <entry key="SMTP.MAIL_ADDR">mail_service@eyesinhome.com</entry>
-    <entry key="SMTP.SENDER">SmartGaiaCloud.com</entry>
-    <entry key="SMTP.USER">mail_service</entry>
-    <entry key="SMTP.PASSWORD">zaq12wsx</entry>
+    <entry key="SMTP.MAIL_ADDR">postmaster@smartgaiacloud.com</entry>
+    <entry key="SMTP.SENDER">postmaster</entry>
+    <entry key="SMTP.USER">postmaster</entry>
+    <entry key="SMTP.PASSWORD">ability123</entry>
     <!-- SMS configuration -->
     <entry key="SMS.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
     <entry key="SMS.API.PROTOCOL">http</entry>
@@ -25,16 +25,21 @@
     <entry key="SMS.API.SENDER">Neutral_Gaia</entry>
     <entry key="SMS.API.USERNAME"></entry>
     <entry key="SMS.API.PASSWORD"></entry>
+    
     <!-- PNS configuration -->
     <entry key="PNS.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
     <!-- iOS PNS configuration -->
-    <entry key="PNS.ISDEV">1</entry> <!-- "1:DEV; 0:PROD;" -->
+    <entry key="PNS.ISDEV">0</entry> <!-- "1:DEV; 0:PROD;" -->
     <entry key="PNS.APNS.DEV.P12">cert/gaiaSmartHome_pns_ssl_certificate_development.p12</entry>
     <entry key="PNS.APNS.PROD.P12">cert/gaiaSmartHome_pns_ssl_certificate_production.p12</entry>
     <entry key="PNS.APNS.PASSWORD">sercomm.aloha</entry>
     <!-- Android GCM configuration -->
-    <entry key="PNS.GCM.API_KEY">AIzaSyB2baLsGq3TithDE4ogeidIcbU0QFdBrW0</entry>
-    
+    <entry key="PNS.GCM.API_KEY">AIzaSyB2baLsGq3TithDE4ogeidIcbU0QFdBrW0</entry>	
+
+
+
+
+
     <!-- followings are add by Jason@20140808 -->
     <!-- SMTP through Web Service -->
     <entry key="WS.SMTP.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
