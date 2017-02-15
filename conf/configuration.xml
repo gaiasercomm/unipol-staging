@@ -10,7 +10,7 @@
     <!-- "4: BroadBand" -->
     <entry key="PROFILE.ID">0</entry>
     <!-- CMS service configuration -->
-    <entry key="SERV.APACHE.HTTPPORT">8081</entry>
+    <entry key="SERV.APACHE.HTTPPORT">8080</entry>
     <entry key="SERV.APACHE.MAX_THREAD">500</entry>
     <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>  
     <entry key="SERV.KEY_STORE.PASSWORD">zaq12wsx</entry>  
