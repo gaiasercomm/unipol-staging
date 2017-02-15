@@ -66,5 +66,5 @@
     <entry key="REDIS.PORT">6379</entry> <!-- millisecond -->
     
     <!-- LOCAL or NOT for database-connection user/password-->
-    <entry key="LOCAL">N</entry>
+    <entry key="LOCAL">Y</entry>
 </properties>
