@@ -19,7 +19,7 @@
     <entry key="SERV.TRUST_STORE.PASSWORD">zaq12wsx</entry>
     
     <!-- White list of proxy location to allow to pass invoking BMSi -->
-    <entry key ="BMS.LOCATION.CHECK">Y</entry>
+    <entry key ="BMS.LOCATION.CHECK">N</entry>
     <entry key ="BMS.LOCATION">neutral_web;neutral_web_2</entry>
     
     <entry key="ENABLE.SESSION.CONTROL">N</entry>
