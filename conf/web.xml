@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
+    <servlet>
+        <servlet-name>helloworld</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.HelloWorld</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloworld</servlet-name>
+        <url-pattern>/cgi/helloworld</url-pattern>
+    </servlet-mapping>
+    
+    <!-- BMSi servlet -->
+    <servlet>
+        <servlet-name>XFireServlet</servlet-name>
+        <servlet-class>org.codehaus.xfire.transport.http.XFireConfigurableServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>XFireServlet</servlet-name>
+        <url-pattern>/service/*</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- redirect to DL servlet -->
+    <servlet>
+        <servlet-name>RedirectToDLservlet</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.RedirectToDLservlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>RedirectToDLservlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- site room servlets start -->
+    <servlet>
+        <servlet-name>GetSite</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetSite</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>SetSiteName</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetSiteName</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddRoom</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.AddRoom</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetRoom</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetRoom</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SetRoom</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetRoom</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DelRoom</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DelRoom</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetSite</servlet-name>
+        <url-pattern>/cgi/get_site</url-pattern>
+        <url-pattern>/cgi/get_site.cgi</url-pattern>
+        <url-pattern>/cgi/get_site.php</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>SetSiteName</servlet-name>
+        <url-pattern>/cgi/set_site_name</url-pattern>
+        <url-pattern>/cgi/set_site_name.cgi</url-pattern>
+        <url-pattern>/cgi/set_site_name.php</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>AddRoom</servlet-name>
+        <url-pattern>/cgi/add_room</url-pattern>
+        <url-pattern>/cgi/add_room.cgi</url-pattern>
+        <url-pattern>/cgi/add_room.php</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>GetRoom</servlet-name>
+        <url-pattern>/cgi/get_room</url-pattern>
+        <url-pattern>/cgi/get_room.cgi</url-pattern>
+        <url-pattern>/cgi/get_room.php</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>SetRoom</servlet-name>
+        <url-pattern>/cgi/set_room</url-pattern>
+        <url-pattern>/cgi/set_room.cgi</url-pattern>
+        <url-pattern>/cgi/set_room.php</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>DelRoom</servlet-name>
+        <url-pattern>/cgi/del_room</url-pattern>
+        <url-pattern>/cgi/del_room.cgi</url-pattern>
+        <url-pattern>/cgi/del_room.php</url-pattern>
+    </servlet-mapping>
+    <!-- site room servlets finish -->
+    
+    <!-- cmsi servlets start -->
+    <servlet>
+        <servlet-name>GetElapsedTime</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetElapsedTime</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddContactInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.AddContactInfo</servlet-class>
+    </servlet>  
+     <servlet>
+        <servlet-name>AddSubUser</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.AddSubUser</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>DeleteContactInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DeleteContactInfo</servlet-class>
+    </servlet>  
+      <servlet>
+        <servlet-name>DeleteSubUser</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DeleteSubUser</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>DeletePNSDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DeletePNSDevice</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>GetContactInfoList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetContactInfoList</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>GetEnergyConsumed</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetEnergyConsumed</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>GetServerInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetServerInfo</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>GetSubUserList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetSubUserList</servlet-class>
+    </servlet>      
+    <servlet>
+        <servlet-name>GetUserInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetUserInfo</servlet-class>
+    </servlet>      
+    <servlet>
+        <servlet-name>GetUserPinCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetUserPinCode</servlet-class>
+    </servlet>      
+    <servlet>
+        <servlet-name>GetPNSDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetPNSDevice</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>SetContactInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetContactInfo</servlet-class>
+    </servlet>      
+     <servlet>
+        <servlet-name>SetSubUserInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetSubUserInfo</servlet-class>
+    </servlet>      
+      <servlet>
+        <servlet-name>SetUserInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserInfo</servlet-class>
+    </servlet>      
+    <servlet>
+        <servlet-name>SetSubUserPassword</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetSubUserPassword</servlet-class>
+    </servlet>      
+     <servlet>
+        <servlet-name>SetUserName</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserName</servlet-class>
+    </servlet>      
+       <servlet>
+        <servlet-name>SetUserPinCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserPinCode</servlet-class>
+    </servlet>  
+      <servlet>
+        <servlet-name>SetUserPassword</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserPassword</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>SetPNSDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetPNSDevice</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.Login</servlet-class>
+    </servlet>   
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.Logout</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>ResetUserPassword</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.ResetUserPassword</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>ResetUserPinCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.ResetUserPinCode</servlet-class>
+    </servlet>    
+      <servlet>
+        <servlet-name>UserRegister</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.UserRegister</servlet-class>
+    </servlet>    
+      <servlet>
+        <servlet-name>GetMasterUserByAccountID</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetMasterUserByAccountID</servlet-class>
+    </servlet>        
+     <servlet>
+        <servlet-name>GetKitInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetKitInfo</servlet-class>
+    </servlet>   
+     <servlet>
+        <servlet-name>BindIPDeviceByKit</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.BindIPDeviceByKit</servlet-class>
+    </servlet>  
+      <servlet>
+        <servlet-name>CheckKitBinding</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CheckKitBinding</servlet-class>
+    </servlet>       
+    <servlet>
+        <servlet-name>GetKitList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetKitList</servlet-class>
+    </servlet>      
+    
+    
+     <servlet-mapping>
+        <servlet-name>GetElapsedTime</servlet-name>
+        <url-pattern>/cgi/trackelapsedtime</url-pattern>
+        <url-pattern>/cgi/trackelapsedtime.cgi</url-pattern>
+        <url-pattern>/cgi/trackelapsedtime.php</url-pattern>
+    </servlet-mapping>
+    	 		
+    <servlet-mapping>
+        <servlet-name>AddContactInfo</servlet-name>
+        <url-pattern>/cgi/add_contact</url-pattern>
+        <url-pattern>/cgi/add_contact.cgi</url-pattern>
+        <url-pattern>/cgi/add_contact.php</url-pattern>
+    </servlet-mapping>
+     	 		
+    <servlet-mapping>
+        <servlet-name>AddSubUser</servlet-name>
+        <url-pattern>/cgi/add_subuser</url-pattern>
+        <url-pattern>/cgi/add_subuser.cgi</url-pattern>
+        <url-pattern>/cgi/add_subuser.php</url-pattern>
+    </servlet-mapping>
+   	 		
+    <servlet-mapping>
+        <servlet-name>DeleteContactInfo</servlet-name>
+        <url-pattern>/cgi/delete_contact</url-pattern>
+        <url-pattern>/cgi/delete_contact.cgi</url-pattern>
+        <url-pattern>/cgi/delete_contact.php</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+        <servlet-name>DeleteSubUser</servlet-name>
+        <url-pattern>/cgi/delete_subuser</url-pattern>
+        <url-pattern>/cgi/delete_subuser.cgi</url-pattern>
+        <url-pattern>/cgi/delete_subuser.php</url-pattern>
+    </servlet-mapping>
+    	 		
+    <servlet-mapping>
+        <servlet-name>DeletePNSDevice</servlet-name>
+        <url-pattern>/cgi/delete_pns_info</url-pattern>
+        <url-pattern>/cgi/delete_pns_info.cgi</url-pattern>
+        <url-pattern>/cgi/delete_pns_info.php</url-pattern>
+    </servlet-mapping>
+    	 		
+    <servlet-mapping>
+        <servlet-name>GetContactInfoList</servlet-name>
+        <url-pattern>/cgi/get_contact_list</url-pattern>
+        <url-pattern>/cgi/get_contact_list.cgi</url-pattern>
+        <url-pattern>/cgi/get_contact_list.php</url-pattern>
+    </servlet-mapping>
+  	 		
+    <servlet-mapping>
+        <servlet-name>GetEnergyConsumed</servlet-name>
+        <url-pattern>/cgi/get_energy_consumed</url-pattern>
+        <url-pattern>/cgi/get_energy_consumed.cgi</url-pattern>
+        <url-pattern>/cgi/get_energy_consumed.php</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+        <servlet-name>GetServerInfo</servlet-name>
+        <url-pattern>/cgi/GetServerInfo</url-pattern>
+        <url-pattern>/cgi/GetServerInfo.cgi</url-pattern>
+        <url-pattern>/cgi/GetServerInfo.php</url-pattern>
+    </servlet-mapping>
+  	 		
+    <servlet-mapping>
+        <servlet-name>GetSubUserList</servlet-name>
+        <url-pattern>/cgi/get_subuser_list</url-pattern>
+        <url-pattern>/cgi/get_subuser_list.cgi</url-pattern>
+        <url-pattern>/cgi/get_subuser_list.php</url-pattern>
+    </servlet-mapping>
+  	 		
+    <servlet-mapping>
+        <servlet-name>GetUserInfo</servlet-name>
+        <url-pattern>/cgi/get_user_info</url-pattern>
+        <url-pattern>/cgi/get_user_info.cgi</url-pattern>
+        <url-pattern>/cgi/get_user_info.php</url-pattern>
+    </servlet-mapping>
+  	 		
+    <servlet-mapping>
+        <servlet-name>GetUserPinCode</servlet-name>
+        <url-pattern>/cgi/get_user_pin_code</url-pattern>
+        <url-pattern>/cgi/get_user_pin_code.cgi</url-pattern>
+        <url-pattern>/cgi/get_user_pin_code.php</url-pattern>
+    </servlet-mapping>
+ 
+    <servlet-mapping>
+        <servlet-name>GetPNSDevice</servlet-name>
+        <url-pattern>/cgi/get_pns_info</url-pattern>
+        <url-pattern>/cgi/get_pns_info.cgi</url-pattern>
+        <url-pattern>/cgi/get_pns_info.php</url-pattern>
+    </servlet-mapping>
+    	 		
+    <servlet-mapping>
+        <servlet-name>SetContactInfo</servlet-name>
+        <url-pattern>/cgi/set_contact</url-pattern>
+        <url-pattern>/cgi/set_contact.cgi</url-pattern>
+        <url-pattern>/cgi/set_contact.php</url-pattern>
+    </servlet-mapping>
+    	 		
+    <servlet-mapping>
+        <servlet-name>SetSubUserInfo</servlet-name>
+        <url-pattern>/cgi/set_subuser</url-pattern>
+        <url-pattern>/cgi/set_subuser.cgi</url-pattern>
+        <url-pattern>/cgi/set_subuser.php</url-pattern>
+    </servlet-mapping>
+   		
+    <servlet-mapping>
+        <servlet-name>SetSubUserPassword</servlet-name>
+        <url-pattern>/cgi/set_subuser_password</url-pattern>
+        <url-pattern>/cgi/set_subuser_password.cgi</url-pattern>
+        <url-pattern>/cgi/set_subuser_password.php</url-pattern>
+    </servlet-mapping>
+  	 		
+    <servlet-mapping>
+        <servlet-name>SetUserInfo</servlet-name>
+        <url-pattern>/cgi/set_user_info</url-pattern>
+        <url-pattern>/cgi/set_user_info.cgi</url-pattern>
+        <url-pattern>/cgi/set_user_info.php</url-pattern>
+    </servlet-mapping>
+    		
+    <servlet-mapping>
+        <servlet-name>SetUserName</servlet-name>
+        <url-pattern>/cgi/set_user_name</url-pattern>
+        <url-pattern>/cgi/set_user_name.cgi</url-pattern>
+        <url-pattern>/cgi/set_user_name.php</url-pattern>
+    </servlet-mapping>
+  	 		
+    <servlet-mapping>
+        <servlet-name>SetUserPassword</servlet-name>
+        <url-pattern>/cgi/set_user_password</url-pattern>
+        <url-pattern>/cgi/set_user_password.cgi</url-pattern>
+        <url-pattern>/cgi/set_user_password.php</url-pattern>
+    </servlet-mapping>
+ 	 		
+    <servlet-mapping>
+        <servlet-name>SetUserPinCode</servlet-name>
+        <url-pattern>/cgi/set_user_pin_code</url-pattern>
+        <url-pattern>/cgi/set_user_pin_code.cgi</url-pattern>
+        <url-pattern>/cgi/set_user_pin_code.php</url-pattern>
+    </servlet-mapping>
+       	 		
+    <servlet-mapping>
+        <servlet-name>SetPNSDevice</servlet-name>
+        <url-pattern>/cgi/set_pns_info</url-pattern>
+        <url-pattern>/cgi/set_pns_info.cgi</url-pattern>
+        <url-pattern>/cgi/set_pns_info.php</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/cgi/logon</url-pattern>
+        <url-pattern>/cgi/logon.cgi</url-pattern>
+        <url-pattern>/cgi/logon.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/cgi/logoff</url-pattern>
+        <url-pattern>/cgi/logoff.cgi</url-pattern>
+        <url-pattern>/cgi/logoff.php</url-pattern>
+    </servlet-mapping>
+           
+    <servlet-mapping>
+        <servlet-name>ResetUserPassword</servlet-name>
+        <url-pattern>/cgi/vfi_reset_user_pwd</url-pattern>
+        <url-pattern>/cgi/vfi_reset_user_pwd.cgi</url-pattern>
+        <url-pattern>/cgi/vfi_reset_user_pwd.php</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+        <servlet-name>ResetUserPinCode</servlet-name>
+        <url-pattern>/cgi/vfi_reset_user_pin</url-pattern>
+        <url-pattern>/cgi/vfi_reset_user_pin.cgi</url-pattern>
+        <url-pattern>/cgi/vfi_reset_user_pin.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>UserRegister</servlet-name>
+        <url-pattern>/cgi/user_register</url-pattern>
+        <url-pattern>/cgi/user_register.cgi</url-pattern>
+        <url-pattern>/cgi/user_register.php</url-pattern>
+    </servlet-mapping>
+               
+    <servlet-mapping>
+        <servlet-name>GetMasterUserByAccountID</servlet-name>
+        <url-pattern>/cgi/get_masteruser_by_account</url-pattern>
+        <url-pattern>/cgi/get_masteruser_by_account.cgi</url-pattern>
+        <url-pattern>/cgi/get_masteruser_by_account.php</url-pattern>
+    </servlet-mapping>
+            
+    <servlet-mapping>
+        <servlet-name>GetKitInfo</servlet-name>
+        <url-pattern>/cgi/get_kit_info</url-pattern>
+        <url-pattern>/cgi/get_kit_info.cgi</url-pattern>
+        <url-pattern>/cgi/get_kit_info.php</url-pattern>
+    </servlet-mapping>
+               
+    <servlet-mapping>
+        <servlet-name>BindIPDeviceByKit</servlet-name>
+        <url-pattern>/cgi/bind_ip_device_by_kit</url-pattern>
+        <url-pattern>/cgi/bind_ip_device_by_kit.cgi</url-pattern>
+        <url-pattern>/cgi/bind_ip_device_by_kit.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>CheckKitBinding</servlet-name>
+        <url-pattern>/cgi/check_kit_binding</url-pattern>
+        <url-pattern>/cgi/check_kit_binding.cgi</url-pattern>
+        <url-pattern>/cgi/check_kit_binding.php</url-pattern>
+    </servlet-mapping>
+           
+    <servlet-mapping>
+        <servlet-name>GetKitList</servlet-name>
+        <url-pattern>/cgi/get_kit_list</url-pattern>
+        <url-pattern>/cgi/get_kit_list.cgi</url-pattern>
+        <url-pattern>/cgi/get_kit_list.php</url-pattern>
+    </servlet-mapping>
+     <!-- cmsi servlets finish -->
+     
+    <!-- Easy Monitoring servlets -->
+     <servlet>
+        <servlet-name>EasyMonitorAddUser</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorAddUser</servlet-class>
+    </servlet>        
+     <servlet>
+        <servlet-name>EasyMonitorVerifyCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorVerifyCode</servlet-class>
+    </servlet>     
+      <servlet>
+        <servlet-name>EasyMonitorGetIPDeviceList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPDeviceList</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>EasyMonitorGetAuthenticationInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetAuthenticationInfo</servlet-class>
+    </servlet>    
+    <servlet>
+        <servlet-name>EasyMonitorDoDevicePairing</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDoDevicePairing</servlet-class>
+    </servlet>        
+      <servlet>
+        <servlet-name>EasyMonitorModifyAccount</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorModifyAccount</servlet-class>
+    </servlet>   
+     <servlet>
+        <servlet-name>EasyMonitorDisableAccount</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDisableAccount</servlet-class>
+    </servlet>    
+      <servlet>
+        <servlet-name>EasyMonitorCheckDevicePairing</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCheckDevicePairing</servlet-class>
+    </servlet>   
+     <servlet>
+        <servlet-name>EasyMonitorGetUserInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetUserInfo</servlet-class>
+    </servlet> 
+       <servlet>
+        <servlet-name>EasyMonitorGetIPCamAttributes</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPCamAttributes</servlet-class>
+    </servlet>    
+       <servlet>
+        <servlet-name>EasyMonitorPreCheckPairing</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairing</servlet-class>
+    </servlet>   
+       <servlet>
+        <servlet-name>EasyMonitorPrePairingVerification</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPrePairingVerification</servlet-class>
+    </servlet> 
+      <servlet>
+        <servlet-name>EasyMonitorSetIPCamAttributes</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamAttributes</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>EasyMonitorTriggerEventClipNotification</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorTriggerEventClipNotification</servlet-class>
+    </servlet>    
+      <servlet>
+        <servlet-name>EasyMonitorDeleteIPCam</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDeleteIPCam</servlet-class>
+    </servlet>       
+     <servlet>
+        <servlet-name>EasyMonitorResetPassword</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorResetPassword</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>EasyMonitorCodeForReset</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCodeForReset</servlet-class>
+    </servlet>       
+    <servlet>
+        <servlet-name>EasyMonitorCodeForModification</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCodeForModification</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>EasyMonitorResendCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorResendCode</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>EasyMonitorSetPNSDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetPNSDevice</servlet-class>
+    </servlet>    
+    <servlet>
+        <servlet-name>EasyMonitorDeleteIPCamWEB</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDeleteIPCamWEB</servlet-class>
+    </servlet>    
+    <servlet>
+        <servlet-name>EasyMonitorGetServerInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetServerInfo</servlet-class>
+    </servlet>      
+    <servlet>
+        <servlet-name>EasyMonitorPreCheckPairingForPNS</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairingForPNS</servlet-class>
+    </servlet> 
+    <servlet>
+        <servlet-name>EasyMonitorSubpairingRequest</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSubpairingRequest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EasyMonitorSubpairingConfirm</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSubpairingConfirm</servlet-class>
+    </servlet>  
+    <servlet>
+        <servlet-name>EasyMonitorSetIPCamTimezone</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamTimezone</servlet-class>
+    </servlet>   
+    <servlet>
+        <servlet-name>EasyMonitorSendVerificationCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSendVerificationCode</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EasyMonitorVerifyCodeForGeneral</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorVerifyCodeForGeneral</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EasyMonitorAddUser</servlet-name>
+        <url-pattern>/cgi/easy_monitor_add_user</url-pattern>
+        <url-pattern>/cgi/easy_monitor_add_user.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_add_user.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorVerifyCode</servlet-name>
+        <url-pattern>/cgi/easy_monitor_verify_code</url-pattern>
+        <url-pattern>/cgi/easy_monitor_verify_code.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_verify_code.php</url-pattern>
+    </servlet-mapping>
+               
+    <servlet-mapping>
+        <servlet-name>EasyMonitorGetIPDeviceList</servlet-name>
+        <url-pattern>/cgi/easy_monitor_get_ip_device_list</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_ip_device_list.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_ip_device_list.php</url-pattern>
+    </servlet-mapping>
+              
+    <servlet-mapping>
+        <servlet-name>EasyMonitorGetAuthenticationInfo</servlet-name>
+        <url-pattern>/cgi/easy_monitor_get_authentication_info</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_authentication_info.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_authentication_info.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorDoDevicePairing</servlet-name>
+        <url-pattern>/cgi/easy_monitor_do_device_pairing</url-pattern>
+        <url-pattern>/cgi/easy_monitor_do_device_pairing.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_do_device_pairing.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>EasyMonitorModifyAccount</servlet-name>
+        <url-pattern>/cgi/easy_monitor_modify_account</url-pattern>
+        <url-pattern>/cgi/easy_monitor_modify_account.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_modify_account.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorDisableAccount</servlet-name>
+        <url-pattern>/cgi/easy_monitor_disable_account</url-pattern>
+        <url-pattern>/cgi/easy_monitor_disable_account.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_disable_account.php</url-pattern>
+    </servlet-mapping>
+              
+    <servlet-mapping>
+        <servlet-name>EasyMonitorCheckDevicePairing</servlet-name>
+        <url-pattern>/cgi/easy_monitor_check_device_pairing</url-pattern>
+        <url-pattern>/cgi/easy_monitor_check_device_pairing.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_check_device_pairing.php</url-pattern>
+    </servlet-mapping>
+                
+    <servlet-mapping>
+        <servlet-name>EasyMonitorGetUserInfo</servlet-name>
+        <url-pattern>/cgi/easy_monitor_get_user_info</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_user_info.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_user_info.php</url-pattern>
+    </servlet-mapping>
+           
+    <servlet-mapping>
+        <servlet-name>EasyMonitorGetIPCamAttributes</servlet-name>
+        <url-pattern>/cgi/easy_monitor_get_ipcam_attributes</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_ipcam_attributes.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_ipcam_attributes.php</url-pattern>
+    </servlet-mapping>
+          
+    <servlet-mapping>
+        <servlet-name>EasyMonitorPreCheckPairing</servlet-name>
+        <url-pattern>/cgi/easy_monitor_pre_check_pairing</url-pattern>
+        <url-pattern>/cgi/easy_monitor_pre_check_pairing.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_pre_check_pairing.php</url-pattern>
+    </servlet-mapping>
+            
+    <servlet-mapping>
+        <servlet-name>EasyMonitorPrePairingVerification</servlet-name>
+        <url-pattern>/cgi/easy_monitor_pre_pairing_verification</url-pattern>
+        <url-pattern>/cgi/easy_monitor_pre_pairing_verification.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_pre_pairing_verification.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorSetIPCamAttributes</servlet-name>
+        <url-pattern>/cgi/easy_monitor_set_ipcam_attributes</url-pattern>
+        <url-pattern>/cgi/easy_monitor_set_ipcam_attributes.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_set_ipcam_attributes.php</url-pattern>
+    </servlet-mapping>
+           
+    <servlet-mapping>
+        <servlet-name>EasyMonitorTriggerEventClipNotification</servlet-name>
+        <url-pattern>/cgi/easy_monitor_trigger_event_clip_notification</url-pattern>
+        <url-pattern>/cgi/easy_monitor_trigger_event_clip_notification.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_trigger_event_clip_notification.php</url-pattern>
+    </servlet-mapping>
+              
+    <servlet-mapping>
+        <servlet-name>EasyMonitorDeleteIPCam</servlet-name>
+        <url-pattern>/cgi/easy_monitor_delete_ipcam</url-pattern>
+        <url-pattern>/cgi/easy_monitor_delete_ipcam.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_delete_ipcam.php</url-pattern>
+    </servlet-mapping>
+            
+    <servlet-mapping>
+        <servlet-name>EasyMonitorResetPassword</servlet-name>
+        <url-pattern>/cgi/easy_monitor_reset_password</url-pattern>
+        <url-pattern>/cgi/easy_monitor_reset_password.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_reset_password.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorCodeForReset</servlet-name>
+        <url-pattern>/cgi/easy_monitor_code_for_reset</url-pattern>
+        <url-pattern>/cgi/easy_monitor_code_for_reset.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_code_for_reset.php</url-pattern>
+    </servlet-mapping>
+               
+    <servlet-mapping>
+        <servlet-name>EasyMonitorCodeForModification</servlet-name>
+        <url-pattern>/cgi/easy_monitor_code_for_modification</url-pattern>
+        <url-pattern>/cgi/easy_monitor_code_for_modification.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_code_for_modification.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorResendCode</servlet-name>
+        <url-pattern>/cgi/easy_monitor_resend_code</url-pattern>
+        <url-pattern>/cgi/easy_monitor_resend_code.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_resend_code.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorSetPNSDevice</servlet-name>
+        <url-pattern>/cgi/easy_monitor_set_pns_device</url-pattern>
+        <url-pattern>/cgi/easy_monitor_set_pns_device.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_set_pns_device.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>EasyMonitorDeleteIPCamWEB</servlet-name>
+        <url-pattern>/cgi/easy_monitor_delete_ipcam_web</url-pattern>
+        <url-pattern>/cgi/easy_monitor_delete_ipcam_web.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_delete_ipcam_web.php</url-pattern>
+    </servlet-mapping>
+          
+    <servlet-mapping>
+        <servlet-name>EasyMonitorGetServerInfo</servlet-name>
+        <url-pattern>/cgi/easy_monitor_get_server_info</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_server_info.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_get_server_info.php</url-pattern>
+    </servlet-mapping>
+    
+              
+    <servlet-mapping>
+        <servlet-name>EasyMonitorPreCheckPairingForPNS</servlet-name>
+        <url-pattern>/cgi/easy_monitor_pre_check_pairing_for_pns</url-pattern>
+        <url-pattern>/cgi/easy_monitor_pre_check_pairing_for_pns.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_pre_check_pairing_for_pns.php</url-pattern>
+    </servlet-mapping>
+            
+    <servlet-mapping>
+        <servlet-name>EasyMonitorSubpairingRequest</servlet-name>
+        <url-pattern>/cgi/easy_monitor_subpairing_request</url-pattern>
+        <url-pattern>/cgi/easy_monitor_subpairing_request.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_subpairing_request.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>EasyMonitorSubpairingConfirm</servlet-name>
+        <url-pattern>/cgi/easy_monitor_subpairing_confirm</url-pattern>
+        <url-pattern>/cgi/easy_monitor_subpairing_confirm.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_subpairing_confirm.php</url-pattern>
+    </servlet-mapping>
+               
+    <servlet-mapping>
+        <servlet-name>EasyMonitorSetIPCamTimezone</servlet-name>
+        <url-pattern>/cgi/easy_monitor_set_ipcam_timezone</url-pattern>
+        <url-pattern>/cgi/easy_monitor_set_ipcam_timezone.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_set_ipcam_timezone.php</url-pattern>
+    </servlet-mapping>
+              
+    <servlet-mapping>
+        <servlet-name>EasyMonitorSendVerificationCode</servlet-name>
+        <url-pattern>/cgi/easy_monitor_send_verification_code</url-pattern>
+        <url-pattern>/cgi/easy_monitor_send_verification_code.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_send_verification_code.php</url-pattern>
+    </servlet-mapping>
+             
+    <servlet-mapping>
+        <servlet-name>EasyMonitorVerifyCodeForGeneral</servlet-name>
+        <url-pattern>/cgi/easy_monitor_code_for_general</url-pattern>
+        <url-pattern>/cgi/easy_monitor_code_for_general.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_code_for_general.php</url-pattern>
+    </servlet-mapping>
+   
+    <!-- cloud monitoring servlets -->
+    
+    <servlet>
+        <servlet-name>CloudMonitorSubscription</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorSubscription</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorSubscription</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_subscription</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_subscription.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_subscription.php</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>CloudMonitorGetFileList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorGetFileList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorGetFileList</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_get_file_list</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_file_list.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_file_list.php</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>CloudMonitorGetAWSInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorGetAWSInfo</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorGetAWSInfo</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_get_aws_info</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_aws_info.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_aws_info.php</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>CloudMonitorSetFilePreservation</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorSetFilePreservation</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorSetFilePreservation</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_set_file_preservation</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_set_file_preservation.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_set_file_preservation.php</url-pattern>
+    </servlet-mapping>
+
+     <servlet>
+        <servlet-name>CloudMonitorUnSubscription</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorUnSubscription</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorUnSubscription</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_unsubscription</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_unsubscription.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_unsubscription.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CloudMonitorSuspension</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorSuspension</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorSuspension</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_suspension</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_suspension.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_suspension.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CloudMonitorGetRatePlanInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorGetRatePlanInfo</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorGetRatePlanInfo</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_get_rateplan_info</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_rateplan_info.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_rateplan_info.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CloudMonitorGetServiceList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorGetServiceList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorGetServiceList</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_get_service_list</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_service_list.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_get_service_list.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CloudMonitorVerifyCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.CloudMonitorVerifyCode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>CloudMonitorVerifyCode</servlet-name>
+        <url-pattern>/cgi/cloud_monitor_verify_code</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_verify_code.cgi</url-pattern>
+        <url-pattern>/cgi/cloud_monitor_verify_code.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>FaceBookLogin</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.FaceBookLogin</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>FaceBookLogin</servlet-name>
+        <url-pattern>/cgi/facebook_logon</url-pattern>
+        <url-pattern>/cgi/facebook_logon.cgi</url-pattern>
+        <url-pattern>/cgi/facebook_logon.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EasyMonitorCheckUserForFB</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCheckUserForFB</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>EasyMonitorCheckUserForFB</servlet-name>
+        <url-pattern>/cgi/easy_monitor_for_fb_check_user</url-pattern>
+        <url-pattern>/cgi/easy_monitor_for_fb_check_user.cgi</url-pattern>
+        <url-pattern>/cgi/easy_monitor_for_fb_check_user.php</url-pattern>
+    </servlet-mapping>
+    
+    <!-- service layer apis -->
+      <servlet>
+        <servlet-name>ServiceLayerAddUser</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorAddUser</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerAddUser</servlet-name>
+        <url-pattern>/cgi/add_user</url-pattern>
+        <url-pattern>/cgi/add_user.cgi</url-pattern>
+        <url-pattern>/cgi/add_user.php</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>ServiceLayerVerifyCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorVerifyCode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerVerifyCode</servlet-name>
+        <url-pattern>/cgi/verify_code</url-pattern>
+        <url-pattern>/cgi/verify_code.cgi</url-pattern>
+        <url-pattern>/cgi/verify_code.php</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>ServiceLayerModifyAccount</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorModifyAccount</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerModifyAccount</servlet-name>
+        <url-pattern>/cgi/modify_account</url-pattern>
+        <url-pattern>/cgi/modify_account.cgi</url-pattern>
+        <url-pattern>/cgi/modify_account.php</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>ServiceLayerCodeForModification</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCodeForModification</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerCodeForModification</servlet-name>
+        <url-pattern>/cgi/code_for_modification</url-pattern>
+        <url-pattern>/cgi/code_for_modification.cgi</url-pattern>
+        <url-pattern>/cgi/code_for_modification.php</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>ServiceLayerResetPassword</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorResetPassword</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerResetPassword</servlet-name>
+        <url-pattern>/cgi/reset_password</url-pattern>
+        <url-pattern>/cgi/reset_password.cgi</url-pattern>
+        <url-pattern>/cgi/reset_password.php</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>ServiceLayerCodeForReset</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCodeForReset</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerCodeForReset</servlet-name>
+        <url-pattern>/cgi/code_for_reset</url-pattern>
+        <url-pattern>/cgi/code_for_reset.cgi</url-pattern>
+        <url-pattern>/cgi/code_for_reset.php</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>ServiceLayerAddUserForFB</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorAddUserForFB</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerAddUserForFB</servlet-name>
+        <url-pattern>/cgi/for_fb_add_user</url-pattern>
+        <url-pattern>/cgi/for_fb_add_user.cgi</url-pattern>
+        <url-pattern>/cgi/for_fb_add_user.php</url-pattern>
+    </servlet-mapping>
+    
+       <servlet>
+        <servlet-name>ServiceLayerCheckUserForFB</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCheckUserForFB</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerCheckUserForFB</servlet-name>
+        <url-pattern>/cgi/for_fb_check_user</url-pattern>
+        <url-pattern>/cgi/for_fb_check_user.cgi</url-pattern>
+        <url-pattern>/cgi/for_fb_check_user.php</url-pattern>
+    </servlet-mapping>
+    
+       <servlet>
+        <servlet-name>ServiceLayerResendCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorResendCode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerResendCode</servlet-name>
+        <url-pattern>/cgi/resend_code</url-pattern>
+        <url-pattern>/cgi/resend_code.cgi</url-pattern>
+        <url-pattern>/cgi/resend_code.php</url-pattern>
+    </servlet-mapping>
+    
+       <servlet>
+        <servlet-name>ServiceLayerGetIPDeviceList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPDeviceList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetIPDeviceList</servlet-name>
+        <url-pattern>/cgi/obtain_ip_device_list</url-pattern>
+        <url-pattern>/cgi/obtain_ip_device_list.cgi</url-pattern>
+        <url-pattern>/cgi/obtain_ip_device_list.php</url-pattern>
+    </servlet-mapping>
+    
+       <servlet>
+        <servlet-name>ServiceLayerGetAuthenticationInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetAuthenticationInfo</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetAuthenticationInfo</servlet-name>
+        <url-pattern>/cgi/get_authentication_info</url-pattern>
+        <url-pattern>/cgi/get_authentication_info.cgi</url-pattern>
+        <url-pattern>/cgi/get_authentication_info.php</url-pattern>
+    </servlet-mapping>
+    
+         <servlet>
+        <servlet-name>ServiceLayerDoDevicePairing</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDoDevicePairing</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerDoDevicePairing</servlet-name>
+        <url-pattern>/cgi/do_device_pairing</url-pattern>
+        <url-pattern>/cgi/do_device_pairing.cgi</url-pattern>
+        <url-pattern>/cgi/do_device_pairing.php</url-pattern>
+    </servlet-mapping>
+    
+          <servlet>
+        <servlet-name>ServiceLayerCheckDevicePairing</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCheckDevicePairing</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerCheckDevicePairing</servlet-name>
+        <url-pattern>/cgi/check_device_pairing</url-pattern>
+        <url-pattern>/cgi/check_device_pairing.cgi</url-pattern>
+        <url-pattern>/cgi/check_device_pairing.php</url-pattern>
+    </servlet-mapping>
+    
+           <servlet>
+        <servlet-name>ServiceLayerGetUserInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetUserInfo</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetUserInfo</servlet-name>
+        <url-pattern>/cgi/obtain_user_info</url-pattern>
+        <url-pattern>/cgi/obtain_user_info.cgi</url-pattern>
+        <url-pattern>/cgi/obtain_user_info.php</url-pattern>
+    </servlet-mapping>
+    
+             <servlet>
+        <servlet-name>ServiceLayerGetIPCamAttributes</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPCamAttributes</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetIPCamAttributes</servlet-name>
+        <url-pattern>/cgi/get_ipcam_attributes</url-pattern>
+        <url-pattern>/cgi/get_ipcam_attributes.cgi</url-pattern>
+        <url-pattern>/cgi/get_ipcam_attributes.php</url-pattern>
+    </servlet-mapping>
+    
+             <servlet>
+        <servlet-name>ServiceLayerPreCheckPairing</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairing</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerPreCheckPairing</servlet-name>
+        <url-pattern>/cgi/pre_check_pairing</url-pattern>
+        <url-pattern>/cgi/pre_check_pairing.cgi</url-pattern>
+        <url-pattern>/cgi/pre_check_pairing.php</url-pattern>
+    </servlet-mapping>
+    
+           <servlet>
+        <servlet-name>ServiceLayerPrePairingVerification</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPrePairingVerification</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerPrePairingVerification</servlet-name>
+        <url-pattern>/cgi/pre_pairing_verification</url-pattern>
+        <url-pattern>/cgi/pre_pairing_verification.cgi</url-pattern>
+        <url-pattern>/cgi/pre_pairing_verification.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSetIPCamAttributes</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamAttributes</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSetIPCamAttributes</servlet-name>
+        <url-pattern>/cgi/set_ipcam_attributes</url-pattern>
+        <url-pattern>/cgi/set_ipcam_attributes.cgi</url-pattern>
+        <url-pattern>/cgi/set_ipcam_attributes.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSetPNSDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetPNSDevice</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSetPNSDevice</servlet-name>
+        <url-pattern>/cgi/set_pns_device</url-pattern>
+        <url-pattern>/cgi/set_pns_device.cgi</url-pattern>
+        <url-pattern>/cgi/set_pns_device.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerGetServerInfo</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetServerInfo</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetServerInfo</servlet-name>
+        <url-pattern>/cgi/obtain_server_info</url-pattern>
+        <url-pattern>/cgi/obtain_server_info.cgi</url-pattern>
+        <url-pattern>/cgi/obtain_server_info.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerPreCheckPairingForPNS</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairingForPNS</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerPreCheckPairingForPNS</servlet-name>
+        <url-pattern>/cgi/pre_check_pairing_for_pns</url-pattern>
+        <url-pattern>/cgi/pre_check_pairing_for_pns.cgi</url-pattern>
+        <url-pattern>/cgi/pre_check_pairing_for_pns.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSubpairingRequest</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSubpairingRequest</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSubpairingRequest</servlet-name>
+        <url-pattern>/cgi/subpairing_request</url-pattern>
+        <url-pattern>/cgi/subpairing_request.cgi</url-pattern>
+        <url-pattern>/cgi/subpairing_request.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSubpairingConfirm</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSubpairingConfirm</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSubpairingConfirm</servlet-name>
+        <url-pattern>/cgi/subpairing_confirm</url-pattern>
+        <url-pattern>/cgi/subpairing_confirm.cgi</url-pattern>
+        <url-pattern>/cgi/subpairing_confirm.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSetIPCamTimezone</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamTimezone</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSetIPCamTimezone</servlet-name>
+        <url-pattern>/cgi/set_ipcam_timezone</url-pattern>
+        <url-pattern>/cgi/set_ipcam_timezone.cgi</url-pattern>
+        <url-pattern>/cgi/set_ipcam_timezone.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSendVerificationCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSendVerificationCode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSendVerificationCode</servlet-name>
+        <url-pattern>/cgi/send_verification_code</url-pattern>
+        <url-pattern>/cgi/send_verification_code.cgi</url-pattern>
+        <url-pattern>/cgi/send_verification_code.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerVerifyCodeForGeneral</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorVerifyCodeForGeneral</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerVerifyCodeForGeneral</servlet-name>
+        <url-pattern>/cgi/code_for_general</url-pattern>
+        <url-pattern>/cgi/code_for_general.cgi</url-pattern>
+        <url-pattern>/cgi/code_for_general.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayeraGetRoomSiteContent</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetRoomSiteContent</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayeraGetRoomSiteContent</servlet-name>
+        <url-pattern>/cgi/get_room_site_content</url-pattern>
+        <url-pattern>/cgi/get_room_site_content.cgi</url-pattern>
+        <url-pattern>/cgi/get_room_site_content.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerUpdateRoomSiteContent</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.UpdateRoomSiteContent</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerUpdateRoomSiteContent</servlet-name>
+        <url-pattern>/cgi/update_room_site_content</url-pattern>
+        <url-pattern>/cgi/update_room_site_content.cgi</url-pattern>
+        <url-pattern>/cgi/update_room_site_content.php</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>ServiceLayerGetDiagCode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetDiagCode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetDiagCode</servlet-name>
+        <url-pattern>/cgi/get_diag_description</url-pattern>
+        <url-pattern>/cgi/get_diag_description.cgi</url-pattern>
+        <url-pattern>/cgi/get_diag_description.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerUserEventNotify</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.EventNotify</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerUserEventNotify</servlet-name>
+        <url-pattern>/cgi/user_event_notify</url-pattern>
+        <url-pattern>/cgi/user_event_notify.cgi</url-pattern>
+        <url-pattern>/cgi/user_event_notify.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSetUserPnsEventSeverity</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserEventNotifySeverity</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSetUserPnsEventSeverity</servlet-name>
+        <url-pattern>/cgi/set_user_pns_eventseverity</url-pattern>
+        <url-pattern>/cgi/set_user_pns_eventseverity.cgi</url-pattern>
+        <url-pattern>/cgi/set_user_pns_eventseverity.php</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>ServiceLayerGetUserEventList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetUserEventGroupList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetUserEventList</servlet-name>
+        <url-pattern>/cgi/get_user_event_group_list</url-pattern>
+        <url-pattern>/cgi/get_user_event_group_list.cgi</url-pattern>
+        <url-pattern>/cgi/get_user_event_group_list.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerSetUserPnsEvent</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserPnsEvent</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerSetUserPnsEvent</servlet-name>
+        <url-pattern>/cgi/set_user_pns_event</url-pattern>
+        <url-pattern>/cgi/set_user_pns_event.cgi</url-pattern>
+        <url-pattern>/cgi/set_user_pns_event.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerGetGroupEvents</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetGroupEvents</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetGroupEvents</servlet-name>
+        <url-pattern>/cgi/get_group_events</url-pattern>
+        <url-pattern>/cgi/get_group_events.cgi</url-pattern>
+        <url-pattern>/cgi/get_group_events.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerUpdateUserPnsBadge</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.UpdateUserPnsBadge</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerUpdateUserPnsBadge</servlet-name>
+        <url-pattern>/cgi/update_user_pns_badge</url-pattern>
+        <url-pattern>/cgi/update_user_pns_badge.cgi</url-pattern>
+        <url-pattern>/cgi/update_user_pns_badge.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerGetUserInfoByKitcode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetUserInfoByKitcode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetUserInfoByKitcode</servlet-name>
+        <url-pattern>/cgi/get_user_info_by_kitcode</url-pattern>
+        <url-pattern>/cgi/get_user_info_by_kitcode.cgi</url-pattern>
+        <url-pattern>/cgi/get_user_info_by_kitcode.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerDisablePnsDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DisablePnsDevice</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerDisablePnsDevice</servlet-name>
+        <url-pattern>/cgi/disable_pns_device</url-pattern>
+        <url-pattern>/cgi/disable_pns_device.cgi</url-pattern>
+        <url-pattern>/cgi/disable_pns_device.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerGetActivityLogDetail</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetActivityLogDetail</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetActivityLogDetail</servlet-name>
+        <url-pattern>/cgi/get_activity_detail</url-pattern>
+        <url-pattern>/cgi/get_activity_detail.cgi</url-pattern>
+        <url-pattern>/cgi/get_activity_detail.php</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>ServiceLayerGetActivityLogSummary</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetActivityLogSummary</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetActivityLogSummary</servlet-name>
+        <url-pattern>/cgi/get_activity_log_summary</url-pattern>
+        <url-pattern>/cgi/get_activity_log_summary.cgi</url-pattern>
+        <url-pattern>/cgi/get_activity_log_summary.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServiceLayerGetDiagResult</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.GetDiagResult</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerGetDiagResult</servlet-name>
+        <url-pattern>/cgi/get_diag_result</url-pattern>
+        <url-pattern>/cgi/get_diag_result.cgi</url-pattern>
+        <url-pattern>/cgi/get_diag_result.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerBroadcastPns</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.BroadcastPns</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerBroadcastPns</servlet-name>
+        <url-pattern>/cgi/broadcast_pns</url-pattern>
+        <url-pattern>/cgi/broadcast_pns.cgi</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServiceLayerUnbindKitcode</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.UnbindKitcode</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>ServiceLayerUnbindKitcode</servlet-name>
+        <url-pattern>/cgi/unbind_account_by_kitcode</url-pattern>
+        <url-pattern>/cgi/unbind_account_by_kitcode.cgi</url-pattern>
+        <url-pattern>/cgi/unbind_account_by_kitcod.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SwitchKit</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.SwitchKit</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>SwitchKit</servlet-name>
+        <url-pattern>/cgi/switch_kit</url-pattern>
+        <url-pattern>/cgi/switch_kit.cgi</url-pattern>
+        <url-pattern>/cgi/switch_kit.php</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- for spain demo -->
+    <servlet>
+       <servlet-name>SpainPnsNotify</servlet-name>
+       <servlet-class>com.sercomm.cms.servlet.cmsi.SpainPnsNotify</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>SpainPnsNotify</servlet-name>
+        <url-pattern>/event/dm_pns_notify</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>SpainAnalysis</servlet-name>
+       <servlet-class>com.sercomm.cms.servlet.cmsi.SpainGetAnalysis</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>SpainAnalysis</servlet-name>
+        <url-pattern>/analysisReport/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- LEE temp switch test -->
+    <!--
+    <servlet>
+       <servlet-name>TempSwitch</servlet-name>
+       <servlet-class>com.sercomm.cms.servlet.cmsi.TempSwitchServlet</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>TempSwitch</servlet-name>
+        <url-pattern>/cgi/tmp_switch</url-pattern>
+    </servlet-mapping>
+    -->
+    
+    <!-- Develop use -->
+    <servlet>
+       <servlet-name>GetVerify</servlet-name>
+       <servlet-class>com.sercomm.cms.servlet.GetVerify</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>GetVerify</servlet-name>
+        <url-pattern>/cgi/user/verifycode</url-pattern>
+    </servlet-mapping>
+    
+    <!-- filters -->
+    <filter>
+        <filter-name>OperatorAuthFilter</filter-name>
+        <filter-class>com.sercomm.cms.filter.OperatorAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>OperatorAuthFilter</filter-name>
+        <url-pattern>/operator/*</url-pattern>
+    </filter-mapping>
+        
+        <!-- bms filter  -->
+    <filter>
+        <filter-name>XFireAuthFilter</filter-name>
+        <filter-class>com.sercomm.cms.filter.XFireAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XFireAuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+     <!-- add user name and token to Http Request header -->
+    <filter>
+        <filter-name>AddSessionFilter</filter-name>
+        <filter-class>com.sercomm.cms.filter.AddSessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AddSessionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!-- authentication filter -->
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.sercomm.cms.filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!-- 
+    <filter>
+        <filter-name>XssFilter</filter-name>
+        <filter-class>com.sercomm.cms.filter.XssFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XssFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    -->
+    
+    
+    
+    
+    
+    
+    
+    
+</web-app>

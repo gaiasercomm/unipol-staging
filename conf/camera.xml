@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ################################################################
+	 ##
+	 ##                 VF Commercial Setting
+	 ##
+     ################################################################ -->
+
+<!-- 
+This document is the default setting of camera for Neutral environment. 
+
+attribute description
+enable - 1:on; 0:off
+extend - 1:yes; 0:no => extend Default Model
+reboot - 1:yes; 0:no
+
+event pattern :
+mp4,%d,%d,1 : 8026, 8261, 8321, 8110
+mp4,2,%d,%d : 8221, 821, 
+==================================================================== -->
+<Cameras xmlns="http://www.sercomm.com/camera" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sercomm.com/camera camera.xsd ">
+	<!-- Default setting ################################################################################################### -->
+	<Model type="DEFAULT">
+		<Audio>
+			<Group name="AUDIO" extend="0">
+				<AudioIn text="audio_in" enable="1">
+					<prop key="in_audio_type">5</prop>
+					<prop key="in_audio_type2">3</prop>
+					<prop key="in_audio_type3">1</prop>
+				</AudioIn>
+				<AudioOut text="audio_out" enable="0">
+				</AudioOut>
+			</Group>
+		</Audio>
+		<Stream>
+			<Group name="JPEG" extend="0">
+				<mode text="mode3" enable="1">
+					<prop key="resolution3">2</prop>
+					<prop key="quality_level3">3</prop>
+					<prop key="frame_rate3">5</prop>
+				</mode>
+				<mode text="mode2" enable="0"/>
+				<mode text="mode3" enable="0"/>
+			</Group>
+			<Group name="H264" extend="0">
+				<mode text="mode" enable="1">
+					<prop key="resolution2">2</prop>
+					<prop key="quality_type2">0</prop>
+					<prop key="quality_level2">3</prop>
+					<prop key="bit_rate2">128</prop>
+					<prop key="frame_rate2">5</prop>
+				</mode>
+				<mode text="mode2" enable="1">
+					<prop key="resolution2">3</prop>
+					<prop key="quality_type2">0</prop>
+					<prop key="quality_level2">3</prop>
+					<prop key="bit_rate2">512</prop>
+					<prop key="frame_rate2">5</prop>
+				</mode>
+				<mode text="mode3" enable="0"/>
+			</Group>
+			<!--  
+			<Group name="MPEG4" extend="0">
+				<mode text="mode" enable="0"/>
+				<mode text="mode2" enable="0"/>
+				<mode text="mode3" enable="1">
+					<prop key="resolution3">2</prop>
+					<prop key="quality_type3">0</prop>
+					<prop key="quality_level3">3</prop>
+					<prop key="bit_rate3">128</prop>
+					<prop key="frame_rate3">5</prop>
+				</mode>
+			</Group>
+			-->
+		</Stream>
+		<Other>
+			<Group name="HTTP_EVENT" text="http_event_en" enable="1" extend="0" reboot="0">
+				<prop key="http_post_en">1</prop>
+				<prop key="http_post_url">http://192.168.99.170:80/storage/set_media</prop><!-- CMS_META address -->
+			</Group>
+			<Group name="EVENT" text="event_trigger" enable="1" extend="0" reboot="0"><!-- default preCapture and postCapture -->
+				<prop key="event_trigger">1</prop>
+				<prop key="event1_entry">is=2|es=0,|et=5|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:1;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=0|ea=mp4,3,7,1|en=HTTP_POST</prop>
+			</Group>
+			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="0" reboot="0">
+				<!--  !!! DO NOT DELETE !!! - for reference
+				<prop key="http_url"></prop>
+				<prop key="http_proxy"></prop>
+				<prop key="http_proxy_no">80</prop>
+				<prop key="http_method"></prop>
+				<prop key="http_user"></prop>
+				<prop key="http_password"></prop>
+				<prop key="proxy_user"></prop>
+				<prop key="proxy_password"></prop>
+				<prop key="event_data_flag"></prop>
+				-->
+			</Group>
+		</Other>
+	</Model>
+	<!-- RC8026 ################################################################################################### -->
+	<Model type="RC8026">
+		<Audio>
+			<Group name="AUDIO" extend="0">
+				<AudioIn text="audio_in" enable="1">
+					<prop key="in_audio_type">5</prop>
+					<prop key="in_audio_type2">3</prop>
+				</AudioIn>
+				<AudioOut text="audio_out" enable="0">
+				</AudioOut>
+			</Group>
+		</Audio>
+		<Stream>
+			<Group name="JPEG" extend="0">
+				<mode text="mode" enable="1">
+					<prop key="resolution">3</prop>
+					<prop key="quality_level">3</prop>
+					<prop key="frame_rate">10</prop>
+				</mode>
+				<mode text="mode2" enable="0"/>
+				<mode text="mode3" enable="0"/>
+			</Group>
+			<Group name="H264" extend="0">
+				<mode text="mode" enable="0"/>
+				<mode text="mode2" enable="1">
+					<prop key="resolution2">2</prop>
+					<prop key="quality_type2">0</prop>
+					<prop key="quality_level2">3</prop>
+					<prop key="bit_rate2">64</prop>
+					<prop key="frame_rate2">5</prop>
+				</mode>
+				<mode text="mode3" enable="1">
+					<prop key="resolution3">3</prop>
+					<prop key="quality_type3">0</prop>
+					<prop key="bit_rate3">128</prop>
+					<prop key="frame_rate3">5</prop>
+				</mode>
+			</Group>
+			<!-- 
+			<Group name="MPEG4" extend="0">
+				<mode text="mode" enable="0"/>
+				<mode text="mode2" enable="0"/>
+				<mode text="mode3" enable="1">
+					<prop key="resolution3">2</prop>
+					<prop key="quality_type3">0</prop>
+					<prop key="quality_level3">3</prop>
+					<prop key="bit_rate3">0</prop>
+					<prop key="frame_rate3">5</prop>
+				</mode>
+			</Group>
+			 -->
+		</Stream>
+		<Other>
+			<Group name="HTTP_EVENT" text="http_event_en" enable="1" extend="1"/>
+			<Group name="EVENT" text="event_trigger" enable="1" extend="0" reboot="0"><!-- default preCapture and postCapture -->
+				<prop key="event_trigger">1</prop>
+				<!-- reply : preCapture=3; postCapture=7 -->
+				<prop key="event1_entry">is=2|es=0,|et=5|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:1;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=0|ea=mp4,3,7,1|en=HTTP_POST</prop>
+			</Group>
+			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
+		</Other>
+	</Model>
+	<!-- RC8110 ################################################################################################### -->
+	<Model type="RC8110">
+		<Audio>
+			<Group name="AUDIO" extend="0">
+				<AudioIn text="audio_in" enable="1">
+					<prop key="in_audio_type">1</prop>
+					<prop key="in_audio_type2">3</prop>
+				</AudioIn>
+				<AudioOut text="audio_out" enable="0">
+				</AudioOut>
+			</Group>
+		</Audio>
+		<Stream>
+			<Group name="JPEG" extend="0">
+				<mode text="mode" enable="0"/>
+				<mode text="mode2" enable="0"/>
+				<mode text="mode3" enable="1">
+					<prop key="resolution3">2</prop>
+					<prop key="quality_level3">3</prop>
+					<prop key="frame_rate3">10</prop>
+				</mode>
+			</Group>
+			<Group name="H264" extend="0">
+				<mode text="mode" enable="1">
+					<prop key="resolution">3</prop>
+					<prop key="quality_type">0</prop>
+					<prop key="quality_level">3</prop>
+					<prop key="bit_rate">512</prop>
+					<prop key="frame_rate">5</prop>
+				</mode>
+				<mode text="mode2" enable="1">
+					<prop key="resolution2">3</prop>
+					<prop key="quality_type2">0</prop>
+					<prop key="quality_level2">2</prop>
+					<prop key="bit_rate2">128</prop>
+					<prop key="frame_rate2">5</prop>
+				</mode>
+				<mode text="mode3" enable="0"/>
+			</Group>
+		</Stream>
+		<Other>
+			<Group name="HTTP_EVENT" text="http_event_en" enable="1" extend="1"/>
+			<Group name="EVENT" text="event_trigger" enable="1" extend="0" reboot="0"><!-- default preCapture and postCapture -->
+				<prop key="event_trigger">1</prop>
+				<prop key="event1_entry">is=2|es=0,|et=5|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:1;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=0|ea=mp4,3,7,1|en=HTTP_POST|wl=10</prop>
+			</Group>
+			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
+		</Other>
+	</Model>
+</Cameras>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <!-- Profile information -->
+    <!-- "0: Neutral Sercomm;" -->
+    <!-- "1: Telecom Italia" -->
+    <!-- "2: VodaPhone(Reply)" -->
+    <entry key="PROFILE.ID">2</entry> 
+    <!-- SMTP configuration -->
+    <entry key="SMTP.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
+    <entry key="SMTP.ADDR">mail.eyesinhome.com</entry>
+    <entry key="SMTP.PORT">25</entry>
+    <entry key="SMTP.USE_SSL">false</entry>
+    <entry key="SMTP.MAIL_ADDR">mail_service@eyesinhome.com</entry>
+    <entry key="SMTP.SENDER">Neutral_Gaia</entry>
+    <entry key="SMTP.USER">mail_service</entry>
+    <entry key="SMTP.PASSWORD">zaq12wsx</entry>
+    <!-- SMS configuration -->
+    <entry key="SMS.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
+    <entry key="SMS.API.PROTOCOL">http</entry>
+    <entry key="SMS.API.ADDR">192.168.217.208</entry>
+    <entry key="SMS.API.PORT">9191</entry>
+    <entry key="SMS.API.PATH">/PNS/server/sendNotification</entry>
+    <entry key="SMS.API.SENDER">Reply</entry>
+    <entry key="SMS.API.USERNAME"></entry>
+    <entry key="SMS.API.PASSWORD"></entry>
+    <!-- PNS configuration -->
+    <entry key="PNS.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
+    <!-- iOS PNS configuration -->
+    <entry key="PNS.APNS.P12">cert/Certificates_Production.p12</entry>
+    <entry key="PNS.APNS.PASSWORD">SERCOMM</entry>
+    <!-- Android GCM configuration -->
+    <entry key="PNS.GCM.API_KEY">123456</entry>
+</properties>

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "user_name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "total_site": {
+          "type": "integer"
+        },
+        "site_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "simpleDeviceDataPool": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "deviceType": {
+                      "type": "integer"
+                    },
+                    "associatedKit": {
+                      "type": "string"
+                    },
+                    "privacy": {
+                      "type": "integer",
+                      "minimum": 0, "maximum": 1
+                    },
+                    "associatedRoomIndex": {
+                      "type": "integer"
+                    },
+                    "uuid": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "deviceType",
+                    "associatedKit",
+                    "privacy",
+                    "associatedRoomIndex",
+                    "uuid"
+                  ]
+                }
+              },
+              "simpleRoomList": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "privacy": {
+                      "type": "integer",
+                      "minimum": 0, "maximum": 1
+                    },
+                    "simpleDeviceList": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "privacy",
+                    "simpleDeviceList"
+                  ]
+                }
+              },
+              "privacy": {
+                "type": "integer",
+                "minimum": 0, "maximum": 1
+              },
+              "simpleAssociatedKitList": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "siteIndex": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "simpleDeviceDataPool",
+              "simpleRoomList",
+              "privacy",
+              "simpleAssociatedKitList",
+              "name",
+              "siteIndex"
+            ]
+          }
+        }
+      },
+      "required": [
+        "total_site",
+        "site_list"
+      ]
+    }
+  },
+  "required": [
+    "user_name",
+    "content"
+  ]
+}

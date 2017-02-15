@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <!-- Profile information -->
+    <!-- "0: Neutral Sercomm;" -->
+    <!-- "1: Telecom Italia" -->
+    <!-- "2: VodaPhone(Reply)" -->
+    <!--<entry key="PROFILE.ID">0</entry> -->
+    <!-- SMTP configuration -->
+    <entry key="SMTP.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
+    <entry key="SMTP.ADDR">mail.eyesinhome.com</entry>
+    <entry key="SMTP.PORT">25</entry>
+    <entry key="SMTP.USE_SSL">false</entry>
+    <entry key="SMTP.MAIL_ADDR">mail_service@eyesinhome.com</entry>
+    <entry key="SMTP.SENDER">SmartGaiaCloud.com</entry>
+    <entry key="SMTP.USER">mail_service</entry>
+    <entry key="SMTP.PASSWORD">zaq12wsx</entry>
+    <!-- SMS configuration -->
+    <entry key="SMS.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
+    <entry key="SMS.API.PROTOCOL">http</entry>
+    <entry key="SMS.API.ADDR">api.twsms.com</entry>
+    <entry key="SMS.API.PORT">80</entry>
+    <entry key="SMS.API.PATH">send_sms.php</entry>
+    <entry key="SMS.API.SENDER">Neutral_Gaia</entry>
+    <entry key="SMS.API.USERNAME"></entry>
+    <entry key="SMS.API.PASSWORD"></entry>
+    <!-- PNS configuration -->
+    <entry key="PNS.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
+    <!-- iOS PNS configuration -->
+    <entry key="PNS.ISDEV">1</entry> <!-- "1:DEV; 0:PROD;" -->
+    <entry key="PNS.APNS.DEV.P12">cert/gaiaSmartHome_pns_ssl_certificate_development.p12</entry>
+    <entry key="PNS.APNS.PROD.P12">cert/gaiaSmartHome_pns_ssl_certificate_production.p12</entry>
+    <entry key="PNS.APNS.PASSWORD">sercomm.aloha</entry>
+    <!-- Android GCM configuration -->
+    <entry key="PNS.GCM.API_KEY">AIzaSyB2baLsGq3TithDE4ogeidIcbU0QFdBrW0</entry>
+    
+    <!-- followings are add by Jason@20140808 -->
+    <!-- SMTP through Web Service -->
+    <entry key="WS.SMTP.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
+    <!-- Reply commerical -->
+    <entry key="WS.SMTP.API.LOCATION">http://127.0.0.1/PNS/server/sendMail</entry>
+    <entry key="WS.SMTP.API.SENDER">Reply</entry>
+    <entry key="WS.SMTP.API.IMPL">com.sercomm.cms.client.ReplyWsClient</entry>
+    
+    <!-- SMS through Web Service -->
+    <entry key="WS.SMS.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
+    <!-- Reply commerical -->
+    <entry key="WS.SMS.API.LOCATION">http://127.0.0.1:9191/PNS/server/sendSMS</entry><!-- Reply not implement yet -->
+    <entry key="WS.SMS.API.SENDER">Reply</entry>
+    <entry key="WS.SMS.API.IMPL">com.sercomm.cms.client.ReplyWsClient</entry>
+    
+    <!-- PNS through Web Service -->
+    <entry key="WS.PNS.ENABLE">0</entry> <!-- "1:ON; 0:OFF;" -->
+    <!-- Reply commerical -->
+    <entry key="WS.PNS.API.LOCATION">http://127.0.0.1:9191/PNS/server/sendNotification</entry>
+    <entry key="WS.PNS.API.SENDER">Reply</entry>
+    <entry key="WS.PNS.API.IMPL">com.sercomm.cms.client.ReplyWsClient</entry>
+    
+</properties>

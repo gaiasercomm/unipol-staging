@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- pass authentication filter information -->
+    <entry key="PASS_AUTH_URIS">logon,
+    							logoff,
+    							facebook_logon,
+    							vfi_reset_user_pwd,
+    							vfi_reset_user_pin,
+    							easy_monitor_add_user,
+    							easy_monitor_verify_code,
+    							easy_monitor_reset_password,
+    							easy_monitor_code_for_reset,
+    							easy_monitor_resend_code,
+    							easy_monitor_trigger_event_clip_notification,
+    							easy_monitor_for_fb_add_user,
+    							easy_monitor_for_fb_check_user,
+    							add_user,
+    							verify_code,
+								reset_password,
+								user_event_notify,
+								resend_code,
+								for_fb_check_user,
+								for_fb_add_user,
+								code_for_reset,
+								get_local_info,
+								analysisReport,
+								dm_pns_notify,
+								service,
+								bms_iface_i,
+								dm_pns_notify,
+								analysisreport,
+								<!--  -->
+								get_site,
+								add_room,
+								get_room,
+								delete_room,
+								set_room,
+								update_room_site_content,
+								get_room_site_content,
+								tmp_switch,
+								set_site_name,
+								verifycode,
+								helloworld
+								
+    							</entry>
+ </properties>

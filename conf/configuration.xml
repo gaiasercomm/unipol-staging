@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <!-- Profile information -->
+    <!-- "0: Neutral Sercomm" -->
+    <!-- "1: Telecom Italia" -->
+    <!-- "2: VodaPhone_Italy(Reply)" -->
+    <!-- "3: CHT" -->
+    <!-- "4: BroadBand" -->
+    <entry key="PROFILE.ID">0</entry>
+    <!-- CMS service configuration -->
+    <entry key="SERV.APACHE.HTTPPORT">8081</entry>
+    <entry key="SERV.APACHE.MAX_THREAD">500</entry>
+    <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>  
+    <entry key="SERV.KEY_STORE.PASSWORD">zaq12wsx</entry>  
+    <!-- Portal service information -->
+    <entry key="SERV.PORTAL.ADDR">isbu-rd.no-ip.org</entry>
+    <entry key="SERV.PORTAL.PORT">80</entry>
+    <entry key="SERV.PORTAL.SECURE_PORT">443</entry>
+    <entry key="SERV.PORTAL.PROTOCOL">http</entry>
+    <!-- Media service information -->
+    <entry key="SERV.MEDIA.ADDR">192.168.99.171</entry>
+    <entry key="SERV.MEDIA.PORT">80</entry>
+    <entry key="SERV.MEDIA.SECURE_PORT">443</entry>
+    <entry key="SERV.MEDIA.PROTOCOL">http</entry>
+    <!-- Storage service information -->
+    <entry key="SERV.STORAGE.ADDR">192.168.99.170</entry>
+    <entry key="SERV.STORAGE.PORT">80</entry>
+    <entry key="SERV.STORAGE.SECURE_PORT">-1</entry>
+    <entry key="SERV.STORAGE.PROTOCOL">http</entry>
+    <!-- MySQL configuration - CMS_CORE -->
+    <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">127.0.0.1</entry>
+    <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
+    <entry key="MYSQL.CMS_CORE.USER">wade</entry>
+    <entry key="MYSQL.CMS_CORE.PASSWORD">123456789</entry>
+    <!-- entry key="MYSQL.CMS_CORE.SCHEMA">EASY_CMS_CORE</entry> -->
+    <!-- entry key="MYSQL.CMS_CORE.ADDR">52.17.63.161</entry> -->
+    <!-- entry key="MYSQL.CMS_CORE.PORT">3306</entry> -->
+    <!-- entry key="MYSQL.CMS_CORE.USER">ZXpjbXM=</entry> -->
+    <!-- entry key="MYSQL.CMS_CORE.PASSWORD">eVdleXh6TlpFREFFZnRRUQ==</entry> -->
+	<!-- MySQL configuration - CMS_EVENT -->
+    <entry key="MYSQL.CMS_EVENT.SCHEMA">CMS_EVENT</entry>
+    <entry key="MYSQL.CMS_EVENT.ADDR">192.168.99.111</entry>
+    <entry key="MYSQL.CMS_EVENT.PORT">3306</entry>
+    <entry key="MYSQL.CMS_EVENT.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_EVENT.PASSWORD">emFxMTJ3c3g=</entry>
+    <!-- MySQL configuration - CMS_MEDIA -->
+    <entry key="MYSQL.CMS_MEDIA.SCHEMA">CMS_MEDIA</entry>
+    <entry key="MYSQL.CMS_MEDIA.ADDR">192.168.99.111</entry>
+    <entry key="MYSQL.CMS_MEDIA.PORT">3306</entry>
+    <entry key="MYSQL.CMS_MEDIA.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_MEDIA.PASSWORD">emFxMTJ3c3g=</entry>
+    <!-- User attribute configuration -->
+    <entry key="USER.TIMEOUT.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
+    <entry key="USER.TIMEOUT.INTERVAL">1800000</entry> <!-- millisecond -->
+	<!-- set the elasticSearch location -->
+    <entry key="ES.ADDR">neutral.dev.smartgaiacloud.com</entry>
+    <entry key="ES.PORT">9300</entry>
+    <!-- device layer location  -->
+    <entry key="DL.ADDR">http://neutral.dev.smartgaiacloud.com:8080</entry>
+    <entry key="DL.PORT">8080</entry>
+    <!-- Redis connection information -->
+    <entry key="REDIS.HOST">127.0.0.1</entry> <!-- "1:ON; 0:OFF;" -->
+    <entry key="REDIS.PORT">6379</entry> <!-- millisecond -->
+    
+    <!-- LOCAL or NOT for database-connection user/password-->
+    <entry key="LOCAL">Y</entry>
+</properties>

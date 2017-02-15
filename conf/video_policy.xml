@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    /**************************************** 
+     * Video Policy Configuration 
+     ****************************************/
+     <video_policy_list>: indicate this is a video policy configuration list
+	     <network>: networking
+	           where
+	               1: wired networking
+	               2: 2G networking
+	               3: 3G networking
+	               4: 4G networking
+		     <video_feature>: video feature object
+			     <type>: feature type
+			            where
+			                1: snapshot
+			                2: sequencial image
+			                3: live-streaming
+			     <interval>: allowed to be triggered next time
+			            where 
+			                1. unit is second(s)
+			                2. -1: unlimited
+-->
+
+<video_policy_list>
+    <!-- wired (LAN) networking -->
+    <network>
+        <type>1</type>
+        <video_feature>
+            <feature_type>1</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>2</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>3</feature_type>
+            <interval>-1</interval>
+        </video_feature>
+    </network>
+    <!-- 2G networking -->
+    <network>
+        <type>2</type>
+        <video_feature>
+            <feature_type>1</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>2</feature_type>
+            <interval>5</interval>
+        </video_feature>
+    </network>
+    <!-- 3G networking -->
+    <network>
+        <type>3</type>
+        <video_feature>
+            <feature_type>1</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>2</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>3</feature_type>
+            <interval>-1</interval>
+        </video_feature>
+    </network>
+    <!-- 4G networking -->
+    <network>
+        <type>4</type>
+        <video_feature>
+            <feature_type>1</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>2</feature_type>
+            <interval>5</interval>
+        </video_feature>
+        <video_feature>
+            <feature_type>3</feature_type>
+            <interval>-1</interval>
+        </video_feature>
+    </network>    
+</video_policy_list>
