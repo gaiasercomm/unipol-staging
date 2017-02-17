@@ -66,6 +66,6 @@
     <entry key="ES.PORT">9300</entry>
 	
     <!-- White list of meta location to allow to pass invoking BMSi -->
-    <entry key ="META.LOCATION">neutral_sl;neutral_sl_2</entry>
+    <entry key ="META.LOCATION">neutral_sl</entry>
 	
 </properties>
