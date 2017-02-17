@@ -27,14 +27,27 @@
 								analysisReport,
 								dm_pns_notify,
 								service,
-								bms_iface_i
-dm_pns_notify,
-                                analysisreport,update_room_site_content,
-verifycode,control_rf_device,
-get_room_light_bulbs,
-set_room_light_bulbs,
-set_room_light_colorbulbs,
-set_single_temper_light,
-alexa,action
+								bms_iface_i,
+								dm_pns_notify,
+								analysisreport,
+								<!--  -->
+								get_site,
+								add_room,
+								get_room,
+								delete_room,
+								set_room,
+								update_room_site_content,
+								get_room_site_content,
+								tmp_switch,
+								set_site_name,
+								verifycode,
+								helloworld,
+								get_room_light_bulbs,
+								set_room_light_bulbs,
+								set_room_light_colorbulbs,
+								set_single_temper_light,
+								set_security,
+								logon_with_gw,
+								action
     							</entry>
  </properties>

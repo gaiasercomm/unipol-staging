@@ -1424,11 +1424,21 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
      <!-- Alexa logon -->
     <servlet>
        <servlet-name>AlexaLogon</servlet-name>
-       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaLogOnServ</servlet-class>
+       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaCheckLogon</servlet-class>
     </servlet>              
     <servlet-mapping>
         <servlet-name>AlexaLogon</servlet-name>
         <url-pattern>/cgi/alexa/logon</url-pattern>
+     </servlet-mapping>
+    
+     <!-- Alexa logon -->
+    <servlet>
+       <servlet-name>AlexaLogonGW</servlet-name>
+       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaLogonWithGateway</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>AlexaLogonGW</servlet-name>
+        <url-pattern>/cgi/alexa/logon_with_gw</url-pattern>
      </servlet-mapping>
     
       <!-- Alexa setState -->
@@ -1451,7 +1461,15 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/alexa/control_rf_device</url-pattern>
      </servlet-mapping>
     
-    
+     <!-- Alexa Contro entrance -->
+    <servlet>
+       <servlet-name>AlexaControlEntrance</servlet-name>
+       <servlet-class>com.sercomm.cms.servlet.alexa.AlexaControlEntrance</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>AlexaControlEntrance</servlet-name>
+        <url-pattern>/cgi/alexa/action</url-pattern>
+     </servlet-mapping>
     
     <!-- filters -->
     <filter>
