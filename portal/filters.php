@@ -35,7 +35,7 @@ App::before(function($request)
     // define("_CLASS", _ROOT . "/inc/class/");
 
     #*********
-    define("_PORTAL_VER", "3.1.13a");
+    define("_PORTAL_VER", "3.1.13d");
 
     #*********
     define("_COOKIEDOMAIN", "http://neutral_web/");
