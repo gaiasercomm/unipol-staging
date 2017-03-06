@@ -35,7 +35,7 @@ App::before(function($request)
     // define("_CLASS", _ROOT . "/inc/class/");
 
     #*********
-    define("_PORTAL_VER", "3.1.13d");
+    define("_PORTAL_VER", "3.1.13g");
 
     #*********
     define("_COOKIEDOMAIN", "http://neutral_web/");
@@ -143,7 +143,7 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
-    if (Session::token() != Input::get('_token'))
+    if (Session::token() != Request::header('X-CSRF-TOKEN'))
     {
         throw new Illuminate\Session\TokenMismatchException;
     }
