@@ -573,24 +573,43 @@ mp4,2,%d,%d : 8221, 821,
                 <prop key="event_trigger">1</prop>
                 <!--prop key="event1_entry">is=2|es=0,|et=5|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:1;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=0|ea=mp4,2,3,2|en=HTTP_POST|wl=10</prop-->
                 <prop key="event1_entry">is=2|es=0,|et=5|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:0;httppost:1;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,3,7,2|en=HTTP_POST</prop>
-                <prop key="event2_entry">is=2|es=0,|et=2|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,5,5,2|en=MOTION</prop>
-                <prop key="event3_entry">is=2|es=0,|et=4|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,5,5,2|en=AUDIO</prop>
+                <prop key="event2_entry">is=2|es=0,|et=2|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,5,5,2|en=PEOPLE</prop>
+                <!-- <prop key="event3_entry">is=2|es=0,|et=4|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,5,5,2|en=AUDIO</prop> -->
             </Group>
-			<!--
-			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
-			-->
+            <!--
+            <Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
+            -->
             <Group name="HTTP_NOTIFY" text="http_notify" enable="1" extend="0" reboot="0">
                 <prop key="http_url">http://192.168.26.1/evt/camera.cgi</prop>
                 <prop key="http_method">1</prop>
                 <prop key="event_data_flag">1</prop>
             </Group>
-            <Group name="MOTION" text="md_mode" enable="0" extend="0" reboot="0">
-                <prop key="md_abs_window1">0,0,639,239/640,240</prop>
-                <prop key="md_threshold1">64</prop>
-                <prop key="md_sensitivity1">6</prop>
-                <prop key="md_update_freq1">90</prop>
+            <Group name="IVA" text="od_mode" enable="1" extend="0" reboot="0">
+                <prop key="is_outdoor">1</prop>
+                <prop key="od_sensitivity">100</prop>
+                <prop key="od_switch1">0</prop>
+                <prop key="od_switch2">0</prop>
+                <prop key="od_switch3">0</prop>
+                <prop key="od_switch4">1</prop>
+                <prop key="od_name1">window 1</prop>
+                <prop key="od_name2">window 2</prop>
+                <prop key="od_name3">window 3</prop>
+                <prop key="od_name4">window 4</prop>
+                <prop key="od_window1">0,576,1279,719/1280,720</prop>
+                <prop key="od_window2">0,0,324,244/1280,720</prop>
+                <prop key="od_window3">0,0,324,244/1280,720</prop>
+                <prop key="od_window4">0,0,1279,719/1280,720</prop>
+                <prop key="od_type1">3</prop>
+                <prop key="od_type2">1</prop>
+                <prop key="od_type3">1</prop>
+                <prop key="od_type4">1</prop>
+                <prop key="od_threshold">50</prop>
+                <prop key="od_direction1">0</prop>
+                <prop key="od_direction2">0</prop>
+                <prop key="od_direction3">0</prop>
+                <prop key="od_direction4">0</prop>
             </Group>
-			
+            
         </Other>
     </Model>
     <!-- RC8111 ################################################################################################### -->
