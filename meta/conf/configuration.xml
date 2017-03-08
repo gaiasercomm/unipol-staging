@@ -19,8 +19,12 @@
     <entry key="SERV.TRUST_STORE.PASSWORD">zaq12wsx</entry>
     
     <!-- White list of proxy location to allow to pass invoking BMSi -->
-    <entry key ="BMS.LOCATION.CHECK">N</entry>
-    <entry key ="BMS.LOCATION">neutral_web;neutral_web_2</entry>
+    <entry key ="BMS.LOCATION.CHECK">Y</entry>
+    <entry key ="BMS.LOCATION">192.168.88.203</entry>
+    
+    <!-- White list of SL location to allow to pass invoking CMSi(/cgi/*) -->
+    <entry key ="SL.LOCATION.CHECK">Y</entry>
+    <entry key ="SL.LOCATION">192.168.88.202</entry>
     
     <entry key="ENABLE.SESSION.CONTROL">N</entry>
 
