@@ -1348,7 +1348,35 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/switch_kit.cgi</url-pattern>
         <url-pattern>/cgi/switch_kit.php</url-pattern>
     </servlet-mapping>
-    
+   
+	<servlet>
+        <servlet-name>DeleteIpDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DeleteIPDevice</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>DeleteIpDevice</servlet-name>
+        <url-pattern>/cgi/delete_ip_device</url-pattern>
+        <url-pattern>/cgi/delete_ip_device.cgi</url-pattern>
+        <url-pattern>/cgi/delete_ip_device.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteRfDevice</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DeleteRfDevice</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>DeleteRfDevice</servlet-name>
+        <url-pattern>/cgi/delete_rf_device</url-pattern>
+        <url-pattern>/cgi/delete_rf_device.cgi</url-pattern>
+        <url-pattern>/cgi/delete_rf_device.php</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+ 
     
     <!-- for spain demo -->
     <servlet>

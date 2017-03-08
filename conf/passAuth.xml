@@ -48,6 +48,8 @@
 								set_single_temper_light,
 								set_security,
 								logon_with_gw,
-								action
+								action,
+								delete_rf_device,
+								delete_ip_device
     							</entry>
  </properties>
