@@ -44,7 +44,7 @@
     
 	<!-- ES host -->
     <!-- 1:enable; 0:disable -->
-    <entry key="ES.ENABLE">0</entry>
+    <entry key="ES.ENABLE">1</entry>
     <entry key="ES.ADDR">neutral_elasticsearch</entry>
     <entry key="ES.PORT">9300</entry><!-- fixed -->
     <entry key="ES.USER">Y21z</entry>
