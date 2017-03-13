@@ -24,7 +24,7 @@
     
     <!-- White list of SL location to allow to pass invoking CMSi(/cgi/*) -->
     <entry key ="SL.LOCATION.CHECK">Y</entry>
-    <entry key ="SL.LOCATION">192.168.88.202;192.168.88.104</entry>
+    <entry key ="SL.LOCATION">192.168.88.202;192.168.88.104;122.116.67.86;122.116.67.86</entry>
     
     <entry key="ENABLE.SESSION.CONTROL">N</entry>
 
