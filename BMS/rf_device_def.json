@@ -1,0 +1,182 @@
+[
+    {
+        "uType": 3,
+        "name": "Keyfob",
+        "homeControl": 2,
+        "zone": 0
+    },
+    {
+        "uType": 4,
+        "name": "Siren",
+        "homeControl": 2,
+        "zone": 0
+    },
+    {
+        "uType": 2,
+        "name": "PIR",
+        "homeControl": 0,
+        "zone": 1
+    },
+    {
+        "uType": 1,
+        "name": "Door/Window",
+        "homeControl": 0,
+        "zone": 1
+    },
+    {
+        "uType": 5,
+        "name": "Power Switch",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 6,
+        "name": "Energy Switch",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 0,
+        "name": "Binary Sensor",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 12,
+        "name": "CO Detector",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 13,
+        "name": "Smoke Detector",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 14,
+        "name": "Water Sensor",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 15,
+        "name": "Smart Battery",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 16,
+        "name": "Buzzer",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 17,
+        "name": "Light Sensor",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 18,
+        "name": "Thermo Sensor",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 7,
+        "name": "Electric Meter",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 8,
+        "name": "Lock",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 9,
+        "name": "Dimmer",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 10,
+        "name": "Curtain",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 11,
+        "name": "Thermostat",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 19,
+        "name": "Meter clamp",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 20,
+        "name": "Docomo keypad",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 21,
+        "name": "Vibration movement sensor",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 22,
+        "name": "Camera",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 23,
+        "name": "Temperature Sensor",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 24,
+        "name": "RF-Repeater",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 25,
+        "name": "Dimmer light",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 26,
+        "name": "Color temperature",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
+        "uType": 28,
+        "name": "Gateway",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 29,
+        "name": "Emergency button",
+        "homeControl": 0,
+        "zone": 0
+    },
+    {
+        "uType": 30,
+        "name": "Pendant button",
+        "homeControl": 0,
+        "zone": 0
+    }
+]
