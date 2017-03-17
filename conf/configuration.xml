@@ -61,6 +61,7 @@
     <!-- Redis connection information -->
     <entry key="REDIS.HOST">neutral_redis</entry> 
     <entry key="REDIS.PORT">6379</entry>  
+    <entry key="REDIS.DATABASE">9</entry>  
     <!-- set the elasticSearch locaition -->
     <entry key="ES.ADDR">neutral_elasticsearch</entry>
     <entry key="ES.PORT">9300</entry>
