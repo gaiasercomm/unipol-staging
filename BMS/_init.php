@@ -69,13 +69,13 @@ define("_DEVELOPERXML", _CONF . "developer.xml");
 define("_CMSSDKXML", _CONF . "cmssdk.xml");
 
 // event code map
-define("_EVENT_CODE", _CONF . "event_option.xml");
+@define("_EVENT_CODE", _CONF . "event_option.xml");
 
 // RF device defnition
 define("_RF_DEVICE_DEF", _CONF . "rf_device_def.json");
 
 // the system version
-define("_BMS_VER", "3.0R464");
+define("_BMS_VER", "3.0R466");
 
 // the title of site
 define("_BMS_TITLE", _("Gaia Back-end Management System"));
