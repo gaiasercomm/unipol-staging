@@ -477,14 +477,14 @@ mp4,2,%d,%d : 8221, 821,
 				<mode text="mode" enable="0"/>
 				<mode text="mode2" enable="0"/>
 				<mode text="mode3" enable="1">
-					<prop key="resolution3">2</prop><!-- 3 -->
-					<prop key="quality_level3">3</prop><!-- 2 -->
+					<prop key="resolution3">3</prop><!-- 3 is the lowest limit -->
+					<prop key="quality_level3">2</prop><!-- 2 -->
 					<prop key="frame_rate3">10</prop><!-- 3 -->
 				</mode>
 			</Group>
 			<Group name="H264" extend="0">
 				<mode text="mode" enable="1">
-					<prop key="resolution">2</prop><!-- 3 -->
+					<prop key="resolution">3</prop><!-- 3 is the lowest limit -->
 					<prop key="quality_type">0</prop><!-- 1 -->
 					<prop key="quality_level">2</prop><!-- 2 -->
 					<prop key="bit_rate">128</prop><!-- 512 -->
@@ -492,7 +492,7 @@ mp4,2,%d,%d : 8221, 821,
 					<prop key="frame_rate">25</prop>
 				</mode>
 				<mode text="mode2" enable="1">
-					<prop key="resolution2">3</prop><!-- 2 -->
+					<prop key="resolution2">3</prop><!-- 3 is the lowest limit -->
 					<prop key="quality_type2">0</prop><!-- 1 -->
 					<prop key="quality_level2">2</prop><!-- 2 -->
 					<prop key="bit_rate2">128</prop><!-- 512 -->
