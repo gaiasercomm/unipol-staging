@@ -26,8 +26,6 @@
     <entry key ="SL.LOCATION.CHECK">Y</entry>
     <entry key ="SL.LOCATION">192.168.88.202;192.168.88.104;122.116.67.86</entry>
     
-    <entry key="ENABLE.SESSION.CONTROL">N</entry>
-
     <!-- Reduce size of clip file size to ? percentage, the range is 50 ~ 100 -->
     <entry key="REDUCE.CLIP.FILE">100</entry>
 </properties>
