@@ -162,6 +162,12 @@
         "zone": 0
     },
     {
+        "uType": 27,
+        "name": "Color control",
+        "homeControl": 1,
+        "zone": 0
+    },
+    {
         "uType": 28,
         "name": "Gateway",
         "homeControl": 0,
