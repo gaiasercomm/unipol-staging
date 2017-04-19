@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <!-- Profile information -->
+    <!-- "0: Neutral Sercomm" -->
+    <!-- "1: Telecom Italia" -->
+    <!-- "2: VodaPhone_Italy(Reply)" -->
+    <!-- "3: CHT" -->
+    <!-- "4: BroadBand" -->
+    <!-- "15: Unipol" -->
+    <entry key="PROFILE.ID">15</entry>
+    
+    <!-- CMS service configuration -->
+    <entry key="SERV.APACHE.ADDRESS">neutral_dl</entry>
+    <entry key="SERV.APACHE.HTTPPORT">8999</entry>
+    <entry key="SERV.APACHE.MAX_THREAD">20</entry>
+    <entry key="SERV.APACHE.ACCEPT_COUNT">5</entry>
+    
+    <!-- MySQL -->
+    <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">neutral_db</entry>
+    <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
+    <!-- <entry key="MYSQL.CMS_CORE.PASSWORD">emFxMTJ3c3g=</entry> -->
+</properties>
