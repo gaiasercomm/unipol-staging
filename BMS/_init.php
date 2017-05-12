@@ -75,12 +75,12 @@ define("_CMSSDKXML", _CONF . "cmssdk.xml");
 define("_RF_DEVICE_DEF", _CONF . "rf_device_def.json");
 
 // the system version
-define("_BMS_VER", "3.0R471");
+define("_BMS_VER", "3.0R473");
 
 // the title of site
 define("_BMS_TITLE", _("Gaia Back-end Management System"));
 
-require_once(_INC . "function.php");
+// require_once(_INC . "function.php");
 require_once _ROOT . '/vendor/autoload.php';
 
 // define DB
