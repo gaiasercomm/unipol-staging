@@ -20,7 +20,7 @@
     
     <!-- White list of proxy location to allow to pass invoking BMSi -->
     <entry key ="BMS.LOCATION.CHECK">Y</entry>
-    <entry key ="BMS.LOCATION">192.168.88.203;122.116.67.86;192.168.88.213</entry>
+    <entry key ="BMS.LOCATION">192.168.88.203;122.116.67.86;192.168.88.213;192.168.88.221</entry>
     
     <!-- White list of SL location to allow to pass invoking CMSi(/cgi/*) -->
     <entry key ="SL.LOCATION.CHECK">Y</entry>
