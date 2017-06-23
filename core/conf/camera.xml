@@ -508,7 +508,7 @@ mp4,2,%d,%d : 8221, 821,
                 <prop key="event_trigger">1</prop>
                 <prop key="event1_entry">is=2|es=0,|et=5|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:0;httppost:1;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,5,10,1|en=HTTP_POST</prop>
                 <prop key="event2_entry">is=2|es=0,|et=4|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=1|ea=mp4,5,10,1|en=AUDIO</prop>
-			    <prop key="event3_entry">is=2|es=0,|et=11|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=180|ea=mp4,5,10,1|en=PEOPLE</prop>
+			    <prop key="event3_entry">is=2|es=0,|et=11|acts=op1:0;op2:0;email:0;ftpu:0;im:0;httpn:1;httppost:0;wlled:0;smbc:0;sd:0;op3:0;op4:0;smbc_rec:0;sd_rec:0|ei=180|ea=mp4,5,1,1|en=PEOPLE</prop>
             </Group>
 			<!--
 			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
