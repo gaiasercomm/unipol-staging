@@ -3,19 +3,18 @@
 
 <properties>
 
-	<entry key="redis.host">neutral_redis</entry>
-	
+	<entry key="redis.host">dl-test-cache.redis.cache.windows.net</entry>
 
 	<entry key="redis.port">6379</entry>
-	<entry key="redis.password"></entry>
+	<entry key="redis.password">yWskvMq4dTFUufUMySL4AEzrtqOuqTMxNxdE8ckbTNU=</entry>
 
 	<!-- int REDIS_DEPLOY_TYPE_SINGLE = 1; int REDIS_DEPLOY_TYPE_CLUSTER = 2; int REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE = 3; -->
     <entry key="redis.deploymentModel">1</entry>
 
     <!-- attributes for REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE -->
-    <entry key="redis.sentinel.address">192.168.99.151;192.168.99.152;192.168.99.35</entry>
+    <!-- <entry key="redis.sentinel.address">192.168.99.151;192.168.99.152;192.168.99.35</entry>
     <entry key="redis.sentinel.port">7379</entry>
-    <entry key="redis.sentinel.master">gaia_redis_master</entry>
+    <entry key="redis.sentinel.master">gaia_redis_master</entry> -->
     <!-- end attributes for REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE -->
 
 	<entry key="redis.conn.timeout">2000</entry>

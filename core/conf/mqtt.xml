@@ -4,10 +4,8 @@
   
 <properties>
 	<entry key="mqtt.network.addr">neutral_rabbitmq</entry><!-- AWS -->
-	<!-- <entry key="mqtt.auth.account">mqttclient</entry> -->
-	<!-- <entry key="mqtt.auth.password">ability123</entry> -->
-	<entry key="mqtt.auth.account">gaia_dl</entry>
-	<entry key="mqtt.auth.password">ejVTGcVoxp4p7c2xp99Oo9Ot6U2RpCjrJ48f6Rtr7mH2mxpzxmdJlP2fzUVMm43U</entry>
+	<entry key="mqtt.auth.account">mqttclient</entry>
+	<entry key="mqtt.auth.password">ability123</entry>
 	<entry key="mqtt.network.port">1883</entry>
 	<entry key="keep.alive.interval">10</entry>
 </properties>

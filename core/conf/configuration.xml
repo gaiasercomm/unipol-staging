@@ -36,15 +36,15 @@
 	
     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">neutral_db</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">dl-test-db.mysql.database.azure.com</entry>
 
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLXRlc3QtZGIubXlzcWwuZGF0YWJhc2UuYXp1cmUuY29t</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
     
 	<!-- ES host -->
     <!-- 1:enable; 0:disable -->
-    <entry key="ES.ENABLE">1</entry>
+    <entry key="ES.ENABLE">0</entry>
     <entry key="ES.ADDR">neutral_elasticsearch</entry>
     <entry key="ES.PORT">9300</entry><!-- fixed -->
     <entry key="ES.USER">Y21z</entry>
@@ -76,7 +76,7 @@
     <entry key="IP.DEVICE.ONLINE.INTERVAL">300000</entry>
     
     <!-- MqttAccountService  -->
-    <entry key="MAS.ENABLE">Y</entry><!-- Y|N -->
+    <entry key="MAS.ENABLE">N</entry><!-- Y|N -->
     <entry key="MAS.HEADER">mas-tok</entry>
     <entry key="MAS.KEY">1PfBq95IH08lIQcwsG0dE6J177EzLPVS</entry>
     <entry key="MAS.ENDPOINT">http://neutral_mas:8800</entry>
