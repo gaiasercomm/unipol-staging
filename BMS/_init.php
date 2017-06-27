@@ -46,9 +46,10 @@ define("FUNC", _ROOT . "/functions/");
 // configuration folder
 define("_CONF", _ROOT . "/conf/");
 
-// upload file path
-define("_UPLOAD_PATH", _ROOT . "/upload/");
-define("_UPLOAD_URL", _FOLDER . "/upload/");
+// upload file path 
+define("_UPLOAD_FOLDER", "/upload/");
+define("_UPLOAD_PATH", _ROOT . _UPLOAD_FOLDER);
+define("_UPLOAD_URL", _FOLDER . _UPLOAD_FOLDER);
 
 // encode with the key
 define("_DECRYPT_KEY", "fe01ce2a7fbac8fafaed7c982a04e229");
@@ -75,7 +76,7 @@ define("_CMSSDKXML", _CONF . "cmssdk.xml");
 define("_RF_DEVICE_DEF", _CONF . "rf_device_def.json");
 
 // the system version
-define("_BMS_VER", "3.0R473");
+define("_BMS_VER", "3.0R475");
 
 // the title of site
 define("_BMS_TITLE", _("Gaia Back-end Management System"));
