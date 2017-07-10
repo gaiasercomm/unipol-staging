@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- =============================================================== 
- 
-This document is the default setting of camera for Neutral environment. 
+<!-- ===============================================================
+
+This document is the default setting of camera for Neutral environment.
 
 attribute description
 enable - 1:on; 0:off
@@ -10,7 +10,7 @@ reboot - 1:yes; 0:no
 
 event pattern :
 mp4,%d,%d,1 : 8026, 8261, 8321, 8110
-mp4,2,%d,%d : 8221, 821, 
+mp4,2,%d,%d : 8221, 821,
 ==================================================================== -->
 <Cameras xmlns="http://www.sercomm.com/camera" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sercomm.com/camera camera.xsd ">
 	<!-- Default setting ################################################################################################### -->
@@ -91,7 +91,7 @@ mp4,2,%d,%d : 8221, 821,
 			</Group>
 		</Other>
 	</Model>
-	
+
 	<!-- OC821 ################################################################################################### -->
 	<Model type="OC821">
 		<Audio>
@@ -206,7 +206,7 @@ mp4,2,%d,%d : 8221, 821,
 			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
 		</Other>
 	</Model>
-	
+
 	<!-- RC8261 ################################################################################################### -->
 	<Model type="RC8261">
 		<Audio>
@@ -291,7 +291,7 @@ mp4,2,%d,%d : 8221, 821,
 			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
 		</Other>
 	</Model>
-	 
+
 	<!-- RC8221 ################################################################################################### -->
 	<Model type="RC8221">
 		<Audio>
@@ -350,7 +350,7 @@ mp4,2,%d,%d : 8221, 821,
 			<Group name="HTTP_NOTIFY" text="http_notify" enable="0" extend="1"/>
 		</Other>
 	</Model>
-	
+
 	<!-- RC8110 ################################################################################################### -->
 	<Model type="RC8110">
 		<Audio>
