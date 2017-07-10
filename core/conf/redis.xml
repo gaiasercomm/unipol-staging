@@ -19,7 +19,7 @@
 
 	<entry key="redis.conn.timeout">2000</entry>
 
-	<entry key="redis.pool.max.active">50</entry>
+	<entry key="redis.pool.max.active">2000</entry>
 	<entry key="redis.pool.max.idle">10</entry>
 	<entry key="redis.pool.max.wait">10000</entry>
 	
