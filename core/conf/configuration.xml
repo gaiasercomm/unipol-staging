@@ -64,10 +64,9 @@
     <entry key ="META.LOCATION">neutral_dl;neutral_dl_2</entry>
 
     <!-- post event to Service Layer -->
-    <entry key="EVENT.POST.SERVICE.URL">http://neutral_sl:8080/cgi/user_event_notify.cgi</entry>
-    <!-- Unipol
-    <entry key="EVENT.POST.SERVICE.URL">http://10.243.171.212:6080/api/dlinbound/notify_event.sr</entry>
-     -->
+    <!-- <entry key="EVENT.POST.SERVICE.URL">http://neutral_sl:8080/cgi/user_event_notify.cgi</entry> -->
+    <!-- TIM Test Site -->
+    <entry key="EVENT.POST.SERVICE.URL">http://192.168.101.100:8080/backend/api/sercomm/notify_event.sr</entry>
 
 	<!-- specify the server mode(1: stand-alone, 2: master-slave, *: cluster) -->
  	<entry key="SERVER.MODE">1</entry>
