@@ -65,7 +65,7 @@ App::before(function($request)
 
     define("_STORAGE_ADDR", "192.168.102.8");
     
-    define("_STORAGE_PORT", 80);
+    define("_STORAGE_PORT", 8080);
 
     global $_CDataCenterMSG;
     $_CDataCenterMSG = [
