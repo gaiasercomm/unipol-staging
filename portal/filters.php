@@ -11,7 +11,7 @@
   |
  */
 
- 
+
 if (isset($_COOKIE['lang']))
 {
     App::setLocale($_COOKIE['lang']);
@@ -31,11 +31,11 @@ App::before(function($request)
 
     #*********
     define("_DMSI", "http://neutral_dmsi:3000/");
-    
+
     // define("_CLASS", _ROOT . "/inc/class/");
 
     #*********
-    define("_PORTAL_VER", "3.1.15a");
+    define("_PORTAL_VER", "3.1.13h");
 
     #*********
     define("_COOKIEDOMAIN", "http://neutral_web/");
@@ -44,19 +44,20 @@ App::before(function($request)
     define("_DOMAIN", "neutral_web");
 
     define("_FB_APPID", "1003853789650560");
-    
+
     define("_SERVICE_ID", "2");
-    
+
     define("_RATEPLAN_ID", "1");
-    
+
     define("_WEBSOCKET_ADDR", $_SERVER['SERVER_NAME']);
-    
-    define("_RELAY_ADDR", $_SERVER['SERVER_NAME']);
-    
-    define("_RELAY_PORT", "80");
-    
-    define("_STORAGE_ADDR", $_SERVER['SERVER_NAME']);
-    
+
+    #define("_RELAY_ADDR", $_SERVER['SERVER_NAME']);
+    define("_RELAY_ADDR", "192.168.102.8");
+
+    define("_RELAY_PORT", "8080");
+
+    define("_STORAGE_ADDR", "192.168.102.8");
+
     global $_CDataCenterMSG;
     $_CDataCenterMSG = [
         'STATUS_OFFLINE' => -1,
@@ -67,7 +68,7 @@ App::before(function($request)
         'STATUS_ENTER_DELAY' => 5,
         'STATUS_ALARM' => 10
     ];
-    
+
     global $_PERMISSIONS_CONTROL;
     $_PERMISSIONS_CONTROL = [
         'DIAGNOSTIC' => true,
