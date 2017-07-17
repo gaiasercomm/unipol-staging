@@ -62,7 +62,8 @@
     <entry key="REDIS.HOST">dl-test-cache.redis.cache.windows.net</entry> 
     <entry key="REDIS.PASSWORD">yWskvMq4dTFUufUMySL4AEzrtqOuqTMxNxdE8ckbTNU=</entry>
     <entry key="REDIS.PORT">6379</entry>
-    <entry key="REDIS.DATABASE">9</entry>  
+    <entry key="REDIS.DATABASE">9</entry>
+    <entry key="REDIS.AUTH">Y</entry>
     <!-- set the elasticSearch locaition -->
     <entry key="ES.ADDR">neutral_elasticsearch</entry>
     <entry key="ES.PORT">9300</entry>
