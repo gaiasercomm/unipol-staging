@@ -35,7 +35,7 @@ App::before(function($request)
     // define("_CLASS", _ROOT . "/inc/class/");
 
     #*********
-    define("_PORTAL_VER", "3.1.13h");
+    define("_PORTAL_VER", "3.1.18a");
 
     #*********
     define("_COOKIEDOMAIN", "http://neutral_web/");
@@ -49,14 +49,23 @@ App::before(function($request)
 
     define("_RATEPLAN_ID", "1");
 
+    define("_WEBSOCKET_PROTOCOL", "ws");
+
     define("_WEBSOCKET_ADDR", $_SERVER['SERVER_NAME']);
 
-    #define("_RELAY_ADDR", $_SERVER['SERVER_NAME']);
+    define("_WEBSOCKET_PORT", "8084");
+
+    define("_RELAY_PROTOCOL", "http");
+
     define("_RELAY_ADDR", "192.168.102.8");
 
     define("_RELAY_PORT", "8080");
 
+    define("_STORAGE_PROTOCOL", "http");
+
     define("_STORAGE_ADDR", "192.168.102.8");
+    
+    define("_STORAGE_PORT", 80);
 
     global $_CDataCenterMSG;
     $_CDataCenterMSG = [
