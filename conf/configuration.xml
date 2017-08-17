@@ -32,8 +32,8 @@
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
     <entry key="MYSQL.CMS_CORE.ADDR">dl-collaudo-db.mysql.database.azure.com</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">c2VyY29tbUBkbC1jb2xsYXVkby1kYi5teXNxbC5kYXRhYmFzZS5henVyZS5jb20=</entry>
-    <entry key="MYSQL.CMS_CORE.PASSWORD">ajMyOUdUem84Z0dUVWY0Umkz</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLWNvbGxhdWRvLWRiLm15c3FsLmRhdGFiYXNlLmF6dXJlLmNvbQ==</entry>
+    <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
     <!-- entry key="MYSQL.CMS_CORE.SCHEMA">EASY_CMS_CORE</entry> -->
     <!-- entry key="MYSQL.CMS_CORE.ADDR">52.17.63.161</entry> -->
     <!-- entry key="MYSQL.CMS_CORE.PORT">3306</entry> -->
