@@ -30,10 +30,10 @@
     <entry key="SERV.STORAGE.PROTOCOL">http</entry>
     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">dl-test-db.mysql.database.azure.com</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">dl-collaudo-db.mysql.database.azure.com</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLXRlc3QtZGIubXlzcWwuZGF0YWJhc2UuYXp1cmUuY29t</entry>
-    <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
+    <entry key="MYSQL.CMS_CORE.USER">c2VyY29tbUBkbC1jb2xsYXVkby1kYi5teXNxbC5kYXRhYmFzZS5henVyZS5jb20=</entry>
+    <entry key="MYSQL.CMS_CORE.PASSWORD">ajMyOUdUem84Z0dUVWY0Umkz</entry>
     <!-- entry key="MYSQL.CMS_CORE.SCHEMA">EASY_CMS_CORE</entry> -->
     <!-- entry key="MYSQL.CMS_CORE.ADDR">52.17.63.161</entry> -->
     <!-- entry key="MYSQL.CMS_CORE.PORT">3306</entry> -->
@@ -59,8 +59,8 @@
     <entry key="DL.ADDR">http://neutral_dl:8080</entry>
     <entry key="DL.PORT">8080</entry>
     <!-- Redis connection information -->
-    <entry key="REDIS.HOST">dl-test-cache.redis.cache.windows.net</entry> 
-    <entry key="REDIS.PASSWORD">yWskvMq4dTFUufUMySL4AEzrtqOuqTMxNxdE8ckbTNU=</entry>
+    <entry key="REDIS.HOST">dl-collaudo-cache.redis.cache.windows.net</entry> 
+    <entry key="REDIS.PASSWORD">zlEhomT02IXprCgE9+h1ys/KQYEMXb3BZt4Nz5FXWFU=</entry>
     <entry key="REDIS.PORT">6379</entry>
     <entry key="REDIS.DATABASE">9</entry>
     <entry key="REDIS.AUTH">Y</entry>
