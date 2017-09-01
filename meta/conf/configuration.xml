@@ -10,6 +10,12 @@
     <entry key="SERV.APACHE.MAX_THREAD">500</entry>
     <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>    
     <entry key="SERV.KEY_STORE.PASSWORD">zaq12wsx</entry>
+    
+    <entry key="SERV.LIVEVIEW.TIMEOUT">120000</entry>
+    <entry key="SERV.CLIPFILE_UPLOAD.TIMEOUT">150000</entry>
+
+    
+    
     <!-- NFS information -->
     <entry key ="NFS.MOUNT.PATH">/var/media</entry>
     
