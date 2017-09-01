@@ -17,6 +17,11 @@
     <entry key="SERV.APACHE.HTTPPORT">8081</entry>
     <entry key="SERV.APACHE.MAX_THREAD">150</entry>
     <entry key="SERV.APACHE.ACCEPT_COUNT">200</entry>   
+    
+    <entry key="PROVISION.GW.EXIT_DELAY">60</entry>
+    <entry key="PROVISION.GW.ENTRY_DELAY">30</entry>
+    <entry key="PROVISION.GW.QUICK_EXIT_DELAY">60</entry>
+
 	
     <!-- Portal service information -->
     <entry key="SERV.PORTAL.ADDR">neutral_web</entry>
