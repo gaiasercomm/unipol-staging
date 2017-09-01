@@ -8,49 +8,24 @@
     <!-- "2: VodaPhone_Italy(Reply)" -->
     <!-- "3: CHT" -->
     <!-- "4: BroadBand" -->
+    
+    
     <entry key="PROFILE.ID">0</entry>
+    
+    
     <!-- CMS service configuration -->
     <entry key="SERV.APACHE.HTTPPORT">8080</entry>
     <entry key="SERV.APACHE.MAX_THREAD">500</entry>
     <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>    
-    <!-- Portal service information -->
-    <entry key="SERV.PORTAL.ADDR">neutral_web</entry>
-    <entry key="SERV.PORTAL.PORT">80</entry>
-    <entry key="SERV.PORTAL.SECURE_PORT">443</entry>
-    <entry key="SERV.PORTAL.PROTOCOL">http</entry>
-    <!-- Media service information -->
-    <entry key="SERV.MEDIA.ADDR">192.168.99.97</entry>
-    <entry key="SERV.MEDIA.PORT">80</entry>
-    <entry key="SERV.MEDIA.SECURE_PORT">443</entry>
-    <entry key="SERV.MEDIA.PROTOCOL">http</entry>
-    <!-- Storage service information -->
-    <entry key="SERV.STORAGE.ADDR">192.168.99.97</entry>
-    <entry key="SERV.STORAGE.PORT">80</entry>
-    <entry key="SERV.STORAGE.SECURE_PORT">-1</entry>
-    <entry key="SERV.STORAGE.PROTOCOL">http</entry>
+    
     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
     <entry key="MYSQL.CMS_CORE.ADDR">dl-collaudo-db.mysql.database.azure.com</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
     <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLWNvbGxhdWRvLWRiLm15c3FsLmRhdGFiYXNlLmF6dXJlLmNvbQ==</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
-    <!-- entry key="MYSQL.CMS_CORE.SCHEMA">EASY_CMS_CORE</entry> -->
-    <!-- entry key="MYSQL.CMS_CORE.ADDR">52.17.63.161</entry> -->
-    <!-- entry key="MYSQL.CMS_CORE.PORT">3306</entry> -->
-    <!-- entry key="MYSQL.CMS_CORE.USER">ZXpjbXM=</entry> -->
-    <!-- entry key="MYSQL.CMS_CORE.PASSWORD">eVdleXh6TlpFREFFZnRRUQ==</entry> -->
-	<!-- MySQL configuration - CMS_EVENT -->
-    <entry key="MYSQL.CMS_EVENT.SCHEMA">CMS_EVENT</entry>
-    <entry key="MYSQL.CMS_EVENT.ADDR">192.168.99.111</entry>
-    <entry key="MYSQL.CMS_EVENT.PORT">3306</entry>
-    <entry key="MYSQL.CMS_EVENT.USER">Y21z</entry>
-    <entry key="MYSQL.CMS_EVENT.PASSWORD">emFxMTJ3c3g=</entry>
-    <!-- MySQL configuration - CMS_MEDIA -->
-    <entry key="MYSQL.CMS_MEDIA.SCHEMA">CMS_MEDIA</entry>
-    <entry key="MYSQL.CMS_MEDIA.ADDR">192.168.99.111</entry>
-    <entry key="MYSQL.CMS_MEDIA.PORT">3306</entry>
-    <entry key="MYSQL.CMS_MEDIA.USER">Y21z</entry>
-    <entry key="MYSQL.CMS_MEDIA.PASSWORD">emFxMTJ3c3g=</entry>
+    <entry key="MYSQL.CMS_CORE.SSL">false</entry>
+    
     <!-- User attribute configuration -->
     <entry key="USER.TIMEOUT.ENABLE">1</entry> <!-- "1:ON; 0:OFF;" -->
     <entry key="USER.TIMEOUT.INTERVAL">1800000</entry> <!-- millisecond -->
@@ -58,17 +33,21 @@
     <!-- device layer location  -->
     <entry key="DL.ADDR">http://neutral_dl:8080</entry>
     <entry key="DL.PORT">8080</entry>
+    
     <!-- Redis connection information -->
     <entry key="REDIS.HOST">dl-collaudo-cache.redis.cache.windows.net</entry> 
     <entry key="REDIS.PASSWORD">zlEhomT02IXprCgE9+h1ys/KQYEMXb3BZt4Nz5FXWFU=</entry>
     <entry key="REDIS.PORT">6379</entry>
     <entry key="REDIS.DATABASE">9</entry>
     <entry key="REDIS.AUTH">Y</entry>
+    
     <!-- set the elasticSearch locaition -->
     <entry key="ES.ADDR">neutral_elasticsearch</entry>
     <entry key="ES.PORT">9300</entry>
-	
-    <!-- White list of meta location to allow to pass invoking BMSi -->
-    <entry key ="META.LOCATION">neutral_sl;neutral_sl_2</entry>
+    <entry key="ES.CLUSTER.NAME">rd-cluster-1-</entry>
+    <entry key="ES.ENABLE">N</entry>
+    <entry key="ES.CONNECTION_TIMEOUT">5s</entry>
+
+
 	
 </properties>
