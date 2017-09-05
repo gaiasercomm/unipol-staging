@@ -79,7 +79,7 @@
  	<entry key="SERVER.MODE">1</entry>
  	
     <!-- configureable device online interval -->
-    <entry key="IP.DEVICE.ONLINE.INTERVAL">300000</entry>
+    <entry key="IP.DEVICE.ONLINE.INTERVAL">720000</entry>
     
     <!-- MqttAccountService  -->
     <entry key="MAS.ENABLE">N</entry><!-- Y|N -->
