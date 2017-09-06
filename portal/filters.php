@@ -57,13 +57,13 @@ App::before(function($request)
 
     define("_RELAY_PROTOCOL", "http");
 
-    define("_RELAY_ADDR", "192.168.102.8");
+    define("_RELAY_ADDR", "172.20.12.8");
 
     define("_RELAY_PORT", "8080");
 
     define("_STORAGE_PROTOCOL", "http");
 
-    define("_STORAGE_ADDR", "192.168.102.8");
+    define("_STORAGE_ADDR", "172.20.12.8");
     
     define("_STORAGE_PORT", 8080);
 
