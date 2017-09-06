@@ -20,7 +20,7 @@
     
     <entry key="PROVISION.GW.EXIT_DELAY">60</entry>
     <entry key="PROVISION.GW.ENTRY_DELAY">30</entry>
-    <entry key="PROVISION.GW.QUICK_EXIT_DELAY">60</entry>
+    <entry key="PROVISION.GW.QUICK_EXIT_DELAY">30</entry>
 
 	
     <!-- Portal service information -->
