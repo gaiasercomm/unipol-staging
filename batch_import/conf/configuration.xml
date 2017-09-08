@@ -20,9 +20,8 @@
     
     <!-- MySQL -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">neutral_db</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">dl-collaudo-db.mysql.database.azure.com</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLWNvbGxhdWRvLWRiLm15c3FsLmRhdGFiYXNlLmF6dXJlLmNvbQ==</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
-    <!-- <entry key="MYSQL.CMS_CORE.PASSWORD">emFxMTJ3c3g=</entry> -->
 </properties>
