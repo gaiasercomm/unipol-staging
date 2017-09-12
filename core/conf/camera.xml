@@ -526,6 +526,7 @@ mp4,2,%d,%d : 8221, 821,
                 <prop key="ntp_server">timvss-ntp1.sunto.reply.it</prop>
                 <prop key="time_zone">27</prop>
             </Group>
+            <Group name="VIDEO" text="smart_eptz" enable="0" extend="0"/>
         </Other>
     </Model>
     <!-- RC8111 ################################################################################################### -->
