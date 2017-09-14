@@ -24,4 +24,18 @@
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
     <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLWNvbGxhdWRvLWRiLm15c3FsLmRhdGFiYXNlLmF6dXJlLmNvbQ==</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
+    
+       <!--  Tomcat MySQL connection pool parameters -->
+    <entry key="DBPOOL.JMX.ENABLE">0</entry><!-- default 0 -->
+    <entry key="DBPOOL.INIT_CONN.NUM">5</entry><!-- default 5-->
+    <entry key="DBPOOL.MAX_CONN.NUM">50</entry><!-- default 50 -->
+    <entry key="DBPOOL.MAX_IDLE_CONN.NUM">32</entry><!-- default 32 -->
+    <entry key="DBPOOL.MIN_IDLE_CONN.NUM">16</entry><!-- default 16 -->
+    <entry key="DBPOOL.TESTONBORROW.ENABLE">0</entry><!-- default 0 -->
+    <entry key="DBPOOL.TESTONRETURN.ENABLE">0</entry><!-- default 0 -->
+    <entry key="DBPOOL.TESTWHILEIDLE.ENABLE">1</entry><!-- default 1-->
+    <entry key="DBPOOL.MAX_CONN.WAIT">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.VALIDATION.INTERVAL">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.TIME_BETWEEN_EVICTION_RUNS.WAIT">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.MIN_EVICTABLE_IDLE.TIME">60000</entry><!--default 60000ms -->
 </properties>
