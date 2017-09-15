@@ -64,7 +64,7 @@ mp4,2,%d,%d : 8221, 821,
 		<Other>
 			<Group name="HTTP_EVENT" text="http_event_en" enable="1" extend="0" reboot="0">
 				<prop key="http_post_en">1</prop>
-				<prop key="http_post_url">http://172.20.12.101:8080/storage/set_media</prop><!-- CMS_META -->
+				<prop key="http_post_url">http://timvss-cms-test.sunto.reply.it:8080/storage/set_media</prop><!-- CMS_META -->
 			</Group>
 			<Group name="EVENT" text="event_trigger" enable="1" extend="0" reboot="0"><!-- default preCapture and postCapture -->
 				<prop key="event_trigger">1</prop>
@@ -473,33 +473,31 @@ mp4,2,%d,%d : 8221, 821,
             </Group>
         </Audio>
         <Stream>
-            <Group name="JPEG" extend="0">
-                <mode text="mode" enable="0"/>
-                <mode text="mode2" enable="0"/>
-                <mode text="mode3" enable="1">
-                    <prop key="resolution3">3</prop><!-- 3 is the lowest limit -->
-                    <prop key="quality_level3">2</prop>
-                    <prop key="frame_rate3">10</prop><!-- 3 -->
-                </mode>
-            </Group>
             <Group name="H264" extend="0">
                 <mode text="mode" enable="1">
-                    <prop key="resolution">3</prop><!-- 3 is the lowest limit -->
+                    <prop key="resolution">4</prop>
                     <prop key="quality_type">0</prop>
                     <prop key="quality_level">2</prop>
-                    <prop key="bit_rate">1000</prop>
-                    <prop key="gov_length">30</prop>
-                    <prop key="frame_rate">25</prop>
+                    <prop key="bit_rate">512</prop>
+                    <prop key="gov_length">15</prop>
+                    <prop key="frame_rate">15</prop>
                 </mode>
                 <mode text="mode2" enable="1">
-                    <prop key="resolution2">3</prop><!-- 3 is the lowest limit -->
+                    <prop key="resolution2">4</prop>
                     <prop key="quality_type2">0</prop>
                     <prop key="quality_level2">2</prop>
                     <prop key="bit_rate2">1000</prop>
-                    <prop key="gov_length2">30</prop>
+                    <prop key="gov_length2">25</prop>
                     <prop key="frame_rate2">25</prop>
                 </mode>
-                <mode text="mode3" enable="0"/>
+                <mode text="mode3" enable="1">
+                    <prop key="resolution3">4</prop>
+                    <prop key="quality_type3">0</prop>
+                    <prop key="quality_level3">2</prop>
+                    <prop key="bit_rate3">256</prop>
+                    <prop key="gov_length3">15</prop>
+                    <prop key="frame_rate3">10</prop>
+                </mode>
             </Group>
         </Stream>
         <Other>
