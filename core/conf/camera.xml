@@ -64,7 +64,7 @@ mp4,2,%d,%d : 8221, 821,
 		<Other>
 			<Group name="HTTP_EVENT" text="http_event_en" enable="1" extend="0" reboot="0">
 				<prop key="http_post_en">1</prop>
-				<prop key="http_post_url">http://timvss-cms-test.sunto.reply.it:8080/storage/set_media</prop><!-- CMS_META -->
+				<prop key="http_post_url">http://timvss-cms-collaudo.sunto.reply.it:8080/storage/set_media</prop><!-- CMS_META -->
 			</Group>
 			<Group name="EVENT" text="event_trigger" enable="1" extend="0" reboot="0"><!-- default preCapture and postCapture -->
 				<prop key="event_trigger">1</prop>
