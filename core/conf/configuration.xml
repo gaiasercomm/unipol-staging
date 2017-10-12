@@ -12,8 +12,8 @@
     
     <entry key="PROFILE.ID">15</entry>
     <!-- CMS service configuration -->
-    <entry key="SERV.APACHE.ADDRESS">neutral_dl</entry>
-
+    
+    <entry key="SERV.APACHE.ADDRESS">127.0.0.1</entry>
     <entry key="SERV.APACHE.HTTPPORT">8081</entry>
     <entry key="SERV.APACHE.MAX_THREAD">150</entry>
     <entry key="SERV.APACHE.ACCEPT_COUNT">200</entry>   
