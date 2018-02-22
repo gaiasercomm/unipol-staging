@@ -80,9 +80,12 @@ App::before(function($request)
 
     global $_PERMISSIONS_CONTROL;
     $_PERMISSIONS_CONTROL = [
-        'DIAGNOSTIC' => true,
-        'ONEBTNDIAG' => true
+        'DIAGNOSTIC' => false,      // Network Diagnostics
+        'ONEBTNDIAG' => false,      // Device Diagnostics
+        'ACTIVITY' => false,        // Activity
+        'NOTIFICATION' => false     // Notification
     ];
+
 });
 
 
