@@ -4,22 +4,21 @@
 <properties>
 
 	<entry key="redis.host">dl-collaudo-cache.redis.cache.windows.net</entry>
-
 	<entry key="redis.port">6379</entry>
 	<entry key="redis.password">zlEhomT02IXprCgE9+h1ys/KQYEMXb3BZt4Nz5FXWFU=</entry>
 
 	<!-- int REDIS_DEPLOY_TYPE_SINGLE = 1; int REDIS_DEPLOY_TYPE_CLUSTER = 2; int REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE = 3; -->
     <entry key="redis.deploymentModel">1</entry>
 
-    <!-- attributes for REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE -->
-    <!-- <entry key="redis.sentinel.address">192.168.99.151;192.168.99.152;192.168.99.35</entry>
-    <entry key="redis.sentinel.port">7379</entry>
-    <entry key="redis.sentinel.master">gaia_redis_master</entry> -->
-    <!-- end attributes for REDIS_DEPLOY_TYPE_SENTINEL_MASTER_SLAVE -->
+    <entry key="redis.time_between_eviction_runs">60000</entry>
+    <entry key="redis.min_evictable_idle_time">60000</entry>
+    <entry key="redis.redisson.max_connection">1000</entry>
+    <entry key="redis.redisson.retry_attempt">25</entry>
+    <entry key="redis.redisson.retry_interval">100</entry>
 
 	<entry key="redis.conn.timeout">2000</entry>
 
-	<entry key="redis.pool.max.active">2000</entry>
+	<entry key="redis.pool.max.active">1000</entry>
 	<entry key="redis.pool.max.idle">10</entry>
 	<entry key="redis.pool.max.wait">10000</entry>
 	
