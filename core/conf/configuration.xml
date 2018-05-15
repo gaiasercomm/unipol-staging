@@ -22,7 +22,6 @@
     <entry key="PROVISION.GW.ENTRY_DELAY">30</entry>
     <entry key="PROVISION.GW.QUICK_EXIT_DELAY">30</entry>
 
-	
     <!-- Portal service information -->
     <entry key="SERV.PORTAL.ADDR">neutral_web</entry>
     <entry key="SERV.PORTAL.PORT">80</entry>
@@ -95,10 +94,12 @@
     <entry key="IP.DEVICE.ONLINE.INTERVAL">720000</entry>
     
     <!-- MqttAccountService  -->
-    <entry key="MAS.ENABLE">N</entry><!-- Y|N -->
+    <entry key="MAS.ENABLE">Y</entry><!-- Y|N -->
     <entry key="MAS.HEADER">mas-tok</entry>
     <entry key="MAS.KEY">1PfBq95IH08lIQcwsG0dE6J177EzLPVS</entry>
     <entry key="MAS.ENDPOINT">http://neutral_mas:8800</entry>
     
+    <!-- RFDevice Cacher refresh Delay (seconds) -->
+    <entry key="RF_DEV_REFRESH_DELAY">15</entry>
 </properties>
     
