@@ -14,8 +14,6 @@
     <entry key="SERV.LIVEVIEW.TIMEOUT">120000</entry>
     <entry key="SERV.CLIPFILE_UPLOAD.TIMEOUT">150000</entry>
 
-    
-    
     <!-- NFS information -->
     <entry key ="NFS.MOUNT.PATH">/var/media</entry>
     
@@ -34,4 +32,6 @@
     
     <!-- Reduce size of clip file size to ? percentage, the range is 50 ~ 100 -->
     <entry key="REDUCE.CLIP.FILE">100</entry>
+    
+    <entry key="MQTT.SUPPORT">1</entry><!-- 1:enable; 0:disable -->
 </properties>
