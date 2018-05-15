@@ -11,13 +11,13 @@
     
     <entry key="redis.time_between_eviction_runs">60000</entry>
     <entry key="redis.min_evictable_idle_time">60000</entry>
-    <entry key="redis.redisson.max_connection">1000</entry>
+    <entry key="redis.redisson.max_connection">250</entry>
     <entry key="redis.redisson.retry_attempt">25</entry>
     <entry key="redis.redisson.retry_interval">100</entry>
     
     <entry key="redis.conn.timeout">2000</entry>
 
-    <entry key="redis.pool.max.active">1000</entry>
+    <entry key="redis.pool.max.active">250</entry>
     <entry key="redis.pool.max.idle">10</entry>
     <entry key="redis.pool.max.wait">10000</entry>
 </properties>
