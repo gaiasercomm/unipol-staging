@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 
 <properties>
-    <entry key="redis.host">dl-collaudo-cache.redis.cache.windows.net</entry>
+    <entry key="redis.host">timvss-dl-preprod-cache.redis.cache.windows.net</entry>
     <entry key="redis.port">6379</entry>
     <entry key="redis.password">bjzQ6SghEvfiWUcjwul9/Kpkldc8Y442pQ8qoV8It7o=</entry>    
     
