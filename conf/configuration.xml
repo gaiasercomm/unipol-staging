@@ -20,9 +20,9 @@
     
     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">dl-collaudo-db.mysql.database.azure.com</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">Y21zQHRpbXZzcy1kbC1wcmVwcm9kLWRi</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">Y21zQGRsLWNvbGxhdWRvLWRiLm15c3FsLmRhdGFiYXNlLmF6dXJlLmNvbQ==</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21zQHRpbXZzcy1kbC1wcmVwcm9kLWRi</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
     <entry key="MYSQL.CMS_CORE.SSL">false</entry>
     
@@ -35,8 +35,8 @@
     <entry key="DL.PORT">8080</entry>
     
     <!-- Redis connection information -->
-    <entry key="REDIS.HOST">dl-collaudo-cache.redis.cache.windows.net</entry> 
-    <entry key="REDIS.PASSWORD">zlEhomT02IXprCgE9+h1ys/KQYEMXb3BZt4Nz5FXWFU=</entry>
+    <entry key="REDIS.HOST">timvss-dl-preprod-cache.redis.cache.windows.net</entry> 
+    <entry key="REDIS.PASSWORD">bjzQ6SghEvfiWUcjwul9/Kpkldc8Y442pQ8qoV8It7o=</entry>
     <entry key="REDIS.PORT">6379</entry>
     <entry key="REDIS.DATABASE">9</entry>
     <entry key="REDIS.AUTH">Y</entry>
