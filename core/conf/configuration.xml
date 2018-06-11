@@ -42,9 +42,9 @@
 	
     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">timvss-dl-preprod-db.mysql.database.azure.com</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">10.243.170.79</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">Y21zQHRpbXZzcy1kbC1wcmVwcm9kLWRi</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
     
         <!-- Tomcat MySQL connection pool -->
@@ -85,7 +85,7 @@
     <!-- post event to Service Layer -->
     <!-- <entry key="EVENT.POST.SERVICE.URL">http://neutral_sl:8080/cgi/user_event_notify.cgi</entry> -->
     <!-- TIM Test Site -->
-    <entry key="EVENT.POST.SERVICE.URL">http://172.18.11.100:8080/backend/api/sercomm/notify_event.sr</entry>
+    <entry key="EVENT.POST.SERVICE.URL">http://10.243.171.10:6080/api/dlinbound/notify_event.sr</entry>
 
 	<!-- specify the server mode(1: stand-alone, 2: master-slave, *: cluster) -->
  	<entry key="SERVER.MODE">1</entry>
