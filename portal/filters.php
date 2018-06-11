@@ -35,7 +35,7 @@ App::before(function($request)
     // define("_CLASS", _ROOT . "/inc/class/");
 
     #*********
-    define("_PORTAL_VER", "3.1.18b");
+    define("_PORTAL_VER", "3.1.20a");
 
     #*********
     define("_COOKIEDOMAIN", "http://neutral_web/");
@@ -57,13 +57,13 @@ App::before(function($request)
 
     define("_RELAY_PROTOCOL", "http");
 
-    define("_RELAY_ADDR", "172.18.12.8");
+    define("_RELAY_ADDR", "10.243.170.91");
 
     define("_RELAY_PORT", "8080");
 
     define("_STORAGE_PROTOCOL", "http");
 
-    define("_STORAGE_ADDR", "172.18.12.8");
+    define("_STORAGE_ADDR", "10.243.170.91");
     
     define("_STORAGE_PORT", 8080);
 
