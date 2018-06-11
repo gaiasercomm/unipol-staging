@@ -20,9 +20,9 @@
     
     <!-- MySQL -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
-    <entry key="MYSQL.CMS_CORE.ADDR">timvss-dl-preprod-db.mysql.database.azure.com</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">10.243.170.79</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
-    <entry key="MYSQL.CMS_CORE.USER">Y21zQHRpbXZzcy1kbC1wcmVwcm9kLWRi</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
     <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
     
        <!--  Tomcat MySQL connection pool parameters -->
