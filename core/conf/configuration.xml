@@ -96,7 +96,7 @@
     <entry key="IP.DEVICE.PROVISION.INTERVAL">1000000</entry>
     
     <!-- MqttAccountService  -->
-    <entry key="MAS.ENABLE">N</entry><!-- Y|N -->
+    <entry key="MAS.ENABLE">Y</entry><!-- Y|N -->
     <entry key="MAS.HEADER">mas-tok</entry>
     <entry key="MAS.KEY">1PfBq95IH08lIQcwsG0dE6J177EzLPVS</entry>
     <entry key="MAS.ENDPOINT">http://neutral_mas:8800</entry>
