@@ -34,7 +34,7 @@
     <entry key="DL.PORT">8080</entry>
     
     <!-- Redis connection information -->
-    <entry key="REDIS.HOST">10.243.170.79</entry> 
+    <entry key="REDIS.HOST">10.243.170.96</entry> 
     <entry key="REDIS.PASSWORD"></entry>
     <entry key="REDIS.PORT">6379</entry>
     <entry key="REDIS.DATABASE">9</entry>
