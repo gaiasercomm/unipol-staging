@@ -24,7 +24,7 @@ config:
   elastic:
     conf:
       log: warning
-      hosts: [http://172.31.4.0:9200]
+      hosts: [http://13.115.15.163:9200]
       requestTimeout: 300000
       keepAlive: true
       maxSockets: 256
