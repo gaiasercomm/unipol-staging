@@ -158,7 +158,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod
+      path: files/unipol-prod/
     contents:
       - key: gatewayOnline
         enable: true
@@ -281,7 +281,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod
+      path: files/unipol-prod/
     contents:
       - key: kitReport
         # Mail content for sending
@@ -324,7 +324,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod
+      path: files/unipol-prod/
     contents:
       - key: savingGateways
         # Mail content for sending
