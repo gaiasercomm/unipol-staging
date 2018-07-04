@@ -1,5 +1,7 @@
 config:
 
+  siteName: Unipol-Prod
+
   debug: true
 
   server:
@@ -29,11 +31,11 @@ config:
       keepAliveMaxFreeSockets: 30
 
   ftp:
+    basePath: files/unipol-prod/
     conf:
       host: 10.243.170.74
       user: postmaster
       password: sercomm1234
-      path: files/unipol-prod
 
   kibana:
     conf:
@@ -64,6 +66,7 @@ config:
       rejectUnauthorized: false
 
   mqtt:
+    enable: True
     conf:
       protocol: tcp
       host: shpdllb.northeurope.cloudapp.azure.com
@@ -75,7 +78,8 @@ config:
 
   service:
     cmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
-    dcsi: [{protocol: http, host: 127.0.0.1:8088}]
+    dcsi: [{protocol: http, host: 127.0.0.1, port: 8088}]
+    dns: [{protocol: udp, host: 10.243.170.68, port: 53}]
     bmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
     fwUpgrade: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
 
@@ -123,6 +127,7 @@ scheduleNotification:
     cronTime: 0 5 7 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
+    intervalBeforeSearchEvent: 7776000
     # Wait for Logstash to fill the data, and then shift time point for searching
     shift: forward
     shiftInterval: 300
@@ -143,17 +148,17 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, dean_yang@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
-        subject: Unipol-Prod gateway online offline notification
+        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
+        subject: gateway online offline notification
         errorRecipient: ytc0316@msn.com
-        errorMessage: Unipol-Prod notification fail
+        errorMessage: notification fail
     # Ftp server info for result to send
     putFtp:
       options:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-        path: files/unipol-prod
+      path: files/unipol-prod
     contents:
       - key: gatewayOnline
         enable: true
@@ -169,9 +174,9 @@ scheduleNotification:
           fileExtension: csv
         # Job content template
         job:
-          name: Unipol-Prod gateway online notification
+          name: gateway online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_bundle_log, get_all_gw_log]
       - key: gatewayBootup
         enable: true
@@ -187,9 +192,9 @@ scheduleNotification:
           fileExtension: csv
         # Job content template
         job:
-          name: Unipol-Prod gateway bootup notification
+          name: gateway bootup notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_system_log]
       - key: cameraOffline
         enable: true
@@ -207,9 +212,9 @@ scheduleNotification:
           fileExtension: csv
         # Job content template
         job:
-          name: Unipol-Prod camera offline notification
+          name: camera offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_bundle_log, get_arp, ping_ip_camera, get_all_gw_log, execute_ping_cms, execute_traceroute_cms, execute_ping_mqtt, execute_traceroute_mqtt, execute_ifconfig, execute_ps, execute_route]
       - key: cameraOnline
         enable: true
@@ -227,9 +232,9 @@ scheduleNotification:
           fileExtension: csv
         # Job content template
         job:
-          name: Unipol-Prod camera online notification
+          name: camera online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_ip_camera_log]
       - key: sensorOffline
         enable: true
@@ -245,9 +250,9 @@ scheduleNotification:
           fileExtension: csv
         # Job content template
         job:
-          name: Unipol-Prod sensor offline notification
+          name: sensor offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_wifi_channel, get_site_survey]
 
   # Search data related to the gateway that occurs events during the specified time
@@ -258,7 +263,7 @@ scheduleNotification:
     chunkSize: 300
     highBatteryTemperature: 400
     interval: 86400
-    intervalBeforeSerachEvent: 7776000
+    intervalBeforeSearchEvent: 7776000
     # Wait for Logstash to fill the data, and then shift time point for searching
     shift: forward
     shiftInterval: 300
@@ -267,16 +272,16 @@ scheduleNotification:
       options:
         from: postmaster@smartgaiacloud.com
         to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
-        subject: Unipol-Prod Daily Data for Offline analysis
+        subject: Daily Data for Offline analysis
         errorRecipient: ytc0316@msn.com
-        errorMessage: Unipol-Prod  kit report fail
+        errorMessage: kit report fail
     # Ftp server info for result to send
     putFtp:
       options:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-        path: files/unipol-prod
+      path: files/unipol-prod
     contents:
       - key: kitReport
         # Mail content for sending
@@ -310,16 +315,16 @@ scheduleNotification:
       options:
         from: postmaster@smartgaiacloud.com
         to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
-        subject: Unipol-Prod Gateway offline & Camera online
+        subject: Gateway offline & Camera online
         errorRecipient: ytc0316@msn.com
-        errorMessage: Unipol-Prod Gateway offline & Camera online fail
+        errorMessage: Gateway offline & Camera online fail
     # Ftp server info for result to send
     putFtp:
       options:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-        path: files/unipol-prod
+      path: files/unipol-prod
     contents:
       - key: savingGateways
         # Mail content for sending
@@ -338,8 +343,8 @@ scheduleNotification:
     enable: false
     cronTime: 0,30 * * * * *
     # Creates an array of elements split into groups the length of size
-    chunkSize: 30
-    interval: 10
+    chunkSize: 10
+    interval: 30
     # Query string for elasticsearch
     queryStr: message:(CAM_INFO REPEATER_INFO)
     # Wait for Logstash to fill the data, and then shift time point for searching
