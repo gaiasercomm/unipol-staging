@@ -140,6 +140,7 @@ scheduleNotification:
     intervalBeforeOfflineEvent: 7776000
     intervalBeforeOfflineKpi: 604800
     intervalBeforeSpecialEvent: 86400
+    jobDelay: 30000
     # Wait for Logstash to fill the data, and then shift time point for searching
     shift: forward
     shiftInterval: 300
@@ -176,7 +177,7 @@ scheduleNotification:
           name: gateway online notification
           kitcodes: []
           parameters: [{name: FILE_PATH, value: scheduleLog/}]
-          templateIds: [get_bundle_log, get_all_gw_log]
+          templateIds: [get_all_gw_log]
       - key: gatewayBootup
         enable: true
         eventCode: 30007
@@ -214,7 +215,7 @@ scheduleNotification:
           name: camera offline notification
           kitcodes: []
           parameters: [{name: FILE_PATH, value: scheduleLog/}]
-          templateIds: [get_bundle_log, get_arp, ping_ip_camera, get_all_gw_log, execute_ping_cms, execute_traceroute_cms, execute_ping_mqtt, execute_traceroute_mqtt, execute_ifconfig, execute_ps, execute_route]
+          templateIds: [get_arp, ping_ip_camera, get_all_gw_log, execute_ping_cms, execute_traceroute_cms, execute_ping_mqtt, execute_traceroute_mqtt, execute_ifconfig, execute_ps, execute_route]
       - key: cameraOnline
         enable: true
         eventCode: 99010
@@ -252,7 +253,7 @@ scheduleNotification:
           name: sensor offline notification
           kitcodes: []
           parameters: [{name: FILE_PATH, value: scheduleLog/}]
-          templateIds: [get_wifi_channel, get_site_survey]
+          templateIds: [get_wifi_channel, get_wifi_site_survey]
 
   # Search data related to the gateway that occurs events during the specified time
   kitReport:
@@ -304,7 +305,7 @@ scheduleNotification:
         correctGw: 0
         loginFail: 1
         wrongGw: 2
-      ipPatt: /^10\.35|36\.*/
+      ipPatt: ^10\.35|36\.*
       name: SuperUser
       password: 9ABZWZSLF9G61MSWSD7C1Y6EU71GTISU
       silent: false
