@@ -6,6 +6,7 @@ config:
 
   server:
     api:
+      active: [createJob, createTemplate, refreshCmdTmpls]
       port: 8088
     ssl:
       enable: false
