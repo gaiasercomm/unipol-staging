@@ -104,4 +104,6 @@
     <!-- RFDevice Cacher refresh Delay (seconds) -->
     <entry key="RF_DEV_REFRESH_DELAY">15</entry>
     
+    <entry key="FW_UPGRADE_SWITCH">1</entry>
+    
 </properties>
