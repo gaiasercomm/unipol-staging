@@ -82,7 +82,7 @@ config:
     dcsi: [{protocol: http, host: 127.0.0.1, port: 8088}]
     dns: [{protocol: udp, host: 8.8.8.8, port: 53}]
     bmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
-    fwUpgrade: [{protocol: http, host: neutral_dl_fwupgrade, port: 8080}]
+    fwUpgrade: [{protocol: http, host: shpcms.sunto.reply.it, port: 18080}]
 
   logger:
     # error: 0 warn: 1 info: 2 verbose: 3 debug: 4 silly: 5 
