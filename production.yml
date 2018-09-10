@@ -298,7 +298,7 @@ scheduleNotification:
 
   # Device monitor and rescue
   savingGateway:
-    enable: True
+    enable: False
     cronTime: 0 30 15-23,0-1 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 50
@@ -342,7 +342,7 @@ scheduleNotification:
 
   # Relay cameras system_info to temporary DL for batch f/w upgrade
   relaySystemInfo:
-    enable: False
+    enable: True
     cronTime: 0,30 * * * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 10
