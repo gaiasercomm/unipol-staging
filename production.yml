@@ -70,7 +70,7 @@ config:
     enable: False
     conf:
       protocol: tcp
-      host: shpdllb.northeurope.cloudapp.azure.com
+      host: neutral_rabbitmq
       port: 1883
       options:
         durable: true
@@ -78,11 +78,11 @@ config:
       password: ability123
 
   service:
-    cmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
+    cmsi: [{protocol: http, host: neutral_dl, port: 8080}]
     dcsi: [{protocol: http, host: 127.0.0.1, port: 8088}]
     dns: [{protocol: udp, host: 8.8.8.8, port: 53}]
-    bmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
-    fwUpgrade: [{protocol: http, host: shpcms.sunto.reply.it, port: 18080}]
+    bmsi: [{protocol: http, host: neutral_dl, port: 8080}]
+    fwUpgrade: [{protocol: http, host: neutral_dl_fwupgrade:8080}]
 
   logger:
     # error: 0 warn: 1 info: 2 verbose: 3 debug: 4 silly: 5 
@@ -106,7 +106,7 @@ scheduleNotification:
 
   # Dump ip device cache from redis into elasticsearch
   ipDevice:
-    enable: False
+    enable: false
     cronTime: 0 15,45 * * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
@@ -117,14 +117,14 @@ scheduleNotification:
 
   # Dump rf device cache from redis into elasticsearch
   rfDevice:
-    enable: False 
+    enable: false 
     cronTime: 0 55 1-23/2 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1000
 
   # In elasticsearch search gateways and cameras for the last offline & online and then save to index of kit_status-* 
   kitStatus:
-    enable: False
+    enable: false
     cronTime: 0 5 7 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
@@ -135,7 +135,7 @@ scheduleNotification:
 
   # Notify the devices that generated the specified event via email or FTP, and so ask devices do something
   eventNotification:
-    enable: False
+    enable: false
     cronTime: 0 5 */2 * * *
     interval: 7200
     intervalAfterSpecialEvent: 600
@@ -178,7 +178,7 @@ scheduleNotification:
         job:
           name: gateway online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
           templateIds: [get_all_gw_log]
       - key: gatewayBootup
         enable: true
@@ -196,7 +196,7 @@ scheduleNotification:
         job:
           name: gateway bootup notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
           templateIds: [get_system_log]
       - key: cameraOffline
         enable: true
@@ -216,7 +216,7 @@ scheduleNotification:
         job:
           name: camera offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
           templateIds: [get_arp, ping_ip_camera, get_all_gw_log, execute_ping_cms, execute_traceroute_cms, execute_ping_mqtt, execute_traceroute_mqtt, execute_ifconfig, execute_ps, execute_route]
       - key: cameraOnline
         enable: true
@@ -236,7 +236,7 @@ scheduleNotification:
         job:
           name: camera online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
           templateIds: [get_ip_camera_log]
       - key: sensorOffline
         enable: true
@@ -254,12 +254,12 @@ scheduleNotification:
         job:
           name: sensor offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
           templateIds: [get_wifi_channel, get_wifi_site_survey]
 
   # Search data related to the gateway that occurs events during the specified time
   kitReport:
-    enable: False
+    enable: false
     cronTime: 0 5 5 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 300
@@ -298,7 +298,7 @@ scheduleNotification:
 
   # Device monitor and rescue
   savingGateway:
-    enable: False
+    enable: false
     cronTime: 0 30 15-23,0-1 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 50
