@@ -178,7 +178,7 @@ scheduleNotification:
         job:
           name: gateway online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_all_gw_log]
       - key: gatewayBootup
         enable: true
@@ -196,7 +196,7 @@ scheduleNotification:
         job:
           name: gateway bootup notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_system_log]
       - key: cameraOffline
         enable: true
@@ -216,7 +216,7 @@ scheduleNotification:
         job:
           name: camera offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_arp, ping_ip_camera, get_all_gw_log, execute_ping_cms, execute_traceroute_cms, execute_ping_mqtt, execute_traceroute_mqtt, execute_ifconfig, execute_ps, execute_route]
       - key: cameraOnline
         enable: true
@@ -236,7 +236,7 @@ scheduleNotification:
         job:
           name: camera online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_ip_camera_log]
       - key: sensorOffline
         enable: true
@@ -254,7 +254,7 @@ scheduleNotification:
         job:
           name: sensor offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_wifi_channel, get_wifi_site_survey]
 
   # Search data related to the gateway that occurs events during the specified time
