@@ -1,0 +1,72 @@
+{
+  "//": "Refer Management Plugin at https://www.rabbitmq.com/management.html",
+  "//": "Refer to https://www.rabbitmq.com/passwords.html for computing Password Hashes",
+  "//": "using rabbit_pash_hash.py for computing hashed password",
+  "users": [
+    {
+      "name": "guest",
+      "password_hash": "f3rv2TY9utmlv2CgfWev3oHsNyRRbJ590lElG5A5xx+qCqsK",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "gaia",
+      "password_hash": "f3rv2TY9utmlv2CgfWev3oHsNyRRbJ590lElG5A5xx+qCqsK",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "mqttclient",
+      "password_hash": "f3rv2TY9utmlv2CgfWev3oHsNyRRbJ590lElG5A5xx+qCqsK",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "\/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "guest",
+      "vhost": "\/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "gaia",
+      "vhost": "\/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "mqttclient",
+      "vhost": "\/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [],
+  "policies": [
+    {
+      "vhost": "\/",
+      "name": "ttl-expiry",
+      "pattern": ".*",
+      "apply-to": "queues",
+      "definition": {
+        "message-ttl": 60000,
+        "expires": 1800000
+      },
+      "priority": 0
+    }
+  ],
+  "queues": [],
+  "exchanges": [],
+  "bindings": []
+}
