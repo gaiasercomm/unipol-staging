@@ -1,0 +1,132 @@
+node:
+  id: front_envoy
+  cluster: front_envoy
+static_resources:
+  listeners:
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 1883
+    filter_chains:
+    - filters:
+      - name: envoy.tcp_proxy
+        config:
+          stat_prefix: ingress_mqtt_tcp
+          cluster: mqtt_brokers_tcp
+          idle_timeout: 1800s
+          # max_connect_attempts: 1000
+      - name: envoy.ratelimit
+        config:
+          stat_prefix: ingress_ratelimit
+          domain: gaia_envoy
+          descriptors:
+            - entries:
+              - key: mqtt
+                value: connections
+          timeout: 0.5s
+
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8883
+    filter_chains:
+    - filters:
+      - name: envoy.tcp_proxy
+        config:
+          stat_prefix: ingress_mqtt_ssl
+          cluster: mqtt_brokers_ssl
+          idle_timeout: 1800s
+          # max_connect_attempts: 1000
+      - name: envoy.ratelimit
+        config:
+          stat_prefix: ingress_ratelimit
+          domain: gaia_envoy
+          descriptors:
+            - entries:
+              - key: mqtt
+                value: connections
+          timeout: 0.5s
+
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.tcp_proxy
+        config:
+          stat_prefix: ingress_vpn
+          cluster: vpn
+          idle_timeout: 1800s
+
+  clusters:
+  - name: mqtt_brokers_tcp
+    connect_timeout: 5s
+    circuit_breakers:
+      thresholds:
+      - priority: DEFAULT
+        max_connections: 50000
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    hosts:
+    - socket_address:
+        address: neutral_rabbitmq_secure
+        port_value: 1883
+        
+  - name: mqtt_brokers_ssl
+    connect_timeout: 10s
+    circuit_breakers:
+      thresholds:
+      - priority: DEFAULT
+        max_connections: 50000
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    hosts:
+    - socket_address:
+        address: neutral_rabbitmq_secure
+        port_value: 8883
+        
+  - name: ratelimit_cluster
+    connect_timeout: 0.25s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    http2_protocol_options: {}
+    hosts:
+    - socket_address:
+        address: neutral_ratelimit
+        port_value: 8081
+        
+  - name: statsd
+    connect_timeout: 0.25s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    http2_protocol_options: {}
+    load_assignment:
+      cluster_name: statsd
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                protocol: TCP
+                address: 192.168.102.12
+                port_value: 9125
+
+admin:
+  access_log_path: "/var/log/front_envoy/access_log"
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 8001
+
+rate_limit_service:
+  grpc_service:
+    envoy_grpc:
+      cluster_name: ratelimit_cluster
+    timeout: 0.5s
+  use_data_plane_proto: true
+
+stats_sinks:
+- name: envoy.statsd
+  config:
+    tcp_cluster_name: statsd
