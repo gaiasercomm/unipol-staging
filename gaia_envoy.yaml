@@ -1,0 +1,8 @@
+---
+domain: gaia_envoy
+descriptors:
+  - key: mqtt
+    value: connections
+    rate_limit:
+      unit: second
+      requests_per_unit: 5
