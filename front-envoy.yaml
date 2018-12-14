@@ -70,7 +70,7 @@ static_resources:
     lb_policy: ROUND_ROBIN
     hosts:
     - socket_address:
-        address: neutral_rabbitmq_secure
+        address: neutral_rabbitmq
         port_value: 1883
         
   - name: mqtt_brokers_ssl
@@ -83,7 +83,7 @@ static_resources:
     lb_policy: ROUND_ROBIN
     hosts:
     - socket_address:
-        address: neutral_rabbitmq_secure
+        address: neutral_rabbitmq
         port_value: 8883
         
   - name: ratelimit_cluster
