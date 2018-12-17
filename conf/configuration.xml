@@ -3,5 +3,6 @@
 
 <properties>
     <entry key="AMS.LDAP.SERVER.OBJECT.DOMAIN">ou=SecuredObjects,dc=smartgaiacloud,dc=com</entry>
-    <entry key="AMS.LDAP.SERVER.POOLSIZE">800</entry>
+    <entry key="AMS.LDAP.SERVER.POOLSIZE">1000</entry>
+    <entry key="AMS.LDAP.SERVER.CACHE.INTERVAL">3600</entry>
 </properties>
