@@ -83,6 +83,7 @@ config:
     dns: [{protocol: udp, host: 10.243.170.68, port: 53}]
     bmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
     fwUpgrade: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
+    fwFileServer: [{protocol: http, host: 10.243.170.74, port: 80}]
 
   logger:
     # error: 0 warn: 1 info: 2 verbose: 3 debug: 4 silly: 5 
@@ -150,7 +151,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: gateway online offline notification
         errorRecipient: ytc0316@msn.com
         errorMessage: notification fail
@@ -273,7 +274,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: Daily Data for Offline analysis
         errorRecipient: ytc0316@msn.com
         errorMessage: kit report fail
@@ -290,7 +291,7 @@ scheduleNotification:
         mail:
           fileName: daily_data.csv
           tableTitle: Daily Data for Offline analysis
-          tableHeader: [index, kitcode, fw_version, last_3rd_offline_time, last_3rd_online_time, last_2nd_offline_time, last_2nd_online_time, last_offline_time, last_online_time, first_3rd_offline_time, first_3rd_online_time, first_2nd_offline_time, first_2nd_online_time, first_offline_time, first_online_time, last_3rd_ac_to_dc, last_3rd_dc_to_ac, last_2nd_ac_to_dc, last_2nd_dc_to_ac, last_ac_to_dc, last_dc_to_ac, last_3rd_low_battery_event, last_2nd_low_battery_event, last_low_battery_event, last_3rd_high_battery_temperature_time, last_3rd_high_battery_temperature, last_2nd_high_battery_temperature_time, last_2nd_high_battery_temperature, last_high_battery_temperature_time, last_high_battery_temperature, last_3rd_reboot_time, last_3rd_reboot_reason_sub_code, last_2nd_reboot_time, last_2nd_reboot_reason_sub_code, last_reboot_time, last_reboot_reason_sub_code, online_offline_status, online_hours]
+          tableHeader: [index, kitcode, fw_version, last_3rd_offline_time, last_3rd_online_time, last_2nd_offline_time, last_2nd_online_time, last_offline_time, last_online_time, first_3rd_offline_time, first_3rd_online_time, first_2nd_offline_time, first_2nd_online_time, first_offline_time, first_online_time, last_3rd_ac_to_dc, last_3rd_dc_to_ac, last_2nd_ac_to_dc, last_2nd_dc_to_ac, last_ac_to_dc, last_dc_to_ac, last_3rd_low_battery_event, last_2nd_low_battery_event, last_low_battery_event, last_3rd_high_battery_temperature_time, last_3rd_high_battery_temperature, last_2nd_high_battery_temperature_time, last_2nd_high_battery_temperature, last_high_battery_temperature_time, last_high_battery_temperature, last_3rd_reboot_time, last_3rd_reboot_reason_sub_code, last_2nd_reboot_time, last_2nd_reboot_reason_sub_code, last_reboot_time, last_reboot_reason_sub_code, 8xxx_number_of_day, 9xxx_number_of_day, reboot_number_of_day, online_number_of_day, offline_number_of_day, online_offline_status, online_hours]
         # File info for ftp
         ftp:
           fileName: daily_data
@@ -316,7 +317,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: Gateway offline & Camera online
         errorRecipient: ytc0316@msn.com
         errorMessage: Gateway offline & Camera online fail
@@ -361,3 +362,50 @@ scheduleNotification:
       payloadKeys: [{}, {key: MAC, formatTime: false}, {key: DEVICE_NAME, formatTime: false}, {key: IP, formatTime: false}, {key: VIP, formatTime: false}, {key: MODEL, formatTime: false}, {key: FW_VERSION, formatTime: false}, {key: TIMESTAMP, formatTime: true}]
       # The payload template for relayed
       payloadTemplate: <?xml version="1.0" encoding="UTF-8"?><registration><timestamp>{{TIMESTAMP}}</timestamp><mac>{{MAC}}</mac><device_name>{{DEVICE_NAME}}</device_name><ip>{{IP}}</ip><vip>{{VIP}}</vip><model>{{MODEL}}</model><fw_version>{{FW_VERSION}}</fw_version><event_capability><event><by>motion</by></event><event><by>audio</by></event><event><by>httpc</by></event></event_capability></registration>
+      
+  # Search data related to the kronos camera that occurs state and kpi during the specified time
+  kronosCameraReport:
+    enable: false
+    cronTime: 0 5 0 * * *
+    interval: 86400
+    intervalBeforeSearchLog: 7776000
+    # Wait for Logstash to fill the data, and then shift time point for searching
+    shift: forward
+    shiftInterval: 300
+    queryStr: 'serial:1809CFN*'
+    # Nodemailer options
+    sendMail:
+      options:
+        from: postmaster@smartgaiacloud.com
+        to: lee_shen@sercomm.com, leon_zang@sdc.sercomm.com, nick_wan@sdc.sercomm.com, terry_chen@sercomm.com, cloud_wu@sercomm.com, andy_su@sercomm.com
+        subject: Daily report for kronos camera analysis
+        errorRecipient: ytc0316@msn.com
+        errorMessage: kronos camera report fail
+    # Ftp server info for result to send
+    putFtp:
+      options:
+        host: ftp.smartgaiacloud.com
+        user: na502s
+        password: u245h1wT
+      path: files/tim-prod/
+    contents:
+      - key: stateReport
+        # Mail content for sending
+        mail:
+          fileName: kronos_camera_state.csv
+          tableTitle: Camera state
+          tableHeader: [index, serial, mac, fw_version, last_3rd_offline_time, last_3rd_online_time, last_2nd_offline_time, last_2nd_online_time, last_offline_time, last_online_time, first_3rd_offline_time, first_3rd_online_time, first_2nd_offline_time, first_2nd_online_time, first_offline_time, first_online_time, offline_count, online_count, last_state]
+        # File info for ftp
+        ftp:
+          fileName: kronos_camera_state
+          fileExtension: csv
+      - key: wirelessReport
+        # Mail content for sending
+        mail:
+          fileName: kronos_camera_wireless.csv
+          tableTitle: Camera wireless
+          tableHeader: [index, serial, mac, fw_version, last_channel, avg_noise_level, max_noise_level, min_noise_level, avg_rssi, max_rssi, min_rssi, avg_signal_strength, max_signal_strength, min_signal_strength]
+        # File info for ftp
+        ftp:
+          fileName: kronos_camera_wireless
+          fileExtension: csv
