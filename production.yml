@@ -40,7 +40,7 @@ config:
 
   kibana:
     conf:
-      host: http://13.115.15.163:5601
+      host: http://172.31.4.0:5601
 
   mysql:
     conf:
@@ -55,6 +55,9 @@ config:
       host: 10.243.170.97
       port: 6379
       password: 
+      # 1: DEPLOY_MODEL_SINGLE
+      # 2: DEPLOY_MODEL_CLUSTER
+      deployModel: 1
 
   mail:
     host: mail.smartgaiacloud.com
@@ -78,12 +81,12 @@ config:
       password: ability123
 
   service:
-    cmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
+    cmsi: [{protocol: http, host: 10.243.170.81:8080}]
     dcsi: [{protocol: http, host: 127.0.0.1, port: 8088}]
-    dns: [{protocol: udp, host: 10.243.170.68, port: 53}]
-    bmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
-    fwUpgrade: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
-    fwFileServer: [{protocol: http, host: 10.243.170.74, port: 80}]
+    dns: [{protocol: udp, host: 8.8.8.8, port: 53}]
+    bmsi: [{protocol: http, host: 10.243.170.81:8080}]
+    fwUpgrade: [{protocol: http, host: 10.243.170.81:8080}]
+    fwFileServer: [{protocol: http, host: 10.243.170.72, port: 80}]
 
   logger:
     # error: 0 warn: 1 info: 2 verbose: 3 debug: 4 silly: 5 
@@ -151,7 +154,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: gateway online offline notification
         errorRecipient: ytc0316@msn.com
         errorMessage: notification fail
@@ -198,7 +201,7 @@ scheduleNotification:
           name: gateway bootup notification
           kitcodes: []
           parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
-          templateIds: [get_system_log]
+          templateIds: [get_all_gw_log]
       - key: cameraOffline
         enable: true
         eventCode: 99003
@@ -274,7 +277,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: Daily Data for Offline analysis
         errorRecipient: ytc0316@msn.com
         errorMessage: kit report fail
@@ -317,7 +320,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@Sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: Gateway offline & Camera online
         errorRecipient: ytc0316@msn.com
         errorMessage: Gateway offline & Camera online fail
@@ -362,7 +365,7 @@ scheduleNotification:
       payloadKeys: [{}, {key: MAC, formatTime: false}, {key: DEVICE_NAME, formatTime: false}, {key: IP, formatTime: false}, {key: VIP, formatTime: false}, {key: MODEL, formatTime: false}, {key: FW_VERSION, formatTime: false}, {key: TIMESTAMP, formatTime: true}]
       # The payload template for relayed
       payloadTemplate: <?xml version="1.0" encoding="UTF-8"?><registration><timestamp>{{TIMESTAMP}}</timestamp><mac>{{MAC}}</mac><device_name>{{DEVICE_NAME}}</device_name><ip>{{IP}}</ip><vip>{{VIP}}</vip><model>{{MODEL}}</model><fw_version>{{FW_VERSION}}</fw_version><event_capability><event><by>motion</by></event><event><by>audio</by></event><event><by>httpc</by></event></event_capability></registration>
-      
+
   # Search data related to the kronos camera that occurs state and kpi during the specified time
   kronosCameraReport:
     enable: false
@@ -372,22 +375,22 @@ scheduleNotification:
     # Wait for Logstash to fill the data, and then shift time point for searching
     shift: forward
     shiftInterval: 300
-    queryStr: 'serial:1809CFN*'
+    queryStr: '*'
     # Nodemailer options
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, leon_zang@sdc.sercomm.com, nick_wan@sdc.sercomm.com, terry_chen@sercomm.com, cloud_wu@sercomm.com, andy_su@sercomm.com
+        to: lee_shen@sercomm.com, leon_zang@sdc.sercomm.com, nick_wan@sdc.sercomm.com, terry_chen@sercomm.com, cloud_wu@sercomm.com, andy_su@sercomm.com, anthony_chen@sercomm.com, eve_lee@sercomm.com, eagle_luo@sdc.sercomm.com
         subject: Daily report for kronos camera analysis
         errorRecipient: ytc0316@msn.com
         errorMessage: kronos camera report fail
     # Ftp server info for result to send
     putFtp:
       options:
-        host: ftp.smartgaiacloud.com
-        user: na502s
-        password: u245h1wT
-      path: files/tim-prod/
+        host: 10.243.170.74
+        user: postmaster
+        password: sercomm1234
+      path: files/unipol-prod/
     contents:
       - key: stateReport
         # Mail content for sending
