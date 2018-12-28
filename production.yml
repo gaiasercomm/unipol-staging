@@ -25,14 +25,14 @@ config:
   elastic:
     conf:
       log: warning
-      hosts: [http://172.31.4.0:9200]
+      hosts: [http://13.115.15.163:9200]
       requestTimeout: 300000
       keepAlive: true
       maxSockets: 256
       keepAliveMaxFreeSockets: 30
 
   ftp:
-    basePath: files/unipol-prod/
+    basePath: /
     conf:
       host: 10.243.170.74
       user: postmaster
@@ -40,21 +40,21 @@ config:
 
   kibana:
     conf:
-      host: http://172.31.4.0:5601
+      host: http://13.115.15.163:5601
 
   mysql:
     conf:
       connectionLimit: 10
-      host: 10.247.170.79
+      host: 10.243.170.79
       user: cms
       password: ability123
       database: n_cms_core
 
   redis:
     conf:
-      host: neutral_redis
+      host: 10.243.170.97
       port: 6379
-      password: 9EEyM5vBBTEWxdTY
+      password: 
       # 1: DEPLOY_MODEL_SINGLE
       # 2: DEPLOY_MODEL_CLUSTER
       deployModel: 1
@@ -70,7 +70,7 @@ config:
       rejectUnauthorized: false
 
   mqtt:
-    enable: True
+    enable: False
     conf:
       protocol: tcp
       host: shpdllb.northeurope.cloudapp.azure.com
@@ -85,7 +85,7 @@ config:
     dcsi: [{protocol: http, host: 127.0.0.1, port: 8088}]
     dns: [{protocol: udp, host: 8.8.8.8, port: 53}]
     bmsi: [{protocol: http, host: 10.243.170.81:8080}]
-    fwUpgrade: [{protocol: http, host: 10.243.170.81:8080}]
+    fwUpgrade: [{protocol: http, host: neutral_dl_fwupgrade, port: 8080}]
     fwFileServer: [{protocol: http, host: 10.243.170.72, port: 80}]
 
   logger:
@@ -164,7 +164,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod/
+      path: /
     contents:
       - key: gatewayOnline
         enable: true
@@ -182,7 +182,7 @@ scheduleNotification:
         job:
           name: gateway online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_all_gw_log]
       - key: gatewayBootup
         enable: true
@@ -200,7 +200,7 @@ scheduleNotification:
         job:
           name: gateway bootup notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_all_gw_log]
       - key: cameraOffline
         enable: true
@@ -220,7 +220,7 @@ scheduleNotification:
         job:
           name: camera offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_arp, ping_ip_camera, get_all_gw_log, execute_ping_cms, execute_traceroute_cms, execute_ping_mqtt, execute_traceroute_mqtt, execute_ifconfig, execute_ps, execute_route]
       - key: cameraOnline
         enable: true
@@ -240,7 +240,7 @@ scheduleNotification:
         job:
           name: camera online notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_ip_camera_log]
       - key: sensorOffline
         enable: true
@@ -258,7 +258,7 @@ scheduleNotification:
         job:
           name: sensor offline notification
           kitcodes: []
-          parameters: [{name: FILE_PATH, value: files/neutral-demo/scheduleLog/}]
+          parameters: [{name: FILE_PATH, value: files/unipol-prod/scheduleLog/}]
           templateIds: [get_wifi_channel, get_wifi_site_survey]
 
   # Search data related to the gateway that occurs events during the specified time
@@ -287,7 +287,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod/
+      path: /
     contents:
       - key: kitReport
         # Mail content for sending
@@ -330,7 +330,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod/
+      path: /
     contents:
       - key: savingGateways
         # Mail content for sending
@@ -346,7 +346,7 @@ scheduleNotification:
 
   # Relay cameras system_info to temporary DL for batch f/w upgrade
   relaySystemInfo:
-    enable: false
+    enable: True
     cronTime: 0,30 * * * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 10
@@ -390,7 +390,7 @@ scheduleNotification:
         host: 10.243.170.74
         user: postmaster
         password: sercomm1234
-      path: files/unipol-prod/
+      path: /
     contents:
       - key: stateReport
         # Mail content for sending
