@@ -81,11 +81,11 @@ config:
       password: ability123
 
   service:
-    cmsi: [{protocol: http, host: 10.243.170.81:8080}]
+    cmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
     dcsi: [{protocol: http, host: 127.0.0.1, port: 8088}]
-    dns: [{protocol: udp, host: 8.8.8.8, port: 53}]
-    bmsi: [{protocol: http, host: 10.243.170.81:8080}]
-    fwUpgrade: [{protocol: http, host: 10.243.170.81:8080}]
+    dns: [{protocol: udp, host: 10.243.170.68, port: 53}]
+    bmsi: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
+    fwUpgrade: [{protocol: http, host: shpcms.sunto.reply.it, port: 8080}]
     fwFileServer: [{protocol: http, host: 10.243.170.72, port: 80}]
 
   logger:
