@@ -152,3 +152,4 @@ stats_sinks:
 - name: envoy.statsd
   config:
     tcp_cluster_name: statsd
+    prefix : envoy
