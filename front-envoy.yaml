@@ -105,7 +105,7 @@ static_resources:
     lb_policy: ROUND_ROBIN
     hosts:
     - socket_address:
-        address: 
+        address: 10.243.170.114
         port_value: 10080
         
   - name: ratelimit_cluster
