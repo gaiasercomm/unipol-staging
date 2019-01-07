@@ -115,7 +115,7 @@ static_resources:
     http2_protocol_options: {}
     hosts:
     - socket_address:
-        address: neutral_ratelimit
+        address: 10.243.170.114
         port_value: 8081
         
   - name: statsd
@@ -131,7 +131,7 @@ static_resources:
             address:
               socket_address:
                 protocol: TCP
-                address: 192.168.102.12
+                address: 10.243.170.114
                 port_value: 9125
 
 admin:
