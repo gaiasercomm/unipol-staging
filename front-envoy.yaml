@@ -106,7 +106,7 @@ static_resources:
     hosts:
     - socket_address:
         address: 10.243.170.114
-        port_value: 10080
+        port_value: 10081
         
   - name: ratelimit_cluster
     connect_timeout: 0.25s
