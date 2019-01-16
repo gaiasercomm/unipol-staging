@@ -73,7 +73,7 @@ config:
     enable: True
     conf:
       protocol: tcp
-      host: shpdllb.northeurope.cloudapp.azure.com
+      host: 10.243.170.98
       port: 1883
       options:
         durable: true
