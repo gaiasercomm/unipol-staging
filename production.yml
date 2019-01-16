@@ -393,22 +393,35 @@ scheduleNotification:
       path: files/unipol-prod/
     contents:
       - key: stateReport
+        enable: true
         # Mail content for sending
         mail:
           fileName: kronos_camera_state.csv
           tableTitle: Camera state
-          tableHeader: [index, serial, mac, fw_version, last_3rd_offline_time, last_3rd_online_time, last_2nd_offline_time, last_2nd_online_time, last_offline_time, last_online_time, first_3rd_offline_time, first_3rd_online_time, first_2nd_offline_time, first_2nd_online_time, first_offline_time, first_online_time, offline_count, online_count, last_state]
+          tableHeader: [index, serial, mac, model, fw_version, last_3rd_offline_time, last_3rd_online_time, last_2nd_offline_time, last_2nd_online_time, last_offline_time, last_online_time, first_3rd_offline_time, first_3rd_online_time, first_2nd_offline_time, first_2nd_online_time, first_offline_time, first_online_time, offline_count, online_count, last_state]
         # File info for ftp
         ftp:
           fileName: kronos_camera_state
           fileExtension: csv
       - key: wirelessReport
+        enable: true
         # Mail content for sending
         mail:
           fileName: kronos_camera_wireless.csv
           tableTitle: Camera wireless
-          tableHeader: [index, serial, mac, fw_version, last_channel, avg_noise_level, max_noise_level, min_noise_level, avg_rssi, max_rssi, min_rssi, avg_signal_strength, max_signal_strength, min_signal_strength]
+          tableHeader: [index, serial, mac, model, fw_version, last_channel, avg_noise_level, max_noise_level, min_noise_level, avg_rssi, max_rssi, min_rssi, avg_signal_strength, max_signal_strength, min_signal_strength]
         # File info for ftp
         ftp:
           fileName: kronos_camera_wireless
+          fileExtension: csv
+      - key: mobileStatusReport
+        enable: true
+        # Mail content for sending
+        mail:
+          fileName: kronos_camera_mobile_status.csv
+          tableTitle: Camera mobile status
+          tableHeader: [index, serial, mac, model, fw_version, apn, band, cellId, dns, gw, imei, imeisv, ip_addr, mask, network_operator, network_type, sim_iccid, sim_imsi, sim_inserted, sim_pin, support_band, avg_rssi, max_rssi, min_rssi, avg_signal_strength, max_signal_strength, min_signal_strength]
+        # File info for ftp
+        ftp:
+          fileName: kronos_camera_mobile_status
           fileExtension: csv
