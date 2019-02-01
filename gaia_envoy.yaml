@@ -5,4 +5,4 @@ descriptors:
     value: connections
     rate_limit:
       unit: second
-      requests_per_unit: 1
+      requests_per_unit: 3
