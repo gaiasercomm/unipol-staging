@@ -154,7 +154,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: terry_chen@sercomm.com
         subject: gateway online offline notification
         errorRecipient: ytc0316@msn.com
         errorMessage: notification fail
