@@ -14,7 +14,7 @@
     <entry key="SERV.APACHE.MAX_THREAD">150</entry>
     <entry key="SERV.APACHE.ACCEPT_COUNT">200</entry>  
 
-    <entry key="PROVISION.GW.EXIT_DELAY">60</entry>
+    <entry key="PROVISION.GW.EXIT_DELAY">120</entry>
     <entry key="PROVISION.GW.ENTRY_DELAY">30</entry>
     <entry key="PROVISION.GW.QUICK_EXIT_DELAY">30</entry>
 
@@ -36,7 +36,7 @@
     <!-- Tomcat MySQL connection pool parameters -->
     <entry key="DBPOOL.JMX.ENABLE">0</entry><!-- default 0 -->
     <entry key="DBPOOL.INIT_CONN.NUM">5</entry><!-- default 5-->
-    <entry key="DBPOOL.MAX_CONN.NUM">25</entry><!-- default 50 -->
+    <entry key="DBPOOL.MAX_CONN.NUM">100</entry><!-- default 50 -->
     <entry key="DBPOOL.MAX_IDLE_CONN.NUM">32</entry><!-- default 32 -->
     <entry key="DBPOOL.MIN_IDLE_CONN.NUM">16</entry><!-- default 16 -->
     <entry key="DBPOOL.TESTONBORROW.ENABLE">true</entry><!-- default 0 -->
