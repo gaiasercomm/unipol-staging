@@ -1,4 +1,4 @@
-Unipol staging Project
+unipol-staging  Project
 ===
 
 Description
