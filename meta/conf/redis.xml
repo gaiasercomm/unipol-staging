@@ -52,7 +52,7 @@
         return keyValues;
         ]]>
     </entry>
-    
+
     <entry key="LUA_SET_IPDEVICE"><![CDATA[
         return redis.call('set', KEYS[1], ARGV[1], "XX");]]>
     </entry>

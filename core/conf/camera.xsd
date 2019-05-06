@@ -11,7 +11,8 @@
         <extension base="string">
           <attribute name="key" type="string" use="required"/>
         </extension>
-      </simpleContent>    </complexType>
+      </simpleContent>
+    </complexType>
 <!--  
 <xs:element name="Customer">
     <xs:complexType>
@@ -24,7 +25,8 @@
   </xs:element>
 -->
     <complexType name="mode">
-    	<sequence>    		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
+    	<sequence>
+    		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
     	</sequence>
     	<attribute name="text" type="string" use="required"></attribute>
     	<attribute name="enable" use="required">
@@ -38,7 +40,8 @@
     </complexType>
 
     <complexType name="AudioIn">
-    	<sequence>
+    	<sequence>
+
     		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
     	</sequence>
     	<attribute name="text" type="string" use="required"></attribute>
@@ -53,7 +56,8 @@
     </complexType>
     
     <complexType name="AudioOut">
-    	<sequence>
+    	<sequence>
+
     		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
     	</sequence>
     	<attribute name="text" type="string" use="required"></attribute>
