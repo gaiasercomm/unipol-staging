@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <entry key="redis.host">10.243.170.97</entry>
+    <entry key="redis.port">6389</entry>
+    <entry key="redis.password">I7oQu60OB63d3yC</entry>
+
+    <!-- redis.deploymentModel:
+        1: REDIS_DEPLOY_TYPE_SINGLE
+        2: REDIS_DEPLOY_TYPE_CLUSTER
+        3: REDIS_DEPLOY_TYPE_SENTINEL
+        4: REDIS_DEPLOY_TYPE_REPLICATED
+        5: REDIS_DEPLOY_TYPE_MASTER_SLAVE
+    -->
+    <entry key="redis.deploymentModel">1</entry>
+</properties>

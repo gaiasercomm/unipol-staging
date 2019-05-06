@@ -4,14 +4,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     
-    <servlet>
-        <servlet-name>helloworld</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.HelloWorld</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>helloworld</servlet-name>
-        <url-pattern>/cgi/helloworld</url-pattern>
-    </servlet-mapping>
     
     <!-- BMSi servlet -->
     <servlet>
@@ -92,9 +84,9 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     </servlet-mapping>
      <servlet-mapping>
         <servlet-name>DelRoom</servlet-name>
-        <url-pattern>/cgi/del_room</url-pattern>
-        <url-pattern>/cgi/del_room.cgi</url-pattern>
-        <url-pattern>/cgi/del_room.php</url-pattern>
+        <url-pattern>/cgi/delete_room</url-pattern>
+        <url-pattern>/cgi/delete_room.cgi</url-pattern>
+        <url-pattern>/cgi/delete_room.php</url-pattern>
     </servlet-mapping>
     <!-- site room servlets finish -->
     
@@ -452,19 +444,11 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <servlet-name>EasyMonitorVerifyCode</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorVerifyCode</servlet-class>
     </servlet>     
-      <servlet>
-        <servlet-name>EasyMonitorGetIPDeviceList</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPDeviceList</servlet-class>
-    </servlet>  
     <servlet>
         <servlet-name>EasyMonitorGetAuthenticationInfo</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetAuthenticationInfo</servlet-class>
     </servlet>    
     <servlet>
-        <servlet-name>EasyMonitorDoDevicePairing</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDoDevicePairing</servlet-class>
-    </servlet>        
-      <servlet>
         <servlet-name>EasyMonitorModifyAccount</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorModifyAccount</servlet-class>
     </servlet>   
@@ -480,11 +464,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <servlet-name>EasyMonitorGetUserInfo</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetUserInfo</servlet-class>
     </servlet> 
-       <servlet>
-        <servlet-name>EasyMonitorGetIPCamAttributes</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPCamAttributes</servlet-class>
-    </servlet>    
-       <servlet>
+     <servlet>
         <servlet-name>EasyMonitorPreCheckPairing</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairing</servlet-class>
     </servlet>   
@@ -492,18 +472,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <servlet-name>EasyMonitorPrePairingVerification</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPrePairingVerification</servlet-class>
     </servlet> 
-      <servlet>
-        <servlet-name>EasyMonitorSetIPCamAttributes</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamAttributes</servlet-class>
-    </servlet>  
-    <servlet>
-        <servlet-name>EasyMonitorTriggerEventClipNotification</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorTriggerEventClipNotification</servlet-class>
-    </servlet>    
-      <servlet>
-        <servlet-name>EasyMonitorDeleteIPCam</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDeleteIPCam</servlet-class>
-    </servlet>       
      <servlet>
         <servlet-name>EasyMonitorResetPassword</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorResetPassword</servlet-class>
@@ -524,14 +492,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <servlet-name>EasyMonitorSetPNSDevice</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetPNSDevice</servlet-class>
     </servlet>    
-    <servlet>
-        <servlet-name>EasyMonitorDeleteIPCamWEB</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDeleteIPCamWEB</servlet-class>
-    </servlet>    
-    <servlet>
-        <servlet-name>EasyMonitorGetServerInfo</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetServerInfo</servlet-class>
-    </servlet>      
     <servlet>
         <servlet-name>EasyMonitorPreCheckPairingForPNS</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairingForPNS</servlet-class>
@@ -569,14 +529,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/easy_monitor_verify_code.cgi</url-pattern>
         <url-pattern>/cgi/easy_monitor_verify_code.php</url-pattern>
     </servlet-mapping>
-               
-    <servlet-mapping>
-        <servlet-name>EasyMonitorGetIPDeviceList</servlet-name>
-        <url-pattern>/cgi/easy_monitor_get_ip_device_list</url-pattern>
-        <url-pattern>/cgi/easy_monitor_get_ip_device_list.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_get_ip_device_list.php</url-pattern>
-    </servlet-mapping>
-              
     <servlet-mapping>
         <servlet-name>EasyMonitorGetAuthenticationInfo</servlet-name>
         <url-pattern>/cgi/easy_monitor_get_authentication_info</url-pattern>
@@ -584,13 +536,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/easy_monitor_get_authentication_info.php</url-pattern>
     </servlet-mapping>
              
-    <servlet-mapping>
-        <servlet-name>EasyMonitorDoDevicePairing</servlet-name>
-        <url-pattern>/cgi/easy_monitor_do_device_pairing</url-pattern>
-        <url-pattern>/cgi/easy_monitor_do_device_pairing.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_do_device_pairing.php</url-pattern>
-    </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>EasyMonitorModifyAccount</servlet-name>
         <url-pattern>/cgi/easy_monitor_modify_account</url-pattern>
@@ -620,13 +565,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     </servlet-mapping>
            
     <servlet-mapping>
-        <servlet-name>EasyMonitorGetIPCamAttributes</servlet-name>
-        <url-pattern>/cgi/easy_monitor_get_ipcam_attributes</url-pattern>
-        <url-pattern>/cgi/easy_monitor_get_ipcam_attributes.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_get_ipcam_attributes.php</url-pattern>
-    </servlet-mapping>
-          
-    <servlet-mapping>
         <servlet-name>EasyMonitorPreCheckPairing</servlet-name>
         <url-pattern>/cgi/easy_monitor_pre_check_pairing</url-pattern>
         <url-pattern>/cgi/easy_monitor_pre_check_pairing.cgi</url-pattern>
@@ -639,28 +577,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/easy_monitor_pre_pairing_verification.cgi</url-pattern>
         <url-pattern>/cgi/easy_monitor_pre_pairing_verification.php</url-pattern>
     </servlet-mapping>
-             
-    <servlet-mapping>
-        <servlet-name>EasyMonitorSetIPCamAttributes</servlet-name>
-        <url-pattern>/cgi/easy_monitor_set_ipcam_attributes</url-pattern>
-        <url-pattern>/cgi/easy_monitor_set_ipcam_attributes.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_set_ipcam_attributes.php</url-pattern>
-    </servlet-mapping>
-           
-    <servlet-mapping>
-        <servlet-name>EasyMonitorTriggerEventClipNotification</servlet-name>
-        <url-pattern>/cgi/easy_monitor_trigger_event_clip_notification</url-pattern>
-        <url-pattern>/cgi/easy_monitor_trigger_event_clip_notification.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_trigger_event_clip_notification.php</url-pattern>
-    </servlet-mapping>
               
-    <servlet-mapping>
-        <servlet-name>EasyMonitorDeleteIPCam</servlet-name>
-        <url-pattern>/cgi/easy_monitor_delete_ipcam</url-pattern>
-        <url-pattern>/cgi/easy_monitor_delete_ipcam.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_delete_ipcam.php</url-pattern>
-    </servlet-mapping>
-            
     <servlet-mapping>
         <servlet-name>EasyMonitorResetPassword</servlet-name>
         <url-pattern>/cgi/easy_monitor_reset_password</url-pattern>
@@ -695,21 +612,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/easy_monitor_set_pns_device.cgi</url-pattern>
         <url-pattern>/cgi/easy_monitor_set_pns_device.php</url-pattern>
     </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>EasyMonitorDeleteIPCamWEB</servlet-name>
-        <url-pattern>/cgi/easy_monitor_delete_ipcam_web</url-pattern>
-        <url-pattern>/cgi/easy_monitor_delete_ipcam_web.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_delete_ipcam_web.php</url-pattern>
-    </servlet-mapping>
-          
-    <servlet-mapping>
-        <servlet-name>EasyMonitorGetServerInfo</servlet-name>
-        <url-pattern>/cgi/easy_monitor_get_server_info</url-pattern>
-        <url-pattern>/cgi/easy_monitor_get_server_info.cgi</url-pattern>
-        <url-pattern>/cgi/easy_monitor_get_server_info.php</url-pattern>
-    </servlet-mapping>
-    
               
     <servlet-mapping>
         <servlet-name>EasyMonitorPreCheckPairingForPNS</servlet-name>
@@ -976,18 +878,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/resend_code.php</url-pattern>
     </servlet-mapping>
     
-       <servlet>
-        <servlet-name>ServiceLayerGetIPDeviceList</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPDeviceList</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerGetIPDeviceList</servlet-name>
-        <url-pattern>/cgi/obtain_ip_device_list</url-pattern>
-        <url-pattern>/cgi/obtain_ip_device_list.cgi</url-pattern>
-        <url-pattern>/cgi/obtain_ip_device_list.php</url-pattern>
-    </servlet-mapping>
-    
-       <servlet>
+     <servlet>
         <servlet-name>ServiceLayerGetAuthenticationInfo</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetAuthenticationInfo</servlet-class>
     </servlet>              
@@ -998,29 +889,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/get_authentication_info.php</url-pattern>
     </servlet-mapping>
     
-         <servlet>
-        <servlet-name>ServiceLayerDoDevicePairing</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorDoDevicePairing</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerDoDevicePairing</servlet-name>
-        <url-pattern>/cgi/do_device_pairing</url-pattern>
-        <url-pattern>/cgi/do_device_pairing.cgi</url-pattern>
-        <url-pattern>/cgi/do_device_pairing.php</url-pattern>
-    </servlet-mapping>
-    
-          <servlet>
-        <servlet-name>ServiceLayerCheckDevicePairing</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorCheckDevicePairing</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerCheckDevicePairing</servlet-name>
-        <url-pattern>/cgi/check_device_pairing</url-pattern>
-        <url-pattern>/cgi/check_device_pairing.cgi</url-pattern>
-        <url-pattern>/cgi/check_device_pairing.php</url-pattern>
-    </servlet-mapping>
-    
-           <servlet>
+    <servlet>
         <servlet-name>ServiceLayerGetUserInfo</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetUserInfo</servlet-class>
     </servlet>              
@@ -1031,18 +900,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/obtain_user_info.php</url-pattern>
     </servlet-mapping>
     
-             <servlet>
-        <servlet-name>ServiceLayerGetIPCamAttributes</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorGetIPCamAttributes</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerGetIPCamAttributes</servlet-name>
-        <url-pattern>/cgi/get_ipcam_attributes</url-pattern>
-        <url-pattern>/cgi/get_ipcam_attributes.cgi</url-pattern>
-        <url-pattern>/cgi/get_ipcam_attributes.php</url-pattern>
-    </servlet-mapping>
-    
-             <servlet>
+    <servlet>
         <servlet-name>ServiceLayerPreCheckPairing</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorPreCheckPairing</servlet-class>
     </servlet>              
@@ -1062,17 +920,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/pre_pairing_verification</url-pattern>
         <url-pattern>/cgi/pre_pairing_verification.cgi</url-pattern>
         <url-pattern>/cgi/pre_pairing_verification.php</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>ServiceLayerSetIPCamAttributes</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamAttributes</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerSetIPCamAttributes</servlet-name>
-        <url-pattern>/cgi/set_ipcam_attributes</url-pattern>
-        <url-pattern>/cgi/set_ipcam_attributes.cgi</url-pattern>
-        <url-pattern>/cgi/set_ipcam_attributes.php</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -1128,17 +975,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/subpairing_confirm</url-pattern>
         <url-pattern>/cgi/subpairing_confirm.cgi</url-pattern>
         <url-pattern>/cgi/subpairing_confirm.php</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>ServiceLayerSetIPCamTimezone</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.EasyMonitorSetIPCamTimezone</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerSetIPCamTimezone</servlet-name>
-        <url-pattern>/cgi/set_ipcam_timezone</url-pattern>
-        <url-pattern>/cgi/set_ipcam_timezone.cgi</url-pattern>
-        <url-pattern>/cgi/set_ipcam_timezone.php</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -1206,7 +1042,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/user_event_notify.cgi</url-pattern>
         <url-pattern>/cgi/user_event_notify.php</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>ServiceLayerSetUserPnsEventSeverity</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.SetUserEventNotifySeverity</servlet-class>
@@ -1316,17 +1152,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/get_diag_result.cgi</url-pattern>
         <url-pattern>/cgi/get_diag_result.php</url-pattern>
     </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>ServiceLayerBroadcastPns</servlet-name>
-        <servlet-class>com.sercomm.cms.servlet.cmsi.BroadcastPns</servlet-class>
-    </servlet>              
-    <servlet-mapping>
-        <servlet-name>ServiceLayerBroadcastPns</servlet-name>
-        <url-pattern>/cgi/broadcast_pns</url-pattern>
-        <url-pattern>/cgi/broadcast_pns.cgi</url-pattern>
-    </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>ServiceLayerUnbindKitcode</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.UnbindKitcode</servlet-class>
@@ -1350,6 +1176,8 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     </servlet-mapping>
     
     
+    
+    <!-- DL services  -->
     <servlet>
         <servlet-name>DeleteIpDevice</servlet-name>
         <servlet-class>com.sercomm.cms.servlet.cmsi.DeleteIPDevice</servlet-class>
@@ -1372,7 +1200,128 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/delete_rf_device.php</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>AddAutomation</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.AddAutomation</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>AddAutomation</servlet-name>
+        <url-pattern>/cgi/v2/add_automation</url-pattern>
+        <url-pattern>/cgi/v2/add_automation.cgi</url-pattern>
+        <url-pattern>/cgi/v2/add_automation.php</url-pattern>
+    </servlet-mapping>
     
+    <servlet>
+        <servlet-name>GetAutomation</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.GetAutomation</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>GetAutomation</servlet-name>
+        <url-pattern>/cgi/v2/get_automation</url-pattern>
+        <url-pattern>/cgi/v2/get_automation.cgi</url-pattern>
+        <url-pattern>/cgi/v2/get_automation.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAutomationList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.GetAutomationList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>GetAutomationList</servlet-name>
+        <url-pattern>/cgi/v2/get_automation_list</url-pattern>
+        <url-pattern>/cgi/v2/get_automation_list.cgi</url-pattern>
+        <url-pattern>/cgi/v2/get_automation_list.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetWholeAutomationList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.GetWholeAutomationList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>GetWholeAutomationList</servlet-name>
+        <url-pattern>/cgi/v2/get_whole_automation_list</url-pattern>
+        <url-pattern>/cgi/v2/get_whole_automation_list.cgi</url-pattern>
+        <url-pattern>/cgi/v2/get_whole_automation_list.php</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SetAutomation</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.SetAutomation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetAutomation</servlet-name>
+        <url-pattern>/cgi/v2/set_automation</url-pattern>
+        <url-pattern>/cgi/v2/set_automation.cgi</url-pattern>
+        <url-pattern>/cgi/v2/set_automation.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteAutomation</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.DeleteAutomation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAutomation</servlet-name>
+        <url-pattern>/cgi/v2/delete_automation</url-pattern>
+        <url-pattern>/cgi/v2/delete_automation.cgi</url-pattern>
+        <url-pattern>/cgi/v2/delete_automation.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddScene</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.AddScene</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddScene</servlet-name>
+        <url-pattern>/cgi/v2/add_scene</url-pattern>
+        <url-pattern>/cgi/v2/add_scene.cgi</url-pattern>
+        <url-pattern>/cgi/v2/add_scene.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetScene</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.GetScene</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>GetScene</servlet-name>
+        <url-pattern>/cgi/v2/get_scene</url-pattern>
+        <url-pattern>/cgi/v2/get_scene.cgi</url-pattern>
+        <url-pattern>/cgi/v2/get_scene.php</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>GetSceneList</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.GetSceneList</servlet-class>
+    </servlet>              
+    <servlet-mapping>
+        <servlet-name>GetSceneList</servlet-name>
+        <url-pattern>/cgi/v2/get_scene_list</url-pattern>
+        <url-pattern>/cgi/v2/get_scene_list.cgi</url-pattern>
+        <url-pattern>/cgi/v2/get_scene_list.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetScene</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.SetScene</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetScene</servlet-name>
+        <url-pattern>/cgi/v2/set_scene</url-pattern>
+        <url-pattern>/cgi/v2/set_scene.cgi</url-pattern>
+        <url-pattern>/cgi/v2/set_scene.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteScene</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.dlwrap.DeleteScene</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteScene</servlet-name>
+        <url-pattern>/cgi/v2/delete_scene</url-pattern>
+        <url-pattern>/cgi/v2/delete_scene.cgi</url-pattern>
+        <url-pattern>/cgi/v2/delete_scene.php</url-pattern>
+    </servlet-mapping>
+
     <!-- for spain demo -->
     <servlet>
        <servlet-name>SpainPnsNotify</servlet-name>
@@ -1494,6 +1443,17 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/cgi/alexa/action</url-pattern>
      </servlet-mapping>
     
+    <!-- delete user for testing -->
+     <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>com.sercomm.cms.servlet.cmsi.DeleteUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/cgi/delete_user</url-pattern>
+    </servlet-mapping>
+    
+    
     <!-- filters -->
     <filter>
         <filter-name>OperatorAuthFilter</filter-name>
@@ -1504,16 +1464,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/operator/*</url-pattern>
     </filter-mapping>
         
-        <!-- bms filter  -->
-    <filter>
-        <filter-name>XFireAuthFilter</filter-name>
-        <filter-class>com.sercomm.cms.filter.XFireAuthFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>XFireAuthFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    
      <!-- add user name and token to Http Request header -->
     <filter>
         <filter-name>AddSessionFilter</filter-name>
@@ -1544,12 +1494,5 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     -->
-    
-    
-    
-    
-    
-    
-    
     
 </web-app>

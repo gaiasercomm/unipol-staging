@@ -1,4 +1,4 @@
-Unipol staging Site
+unipol-staging SL configuration
 ===
 
 Description

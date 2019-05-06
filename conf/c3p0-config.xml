@@ -1,0 +1,17 @@
+<c3p0-config>
+    <default-config>
+        <property name="user">cms</property>
+        <property name="password">ability123</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://10.243.170.79:3306/n_cms_core?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false</property>
+        <property name="initialPoolSize">5</property>
+        <property name="maxIdleTime">7200</property>
+        <property name="maxPoolSize">400</property>
+        <property name="minPoolSize">16</property>
+        <property name="acquireRetryAttempts">3</property>
+        <property name="acquireRetryDelay">10</property>
+        <property name="testConnectionOnCheckout">true</property>
+        <property name="testConnectionOnCheckin">false</property>
+        <property name="idleConnectionTestPeriod">0</property>
+    </default-config>
+</c3p0-config>

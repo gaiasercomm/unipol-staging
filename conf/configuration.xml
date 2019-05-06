@@ -4,20 +4,15 @@
 <properties>
     <!-- Profile information -->
     <!-- "0: Neutral Sercomm" -->
-    <!-- "1: Telecom Italia" -->
-    <!-- "2: VodaPhone_Italy(Reply)" -->
-    <!-- "3: CHT" -->
-    <!-- "4: BroadBand" -->
-    
     <entry key="PROFILE.ID">0</entry>
-    
+    <entry key="TNT.PNS">N</entry>
     
     <!-- CMS service configuration -->
     <entry key="SERV.APACHE.HTTPPORT">8080</entry>
     <entry key="SERV.APACHE.MAX_THREAD">500</entry>
-    <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>    
+    <entry key="SERV.APACHE.ACCEPT_COUNT">250</entry>  
     
-    <!-- MySQL configuration - CMS_CORE -->
+     <!-- MySQL configuration - CMS_CORE -->
     <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
     <entry key="MYSQL.CMS_CORE.ADDR">10.243.170.79</entry>
     <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
@@ -33,18 +28,11 @@
     <entry key="DL.ADDR">http://neutral_dl:8080</entry>
     <entry key="DL.PORT">8080</entry>
     
-    <!-- Redis connection information -->
-    <entry key="REDIS.HOST">10.243.170.97</entry> 
-    <entry key="REDIS.PASSWORD"></entry>
-    <entry key="REDIS.PORT">6379</entry>
-    <entry key="REDIS.DATABASE">9</entry>
-    <entry key="REDIS.AUTH">N</entry>
-    
     <!-- set the elasticSearch locaition -->
     <entry key="ES.ADDR">neutral_elasticsearch</entry>
     <entry key="ES.PORT">9300</entry>
     <entry key="ES.CLUSTER.NAME">rd-cluster-1-</entry>
     <entry key="ES.ENABLE">N</entry>
     <entry key="ES.CONNECTION_TIMEOUT">5s</entry>
-
+    
 </properties>

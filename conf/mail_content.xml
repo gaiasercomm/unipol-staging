@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mail_template>
+
+    <mail type="1">
+        <subject>Neutral Service at mail.smartgaiacloud.com: Registration Verification Code</subject>
+        <content>Dear ${user_name}, Neutral Service at mail.smartgaiacloud.com: the registration Verification Code is: ${verificationCode}</content>
+    </mail>
+
+    <mail type="2">
+        <subject>Neutral Service at mail.smartgaiacloud.com: Pairing Verification Code</subject>
+        <content>Dear ${user_name}, Neutral Service at mail.smartgaiacloud.com: the Pairing Verification Code is: ${verificationCode}</content>
+    </mail>
+
+    <mail type="3">
+        <subject>Neutral Service at mail.smartgaiacloud.com: Resend Temporary Password</subject>
+        <content>Dear ${user_name}, Neutral Service at mail.smartgaiacloud.com: the Resend Temporary Password is: ${verificationCode}</content>
+    </mail>
+
+    <mail type="4">
+        <subject>Neutral Service at mail.smartgaiacloud.com: Account Modification Verification Code</subject>
+        <content>Dear ${user_name}, Neutral Service at mail.smartgaiacloud.com: the Account Modification Verification Code is: ${verificationCode}</content>
+    </mail>
+
+    <mail type="5">
+        <subject>Neutral Service at mail.smartgaiacloud.com: the CloudMonitor Subscription Verification Code</subject>
+        <content>Dear ${user_name}, Neutral Service at mail.smartgaiacloud.com: the CloudMonitor Subscription Verification Code is: ${verificationCode}</content>
+    </mail>
+
+    <mail type="0">
+        <subject>Neutral Service at mail.smartgaiacloud.com: Verification Code</subject>
+        <content>Dear ${user_name}, Neutral Service at mail.smartgaiacloud.com: the Verification Code is: ${verificationCode}</content>
+    </mail>
+
+</mail_template>
