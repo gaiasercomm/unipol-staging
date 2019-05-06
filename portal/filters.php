@@ -11,7 +11,7 @@
   |
  */
 
-
+ 
 if (isset($_COOKIE['lang']))
 {
     App::setLocale($_COOKIE['lang']);
@@ -19,54 +19,51 @@ if (isset($_COOKIE['lang']))
 
 App::before(function($request)
 {
-    //
+
     #*********
     define("_FOLDER", "portal");
 
     define("_FOLDER_PATH", (_FOLDER != "") ? DIRECTORY_SEPARATOR . _FOLDER : "");
-    // define("_ROOT", "/var/www/html" . _FOLDER_PATH);
 
     #*********
     define("_CGI", "http://neutral_sl:8080/cgi/");
+    
+    #*********
+    define("_HUMANFACTORS", "http://neutral_sl:8080/humanfactors/");
+    
+    #*********
+    define("_DMSI", "http://neutral_dmsi:3000/dmsi/");
 
     #*********
-    define("_DMSI", "http://neutral_dmsi:3000/");
-
-    // define("_CLASS", _ROOT . "/inc/class/");
-
+    define("_PORTAL_VER", "neutral_portal_v3.1.21a");
+    
     #*********
-    define("_PORTAL_VER", "3.1.20a");
-
-    #*********
-    define("_COOKIEDOMAIN", "http://neutral_web/");
-
-    #*********
-    define("_DOMAIN", "neutral_web");
+    define("_DOMAIN", "neutral_portal");
 
     define("_FB_APPID", "1003853789650560");
-
+    
     define("_SERVICE_ID", "2");
-
+    
     define("_RATEPLAN_ID", "1");
-
+    
     define("_WEBSOCKET_PROTOCOL", "ws");
 
-    define("_WEBSOCKET_ADDR", $_SERVER['SERVER_NAME']);
+    define("_WEBSOCKET_ADDR", "neutral_ws");
 
-    define("_WEBSOCKET_PORT", "8084");
-
+    define("_WEBSOCKET_PORT", 8084);
+    
     define("_RELAY_PROTOCOL", "http");
 
     define("_RELAY_ADDR", "10.243.170.91");
-
-    define("_RELAY_PORT", "8080");
+    
+    define("_RELAY_PORT", 8080);
 
     define("_STORAGE_PROTOCOL", "http");
-
-    define("_STORAGE_ADDR", "10.243.170.91");
     
-    define("_STORAGE_PORT", 8080);
+    define("_STORAGE_ADDR", "10.243.170.91");
 
+    define("_STORAGE_PORT", 8080);
+    
     global $_CDataCenterMSG;
     $_CDataCenterMSG = [
         'STATUS_OFFLINE' => -1,
@@ -77,15 +74,14 @@ App::before(function($request)
         'STATUS_ENTER_DELAY' => 5,
         'STATUS_ALARM' => 10
     ];
-
+    
     global $_PERMISSIONS_CONTROL;
     $_PERMISSIONS_CONTROL = [
-        'DIAGNOSTIC' => false,      // Network Diagnostics
-        'ONEBTNDIAG' => false,      // Device Diagnostics
-        'ACTIVITY' => false,        // Activity
-        'NOTIFICATION' => false     // Notification
+        'DIAGNOSTIC' => false,
+        'ONEBTNDIAG' => false,
+        'ACTIVITY' => false,
+        'NOTIFICATION' => false
     ];
-
 });
 
 
