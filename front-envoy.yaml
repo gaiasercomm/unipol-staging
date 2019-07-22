@@ -50,23 +50,14 @@ static_resources:
   - address:
       socket_address:
         address: 0.0.0.0
-        port_value: 10080
+        port_value: 443
     filter_chains:
     - filters:
       - name: envoy.tcp_proxy
         config:
-          stat_prefix: ingress_nginxT
-          cluster: nginxT
+          stat_prefix: ingress_vpn
+          cluster: vpn
           idle_timeout: 1800s
-      - name: envoy.ratelimit
-        config:
-          stat_prefix: ingress_ratelimit
-          domain: gaia_envoy
-          descriptors:
-            - entries:
-              - key: mqtt
-                value: connections
-          timeout: 0.5s
 
   clusters:
   - name: mqtt_brokers_tcp
@@ -95,19 +86,6 @@ static_resources:
         address: neutral_rabbitmq
         port_value: 8883
         
-  - name: nginxT
-    connect_timeout: 10s
-    circuit_breakers:
-      thresholds:
-      - priority: DEFAULT
-        max_connections: 50000
-    type: STRICT_DNS
-    lb_policy: ROUND_ROBIN
-    hosts:
-    - socket_address:
-        address: 10.243.170.114
-        port_value: 10081
-        
   - name: ratelimit_cluster
     connect_timeout: 0.25s
     type: STRICT_DNS
@@ -131,7 +109,7 @@ static_resources:
             address:
               socket_address:
                 protocol: TCP
-                address: 10.243.170.114
+                address: neutral_statsd_exporter
                 port_value: 9125
 
 admin:
