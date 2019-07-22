@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 
 <properties>
-    <entry key="mqtt.network.addr">neutral_rabbitmq</entry>
+    <entry key="mqtt.network.addr">10.243.170.98</entry>
     <entry key="mqtt.auth.account">gaia_dl</entry>
     <entry key="mqtt.auth.password">ability123</entry>
     <!-- <entry key="mqtt.auth.account">gaia_dl</entry> -->

@@ -36,12 +36,12 @@
     <!-- Tomcat MySQL connection pool parameters -->
     <entry key="DBPOOL.JMX.ENABLE">0</entry><!-- default 0 -->
     <entry key="DBPOOL.INIT_CONN.NUM">5</entry><!-- default 5-->
-    <entry key="DBPOOL.MAX_CONN.NUM">100</entry><!-- default 50 -->
+    <entry key="DBPOOL.MAX_CONN.NUM">50</entry><!-- default 50 -->
     <entry key="DBPOOL.MAX_IDLE_CONN.NUM">32</entry><!-- default 32 -->
     <entry key="DBPOOL.MIN_IDLE_CONN.NUM">16</entry><!-- default 16 -->
-    <entry key="DBPOOL.TESTONBORROW.ENABLE">true</entry><!-- default 0 -->
-    <entry key="DBPOOL.TESTONRETURN.ENABLE">false</entry><!-- default 0 -->
-    <entry key="DBPOOL.TESTWHILEIDLE.ENABLE">true</entry><!-- default 1-->
+    <entry key="DBPOOL.TESTONBORROW.ENABLE">ture</entry><!-- default true -->
+    <entry key="DBPOOL.TESTONRETURN.ENABLE">false</entry><!-- default false -->
+    <entry key="DBPOOL.TESTWHILEIDLE.ENABLE">true</entry><!-- default true-->
     <entry key="DBPOOL.MAX_CONN.WAIT">60000</entry><!--default 60000ms -->
     <entry key="DBPOOL.VALIDATION.INTERVAL">60000</entry><!--default 60000ms -->
     <entry key="DBPOOL.TIME_BETWEEN_EVICTION_RUNS.WAIT">60000</entry><!--default 60000ms -->
@@ -88,4 +88,17 @@
     
     <entry key="IOT.HUB">0</entry>
     <entry key="GATEWAY.ONBOARD.KEY">b1ff4e592522b4ac</entry><!-- GATEWAY ONBOARD KEY -->
+
+    <!-- for kronos -->
+    <entry key="KRONOS.ENDPOINT">http://neutral_kronos:9090/plugins/kronos_restapi</entry>
+
+    
+         <entry key="IPDEVICE.PEER.IPADDRESS.RULE.2">
+    	3,real_ip:external_ip;2,real_ip:external_ip
+    </entry>
+         <entry key="IPDEVICE.PEER.IPADDRESS.RULE.5">
+    	3,real_ip:external_ip;2,real_ip:external_ip
+    </entry>
+        
+    <entry key="IPDEVICELIST.VPN.FOLLOW.PEER.IPADDRESS.RULES">0</entry><!-- 1:enable;0:disable-->
 </properties>
