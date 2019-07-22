@@ -35,7 +35,7 @@ App::before(function($request)
     define("_DMSI", "http://neutral_dmsi:3000/dmsi/");
 
     #*********
-    define("_PORTAL_VER", "neutral_portal_v3.1.21a");
+    define("_PORTAL_VER", "v3.1.22b");
     
     #*********
     define("_DOMAIN", "neutral_portal");
