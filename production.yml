@@ -23,6 +23,7 @@ config:
       debugLevel: 0
 
   elastic:
+    version: 561
     conf:
       log: warning
       hosts: [http://172.31.4.0:9200]
@@ -38,10 +39,6 @@ config:
       user: postmaster
       password: sercomm1234
 
-  kibana:
-    conf:
-      host: http://172.31.4.0:5601
-
   mysql:
     conf:
       connectionLimit: 10
@@ -53,11 +50,18 @@ config:
   redis:
     conf:
       host: 10.243.170.97
-      port: 6379
-      password: 
+      port: 6389
+      password: I7oQu60OB63d3yC
       # 1: DEPLOY_MODEL_SINGLE
       # 2: DEPLOY_MODEL_CLUSTER
       deployModel: 1
+    hKey:
+      ipDeviceState: HKEY_IP_DEVICE_STATE
+    key:
+      namespace: ''
+      portionIpDevice: 'ipdevice-:'
+      portionRfDeviceId: 'rfdevice:rfid:'
+      portionRfDeviceZid: 'rfdevice:zid:'
 
   mail:
     host: mail.smartgaiacloud.com
@@ -70,14 +74,14 @@ config:
       rejectUnauthorized: false
 
   mqtt:
-    enable: True
+    enable: false
     conf:
       protocol: tcp
-      host: 10.243.170.98
+      host: neutral_rabbitmq
       port: 1883
       options:
         durable: true
-      username: mqttclient
+      username: gaia_dl
       password: ability123
 
   service:
@@ -105,12 +109,23 @@ config:
         json: true
         timestampFormat: YYYY-MM-DDTHH:mm:ss.SSSZZ
 
+  regExpString:
+    ipDeviceState:
+      mac: '.*state:([^:]*):?\d?'
+    relaySystemInfo:
+      payload: '.*_INFO:.*\(.*,(.*),(.*),(.*),(.*),(.*),(.*),(.*)\)'
+      reportType: '(.*):.*\(.*,.*,.*,.*,.*,.*,.*,.*\)'
+    rfDevice:
+      esId: '{?.*rfdevice:zid:([^}]*)}?:(.*)'
+      mac: '{?.*rfdevice:zid:([^}]*)}?:.*'
+      rfZid: '{?.*rfdevice:zid:.*}?:(.*)'
+
 # Automation module
 scheduleNotification:
 
   # Dump ip device cache from redis into elasticsearch
   ipDevice:
-    enable: True
+    enable: true
     cronTime: 0 15,45 * * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
@@ -121,14 +136,14 @@ scheduleNotification:
 
   # Dump rf device cache from redis into elasticsearch
   rfDevice:
-    enable: True 
+    enable: true 
     cronTime: 0 55 1-23/2 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1000
 
   # In elasticsearch search gateways and cameras for the last offline & online and then save to index of kit_status-* 
   kitStatus:
-    enable: True
+    enable: true
     cronTime: 0 5 7 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
@@ -139,7 +154,7 @@ scheduleNotification:
 
   # Notify the devices that generated the specified event via email or FTP, and so ask devices do something
   eventNotification:
-    enable: True
+    enable: true
     cronTime: 0 5 */2 * * *
     interval: 7200
     intervalAfterSpecialEvent: 600
@@ -156,7 +171,7 @@ scheduleNotification:
         from: postmaster@smartgaiacloud.com
         to: terry_chen@sercomm.com
         subject: gateway online offline notification
-        errorRecipient: ytc0316@msn.com
+        errorRecipient: terry_chen@sercomm.com
         errorMessage: notification fail
     # Ftp server info for result to send
     putFtp:
@@ -263,7 +278,7 @@ scheduleNotification:
 
   # Search data related to the gateway that occurs events during the specified time
   kitReport:
-    enable: True
+    enable: false
     cronTime: 0 5 5 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 300
@@ -277,9 +292,9 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: Daily Data for Offline analysis
-        errorRecipient: ytc0316@msn.com
+        errorRecipient: terry_chen@sercomm.com
         errorMessage: kit report fail
     # Ftp server info for result to send
     putFtp:
@@ -320,9 +335,9 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
         subject: Gateway offline & Camera online
-        errorRecipient: ytc0316@msn.com
+        errorRecipient: terry_chen@sercomm.com
         errorMessage: Gateway offline & Camera online fail
     # Ftp server info for result to send
     putFtp:
@@ -382,7 +397,7 @@ scheduleNotification:
         from: postmaster@smartgaiacloud.com
         to: lee_shen@sercomm.com, leon_zang@sdc.sercomm.com, nick_wan@sdc.sercomm.com, terry_chen@sercomm.com, cloud_wu@sercomm.com, andy_su@sercomm.com, anthony_chen@sercomm.com, eve_lee@sercomm.com, eagle_luo@sdc.sercomm.com
         subject: Daily report for kronos camera analysis
-        errorRecipient: ytc0316@msn.com
+        errorRecipient: terry_chen@sercomm.com
         errorMessage: kronos camera report fail
     # Ftp server info for result to send
     putFtp:
