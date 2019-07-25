@@ -110,7 +110,7 @@ scheduleNotification:
 
   # Dump ip device cache from redis into elasticsearch
   ipDevice:
-    enable: false
+    enable: true
     cronTime: 0 15,45 * * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
@@ -121,14 +121,14 @@ scheduleNotification:
 
   # Dump rf device cache from redis into elasticsearch
   rfDevice:
-    enable: false 
+    enable: true 
     cronTime: 0 55 1-23/2 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1000
 
   # In elasticsearch search gateways and cameras for the last offline & online and then save to index of kit_status-* 
   kitStatus:
-    enable: false
+    enable: true
     cronTime: 0 5 7 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 1200
@@ -139,7 +139,7 @@ scheduleNotification:
 
   # Notify the devices that generated the specified event via email or FTP, and so ask devices do something
   eventNotification:
-    enable: false
+    enable: true
     cronTime: 0 5 */2 * * *
     interval: 7200
     intervalAfterSpecialEvent: 600
@@ -154,7 +154,7 @@ scheduleNotification:
     sendMail:
       options:
         from: postmaster@smartgaiacloud.com
-        to: lee_shen@sercomm.com, louis_shih@sercomm.com, terry_chen@sercomm.com, eric_kao@sercomm.com, schroeder_chung@sercomm.com, jordan_chen@sercomm.com, henry_shiu@sercomm.com, terry_liu@sercomm.com, victor_vallois@sercomm.com
+        to: terry_chen@sercomm.com
         subject: gateway online offline notification
         errorRecipient: ytc0316@msn.com
         errorMessage: notification fail
