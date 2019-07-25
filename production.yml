@@ -77,7 +77,7 @@ config:
       port: 1883
       options:
         durable: true
-      username: mqttclient
+      username: gaia_dl
       password: ability123
 
   service:
