@@ -74,10 +74,10 @@ config:
       rejectUnauthorized: false
 
   mqtt:
-    enable: false
+    enable: true
     conf:
       protocol: tcp
-      host: neutral_rabbitmq
+      host: 10.243.170.98
       port: 1883
       options:
         durable: true
@@ -278,7 +278,7 @@ scheduleNotification:
 
   # Search data related to the gateway that occurs events during the specified time
   kitReport:
-    enable: false
+    enable: true
     cronTime: 0 5 5 * * *
     # Creates an array of elements split into groups the length of size
     chunkSize: 300
