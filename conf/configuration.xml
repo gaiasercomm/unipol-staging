@@ -25,7 +25,7 @@
     <entry key="USER.TIMEOUT.INTERVAL">1800000</entry> <!-- millisecond -->
 
     <!-- device layer location  -->
-    <entry key="DL.ADDR">http://neutral_dl:8080</entry>
+    <entry key="DL.ADDR">http://neutral_meta:8080</entry>
     <entry key="DL.PORT">8080</entry>
     
     <!-- set the elasticSearch locaition -->
