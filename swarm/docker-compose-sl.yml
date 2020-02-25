@@ -1,0 +1,40 @@
+version: '3'
+services:
+  sl:
+    image: nbiotregistry.azurecr.io/sl:v3.1.23
+    tty: true
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.labels.sl == true]
+      resources:
+        reservations:
+          memory: 2000M
+      restart_policy:
+        condition: on-failure
+    environment:
+      - TZ=Europe/Rome
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=sl_release/v3.1.23
+      - CONF_COMMIT_ID=
+      - MAGIC=7580
+    volumes:
+      - sl-core-log-volume:/usr/cms_core/logs      
+    ports:
+      - "28080:8080"
+      - "28090:8090"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true
+
+volumes:
+  sl-core-log-volume:
+    external: true

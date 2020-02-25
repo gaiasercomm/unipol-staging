@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  ldap_mas:
+    image: nbiotregistry.azurecr.io/ldap_master:v1.0.0
+    tty: true
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 90s
+        window: 20s
+      placement:
+        constraints: [node.labels.ldap_mas == true]
+    environment:
+      - LDAP_DOMAIN=smartgaiacloud.com
+      - LDAP_ADMIN_PASSWORD=ability123
+      - LDAP_ORGANISATION=Sercomm Gaia
+      - LDAP_CONFIG_PASSWORD=ability123
+      - LDAP_REPLICATION_ENABLE_MASTER=true
+      - LDAP_SERVERID=001
+      - LDAP_REMOVE_CONFIG_AFTER_SETUP=false
+      - LDAP_LOG_LEVEL=16384
+      - CONSUL_HOST=neutral_consul:8500
+      - CONSUL_SERVICE_NAME=ldap_service
+      - CONSUL_TTL_INTERVAL=30
+      - CONSUL_DERGISTER_AFTER=60
+    volumes:
+      - ldap-mas-master-volume:/var/lib/ldap
+      - slapd-mas-master-volume:/etc/ldap/slapd.d
+    ports:
+      - "1636:636"
+      - "1389:389"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true
+
+volumes:
+  ldap-mas-master-volume:
+    external: true
+  slapd-mas-master-volume:
+    external: true
+

@@ -1,0 +1,45 @@
+version: '3'
+services:
+  onboard_core:
+    image: nbiotregistry.azurecr.io/dl-core:v3.1.24a
+    tty: true
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.dl_onboard == true]
+      update_config:
+        parallelism: 1
+        delay: 20s
+      resources:
+        reservations:
+          memory: 1200M
+      restart_policy:
+        condition: on-failure
+    environment:
+      - TZ=Europe/Rome
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=dl_onboard_release/v3.1.24
+      - CONF_COMMIT_ID=
+      - CMSIMPORT=FALSE
+      - MAGIC="4465"
+    volumes:
+      - dl-core-log-volume:/usr/cms_core/logs
+#    ports:
+#      - "8009:8009"
+#      - "8081:8081"
+#      - "8090:8090"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true
+
+volumes:
+  dl-core-log-volume:
+    external: true

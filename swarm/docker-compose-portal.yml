@@ -1,0 +1,30 @@
+version: '3'
+services:
+  portal:
+    image: nbiotregistry.azurecr.io/portal:v3.1.21a 
+    tty: true
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.labels.portal == true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - TZ=Europe/Rome
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=portal_release/v3.1.21a
+      - CONF_COMMIT_ID=
+      - MAGIC="2521"
+    ports:
+      - "9960:80"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true

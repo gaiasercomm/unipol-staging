@@ -1,0 +1,33 @@
+version: '3'
+services:
+  envoyproxy:
+    image: nbiotregistry.azurecr.io/envoyproxy:v1.8.0
+    tty: true
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.envoyproxy == true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - TZ=Europe/Rome
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=envoyproxy_v1.8.0
+      - CONF_COMMIT_ID=
+      - MAGIC="5357"
+    volumes:
+      - /etc/hostname:/etc/vm/hostname
+    ports:
+      - "1884:1883"
+      - "8884:8883"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true

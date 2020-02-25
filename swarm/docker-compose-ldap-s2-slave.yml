@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  ldap:
+    image: nbiotregistry.azurecr.io/ldap_slave:v1.0.0
+    tty: true
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+        delay: 90s
+        window: 20s
+      placement:
+        constraints: [node.labels.ldap == true]
+    environment:
+      - LDAP_DOMAIN=smartgaiacloud.com
+      - LDAP_ADMIN_PASSWORD=ability123
+      - LDAP_ORGANISATION=Sercomm Gaia
+      - LDAP_CONFIG_PASSWORD=ability123
+      - LDAP_REPLICATION_SLAVE=true
+      - LDAP_REPLICATION_SLAVE_DB_SYNCPROV=binddn="cn=admin,dc=smartgaiacloud,dc=com" bindmethod=simple credentials=ability123 searchbase="dc=smartgaiacloud,dc=com" type="refreshOnly" interval="00:00:00:30" retry="60 +" timeout=5 network-timeout=30
+      - LDAP_REPLICATION_HOST=ldap://neutral_ldap_mas
+      - LDAP_REMOVE_CONFIG_AFTER_SETUP=false
+      - LDAP_LOG_LEVEL=16384
+      - CONSUL_HOST=neutral_consul:8500
+      - CONSUL_SERVICE_NAME=ldap_service
+      - CONSUL_TTL_INTERVAL=30
+      - CONSUL_DERGISTER_AFTER=60
+    ports:
+      - "20636:636"
+      - "20389:389"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true

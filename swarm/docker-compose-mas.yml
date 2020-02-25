@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  mas:
+    image: nbiotregistry.azurecr.io/mas:v3.1.23a
+    tty: true
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.mas == true]
+    environment:
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=mas_release/v3.1.24
+      - MAGIC="2031"
+      - JAVA_OPTIONS=-Xmx256m -Djetty.port=8800 -Dcom.sun.jndi.ldap.connect.pool.initsize=100 -Dcom.sun.jndi.ldap.connect.pool.maxsize=10000 -Dcom.sun.jndi.ldap.connect.pool.prefsize=200 -Dcom.sun.jndi.ldap.connect.pool.timeout=300000 -Dcom.sun.jndi.ldap.connect.pool.authentication=simple -Dcom.sun.jndi.ldap.connect.pool.protocol=plain
+    volumes:
+      - mas-certs-volume:/var/lib/jetty/webapps/certs
+      - mas-vpns-volume:/var/lib/jetty/webapps/vpns
+    ports:
+      - "8800:8800"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true
+
+volumes:
+  mas-certs-volume:
+    external: true
+  mas-vpns-volume:
+    external: true

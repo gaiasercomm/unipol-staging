@@ -1,0 +1,36 @@
+version: '3'
+services:
+  ratelimit:
+    image: nbiotregistry.azurecr.io/ratelimit:v1.0.1
+    tty: true
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.labels.ratelimit==true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - TZ=Europe/Rome
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=ratelimit_v1.0.1
+      - CONF_COMMIT_ID=
+      - REDIS_URL=shpproddlenvoycache.redis.cache.windows.net:6379
+      - REDIS_PASSWORD=NsqZy3qJEvArtKLuHpO+OpKjxXBCRjHLqtIPAwIp4bE=
+      - STATSD_HOST=neutral_statsd_exporter
+      - STATSD_PORT=9125
+      - MAGIC="5718"
+    ports:
+      # - 8080:8080
+      # - 8081:8081
+      - 6070:6070
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true

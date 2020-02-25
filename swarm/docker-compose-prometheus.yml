@@ -1,0 +1,99 @@
+version: '3'
+services:
+  prometheus:
+    image: nbiotregistry.azurecr.io/prometheus:v2.10.0
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.ratelimit == true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - MAGIC="9026"
+    volumes:
+      - prometheus-data-volume:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention=200h'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    depends_on:
+      - alertmanager
+      - statsd_exporter
+    networks:
+      - neutral_default
+
+  statsd_exporter:
+    image: nbiotregistry.azurecr.io/statsd-exporter:v0.10.6
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.ratelimit == true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - MAGIC="2390"
+    command:
+      - '--statsd.mapping-config=/etc/statsd-exporter/statsd_mapping.conf'
+    ports:
+      - "9102:9102"
+      - "9125:9125"
+      - "9125:9125/udp"
+    networks:
+      - neutral_default
+
+  alertmanager:
+    image: nbiotregistry.azurecr.io/alertmanager:v0.17.0_rc1
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.ratelimit == true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - MAGIC="3096"
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+      - '--web.listen-address=0.0.0.0:9093'
+    ports:
+      - "9093:9093"
+    networks:
+      - neutral_default
+
+  grafana:
+    image: nbiotregistry.azurecr.io/grafana:6.2.2
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.ratelimit == true]
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - grafana-data-volume:/var/lib/grafana
+    entrypoint: /setup.sh
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - MAGIC="922"
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+    networks:
+      - neutral_default
+
+networks:
+  neutral_default:
+    external: true
+
+volumes:
+  prometheus-data-volume:
+    external: true
+  grafana-data-volume:
+    external: true

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  pma:
+    image: nbiotregistry.azurecr.io/phpmyadmin:v4.8.5
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.labels.pma == true]
+    environment:
+      - TZ=Europe/Rome
+      - PMA_HOST=10.243.170.79
+    ports:
+      - "9980:80"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true

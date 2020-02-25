@@ -1,0 +1,30 @@
+version: '3'
+services:
+  bms:
+    image: nbiotregistry.azurecr.io/bms:v3.1.5 
+    tty: true
+    deploy:
+      replicas: 1 
+      placement:
+        constraints: [node.labels.bms == true]
+      restart_policy:
+        condition: on-failure
+    environment:
+      - TZ=Europe/Rome
+      - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
+      - CONF_BRANCH=bms_release/v3.1.5
+      - CONF_COMMIT_ID=
+      - MAGIC="6694"
+    ports:
+      - "9970:80"
+    networks:
+      - neutral_default
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+networks:
+  neutral_default:
+    external: true
