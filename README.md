@@ -1,4 +1,4 @@
-unipol-staging DL configuration
+TIM QA environment  Openfire configuration
 ===
 
 Description
