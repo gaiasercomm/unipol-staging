@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <entry key="mqtt.network.addr">neutral_rabbitmq</entry>
+    <entry key="mqtt.auth.account">gaia_dl</entry>
+    <entry key="mqtt.auth.password">ability123</entry>
+    <!-- <entry key="mqtt.auth.account">gaia_dl</entry> -->
+    <!-- <entry key="mqtt.auth.password">ejVTGcVoxp4p7c2xp99Oo9Ot6U2RpCjrJ48f6Rtr7mH2mxpzxmdJlP2fzUVMm43U</entry> -->
+    <entry key="mqtt.network.port">5672</entry>
+    <entry key="keep.alive.interval">10</entry>
+</properties>

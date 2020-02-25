@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <!-- Profile information -->
+    <!-- "0: Neutral Sercomm" -->
+    <!-- "1: Telecom Italia" -->
+    <!-- "2: VodaPhone_Italy(Reply)" -->
+    <!-- "3: CHT" -->
+    <!-- "4: BroadBand" -->
+    <!-- "15: Unipol" -->
+    <entry key="PROFILE.ID">15</entry>
+    
+    <!-- CMS service configuration -->
+    <entry key="SERV.APACHE.ADDRESS">neutral_dl</entry>
+    <entry key="SERV.APACHE.HTTPPORT">8999</entry>
+    <entry key="SERV.APACHE.MAX_THREAD">20</entry>
+    <entry key="SERV.APACHE.ACCEPT_COUNT">5</entry>
+    
+    <!-- MySQL -->
+    <entry key="MYSQL.CMS_CORE.SCHEMA">n_cms_core</entry>
+    <entry key="MYSQL.CMS_CORE.ADDR">10.243.170.79</entry>
+    <entry key="MYSQL.CMS_CORE.PORT">3306</entry>
+    <entry key="MYSQL.CMS_CORE.USER">Y21z</entry>
+    <entry key="MYSQL.CMS_CORE.PASSWORD">YWJpbGl0eTEyMw==</entry>
+
+    <!--  Tomcat MySQL connection pool parameters -->
+    <entry key="DBPOOL.JMX.ENABLE">0</entry><!-- default 0 -->
+    <entry key="DBPOOL.INIT_CONN.NUM">5</entry><!-- default 5-->
+    <entry key="DBPOOL.MAX_CONN.NUM">100</entry><!-- default 50 -->
+    <entry key="DBPOOL.MAX_IDLE_CONN.NUM">32</entry><!-- default 32 -->
+    <entry key="DBPOOL.MIN_IDLE_CONN.NUM">16</entry><!-- default 16 -->
+    <entry key="DBPOOL.TESTONBORROW.ENABLE">true</entry><!-- default true -->
+    <entry key="DBPOOL.TESTONRETURN.ENABLE">false</entry><!-- default false -->
+    <entry key="DBPOOL.TESTWHILEIDLE.ENABLE">true</entry><!-- default true-->
+    <entry key="DBPOOL.MAX_CONN.WAIT">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.VALIDATION.INTERVAL">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.TIME_BETWEEN_EVICTION_RUNS.WAIT">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.MIN_EVICTABLE_IDLE.TIME">60000</entry><!--default 60000ms -->
+</properties>

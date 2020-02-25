@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.sercomm.com/camera" 
+	xmlns:gaia="http://www.sercomm.com/camera" 
+	elementFormDefault="qualified">
+
+	<element name="prop" type="gaia:prop"></element>
+    <complexType name="prop">
+    	<simpleContent>
+        <extension base="string">
+          <attribute name="key" type="string" use="required"/>
+        </extension>
+      </simpleContent>
+    </complexType>
+<!--  
+<xs:element name="Customer">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" type="xs:integer" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+-->
+    <complexType name="mode">
+    	<sequence>
+    		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="text" type="string" use="required"></attribute>
+    	<attribute name="enable" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="AudioIn">
+    	<sequence>
+
+    		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="text" type="string" use="required"></attribute>
+    	<attribute name="enable" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+    
+    <complexType name="AudioOut">
+    	<sequence>
+
+    		<element ref="gaia:prop" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="text" type="string" use="required"></attribute>
+    	<attribute name="enable" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="AudioGroup">
+    	<sequence>
+    		<element name="AudioIn" type="gaia:AudioIn" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="AudioOut" type="gaia:AudioOut" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="extend" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="reboot">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+
+    <complexType name="Audio">
+    	<sequence>
+    		<element name="Group" type="gaia:AudioGroup"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="StreamGroup">
+    	<sequence>
+    		<element name="mode" type="gaia:mode" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="extend" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="reboot">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="Stream">
+    	<sequence>
+    		<element name="Group" type="gaia:StreamGroup" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Cameras" type="gaia:Cameras"></element>
+    
+    
+
+    <complexType name="OtherGroup">
+    	<sequence>
+    		<element name="prop" type="gaia:prop" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="text" type="string" use="required"></attribute>
+    	<attribute name="extend" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="enable" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="reboot">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="0"></enumeration>
+    				<enumeration value="1"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="Other">
+    	<sequence>
+    		<element name="Group" type="gaia:OtherGroup" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="Model">
+    	<sequence>
+    		<element name="Audio" type="gaia:Audio" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Stream" type="gaia:Stream"></element>
+    		<element name="Other" type="gaia:Other" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="type" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="Cameras">
+    	<sequence>
+    		<element name="Model" type="gaia:Model" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>
