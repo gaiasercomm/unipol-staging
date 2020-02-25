@@ -17,7 +17,7 @@ services:
       - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
       - CONF_BRANCH=sl_release/v3.1.23
       - CONF_COMMIT_ID=
-      - MAGIC=7580
+      - MAGIC=3861
     volumes:
       - sl-core-log-volume:/usr/cms_core/logs      
     ports:

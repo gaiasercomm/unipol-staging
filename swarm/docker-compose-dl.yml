@@ -21,7 +21,7 @@ services:
       - CONF_BRANCH=dl_release/v3.1.24
       - CONF_COMMIT_ID=
       - CMSIMPORT=FALSE
-      - MAGIC="5609"
+      - MAGIC="9019"
     volumes:
       - dl-core-log-volume:/usr/cms_core/logs
     ports:
@@ -57,7 +57,7 @@ services:
       - CONF_BRANCH=dl_release/v3.1.24
       - CONF_COMMIT_ID=
       - CMSIMPORT=FALSE
-      - MAGIC="7382"
+      - MAGIC="6586"
     volumes:
       - dl-meta-log-volume:/usr/cms_meta/logs
       - clips-volume:/var/media

@@ -14,7 +14,7 @@ services:
       - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
       - CONF_BRANCH=envoyproxy_v1.8.0
       - CONF_COMMIT_ID=
-      - MAGIC="5357"
+      - MAGIC="3962"
     volumes:
       - /etc/hostname:/etc/vm/hostname
     ports:

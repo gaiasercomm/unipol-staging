@@ -11,7 +11,7 @@ services:
     environment:
       - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
       - CONF_BRANCH=mas_release/v3.1.24
-      - MAGIC="2031"
+      - MAGIC="2563"
       - JAVA_OPTIONS=-Xmx256m -Djetty.port=8800 -Dcom.sun.jndi.ldap.connect.pool.initsize=100 -Dcom.sun.jndi.ldap.connect.pool.maxsize=10000 -Dcom.sun.jndi.ldap.connect.pool.prefsize=200 -Dcom.sun.jndi.ldap.connect.pool.timeout=300000 -Dcom.sun.jndi.ldap.connect.pool.authentication=simple -Dcom.sun.jndi.ldap.connect.pool.protocol=plain
     volumes:
       - mas-certs-volume:/var/lib/jetty/webapps/certs

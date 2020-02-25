@@ -14,7 +14,7 @@ services:
       - CONF_REPO_URL=neutral_dev_config:sercomm2483@122.116.67.86:10443/configuration/unipol-staging.git
       - CONF_BRANCH=portal_release/v3.1.21a
       - CONF_COMMIT_ID=
-      - MAGIC="2521"
+      - MAGIC="8991"
     ports:
       - "9960:80"
     networks:
