@@ -34,23 +34,26 @@
     <entry key="ES.CLUSTER.NAME">rd-cluster-1</entry>
     
     <!-- Tomcat MySQL connection pool parameters -->
-    <entry key="DBPOOL.JMX.ENABLE">0</entry><!-- default 0 -->
-    <entry key="DBPOOL.INIT_CONN.NUM">5</entry><!-- default 5-->
+    <entry key="DBPOOL.JMX.ENABLE">false</entry><!-- default false -->
+    <entry key="DBPOOL.INIT_CONN.NUM">16</entry><!-- default 16-->
     <entry key="DBPOOL.MAX_CONN.NUM">100</entry><!-- default 50 -->
     <entry key="DBPOOL.MAX_IDLE_CONN.NUM">32</entry><!-- default 32 -->
     <entry key="DBPOOL.MIN_IDLE_CONN.NUM">16</entry><!-- default 16 -->
     <entry key="DBPOOL.TESTONBORROW.ENABLE">ture</entry><!-- default true -->
     <entry key="DBPOOL.TESTONRETURN.ENABLE">false</entry><!-- default false -->
-    <entry key="DBPOOL.TESTWHILEIDLE.ENABLE">true</entry><!-- default true-->
-    <entry key="DBPOOL.MAX_CONN.WAIT">60000</entry><!--default 60000ms -->
-    <entry key="DBPOOL.VALIDATION.INTERVAL">60000</entry><!--default 60000ms -->
-    <entry key="DBPOOL.TIME_BETWEEN_EVICTION_RUNS.WAIT">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.TESTWHILEIDLE.ENABLE">true</entry><!-- default false-->
+    <entry key="DBPOOL.MAX_CONN.WAIT">20000</entry><!--default 20000ms -->
+    <entry key="DBPOOL.VALIDATION.INTERVAL">30000</entry><!--default 30000ms -->
+    <entry key="DBPOOL.VALIDATION.QUERY.TIMEOUT">10</entry> <!-- default 10, in second. -->
+    <entry key="DBPOOL.TIME_BETWEEN_EVICTION_RUNS.WAIT">30000</entry><!--default 30000ms -->
     <entry key="DBPOOL.MIN_EVICTABLE_IDLE.TIME">60000</entry><!--default 60000ms -->
+    <entry key="DBPOOL.REMOVE.ABANDONED">true</entry> <!-- default true -->  
+    <entry key="DBPOOL.REMOVE.ABANDONED.TIMEOUT">60</entry> <!-- default 60, in second. -->
 
     <!-- MQTT -->
     <entry key="MQTT.SUPPORT">1</entry><!-- 1:enable; 0:disable -->
     <entry key="GATEWAY.USING.MQTT.IO">1</entry><!-- 0: HTTP, 1:MQTT -->
-	
+
     <!-- User attribute configuration -->
     <entry key="USER.TIMEOUT.ENABLE">1</entry><!-- "1:ON; 0:OFF;" -->
     <entry key="USER.TIMEOUT.INTERVAL">1800000</entry><!-- millisecond -->
@@ -85,20 +88,38 @@
     <!-- Scheduler to evict idle devices (milliseconds) -->
     <entry key="SCHEDULER.TIME.BETWEEN.IDLE.EVICTION.RUNS">1000</entry>
     <entry key="SCHEDULER.TIME.BETWEEN.BUSY.EVICTION.RUNS">100</entry>
-    
+
+    <!-- IoTHub ptotocol type, 0: AMPQ, 1: Azure EHC, 2: Azure EPH -->
     <entry key="IOT.HUB">0</entry>
     <entry key="GATEWAY.ONBOARD.KEY">b1ff4e592522b4ac</entry><!-- GATEWAY ONBOARD KEY -->
+
+    <!-- for nbiot project -->
+    <entry key="NBIOT.PROJECT">N</entry>
+    <entry key="API.GATEWAY.ENDPOING"></entry>
+    <entry key="IOTBRIDGE.ENDPOINT">http://iotbridge-rest</entry>
 
     <!-- for kronos -->
     <entry key="KRONOS.ENDPOINT">http://neutral_kronos:9090/plugins/kronos_restapi</entry>
 
+   <!-- for get_ip_device_list -->
     
-         <entry key="IPDEVICE.PEER.IPADDRESS.RULE.2">
+     
+    <entry key="IPDEVICE.PEER.IPADDRESS.RULE.2">
     	3,real_ip:external_ip;2,real_ip:external_ip
     </entry>
-         <entry key="IPDEVICE.PEER.IPADDRESS.RULE.5">
+     
+    <entry key="IPDEVICE.PEER.IPADDRESS.RULE.5">
     	3,real_ip:external_ip;2,real_ip:external_ip
     </entry>
-        
+     
+   
     <entry key="IPDEVICELIST.VPN.FOLLOW.PEER.IPADDRESS.RULES">0</entry><!-- 1:enable;0:disable-->
+
+    <!-- gRPC service -->
+    <entry key="GRPC.SERVER.PORT">50051</entry>
+
+    <!-- Device gRPC service -->
+    <entry key="DEVICE.SERVICE.HOST">kitshadow-grpc</entry>
+    <entry key="DEVICE.SERVICE.PORT">50051</entry>
+
 </properties>

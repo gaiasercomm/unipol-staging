@@ -35,16 +35,20 @@
     <entry key="REDUCE.CLIP.FILE">100</entry>
     
     <!-- CMS CORE information -->
-    <entry key="CMS_CORE.ADDR">neutral_dl</entry>
+    <entry key="CMS_CORE.ADDR">neutral_core</entry>
     <entry key="CMS_CORE.PORT">8081</entry>
     <entry key="CMS_CORE.PRC">8090</entry>
     <entry key="CMS_CORE.NUMBER">2</entry>
     
     <entry key="NEW.CMS_CORE">N</entry>
-    <entry key="NEW.CMS_CORE.ADDR">neutral_dl</entry>
+    <entry key="NEW.CMS_CORE.ADDR">neutral_core</entry>
     <entry key="NEW.CMS_CORE.PORT">8081</entry>
     <entry key="NEW.CMS_CORE.PRC">8090</entry>
     <entry key="NEW.CMS_CORE.NUMBER">2</entry>
      
     <entry key="CHANGE.WORKER.FW.VER">3.2.99R99</entry>
+
+    <!-- for Kronos -->
+    <entry key="KRONOS.ENDPOINT">http://neutral_kronos:9090/plugins/kronos_restapi</entry> 
+
 </properties>
