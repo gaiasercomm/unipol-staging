@@ -23,7 +23,7 @@ config:
       debugLevel: 0
 
   elastic:
-    version: 670
+    version: 561
     conf:
       log: warning
       hosts: [http://172.31.4.0:9200]
@@ -77,7 +77,7 @@ config:
     enable: true
     conf:
       protocol: tcp
-      host: 10.243.170.98
+      host: neutral_rabbitmq
       port: 1883
       options:
         durable: true
