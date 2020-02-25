@@ -4,6 +4,6 @@
 <properties>
     <entry key="AMS.LDAP.SERVER.OBJECT.DOMAIN">ou=SecuredObjects,dc=smartgaiacloud,dc=com</entry>
     <entry key="AMS.LDAP.SERVER.POOLSIZE">10000</entry>
-    <entry key="SELECTED.BROKER.SERVICE">MQTT</entry> <!--default MQTT (MQTT,IOTHUB)-->
+    <entry key="AMS.BROKER.SERVICE">MQTT</entry> <!--default MQTT (MQTT,IOTHUB)-->
     <entry key="AMS.LDAP.SERVER.CACHE.INTERVAL">3600</entry> <!--default 3600 for 1 hour-->
 </properties>

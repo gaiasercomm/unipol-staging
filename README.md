@@ -20,4 +20,3 @@ Description
             - If the assigned commit point not existed, update the project by git pull
         - replace existed configurations with configuration assigned by CONF_REPO_URL,CONF_BRANCH,CONF_COMMIT_ID.
         - If the configuration assigned by CONF_COMMIT_ID is unreachable, the service should SHUTDOWN AND SHOW ERROR TO CONTAINER CONSOLE.
-
