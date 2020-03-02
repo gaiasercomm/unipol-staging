@@ -4,7 +4,7 @@
 <properties>
 
     <entry key="redis.host">10.243.170.97</entry>
-    <entry key="redis.port">6389</entry>
+    <entry key="redis.port">6379</entry>
     <entry key="redis.password">I7oQu60OB63d3yC</entry>
 
 	<!-- redis.deploymentModel:
