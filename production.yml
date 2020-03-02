@@ -77,7 +77,7 @@ config:
     enable: true
     conf:
       protocol: tcp
-      host: neutral_rabbitmq
+      host: 10.243.170.98
       port: 1883
       options:
         durable: true
