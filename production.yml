@@ -50,7 +50,7 @@ config:
   redis:
     conf:
       host: 10.243.170.97
-      port: 6389
+      port: 6379
       password: I7oQu60OB63d3yC
       # 1: DEPLOY_MODEL_SINGLE
       # 2: DEPLOY_MODEL_CLUSTER
