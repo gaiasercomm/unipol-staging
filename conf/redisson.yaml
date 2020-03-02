@@ -12,7 +12,7 @@ singleServerConfig:
   password: I7oQu60OB63d3yC
   subscriptionsPerConnection: 5
   clientName: null
-  address: "redis://10.243.170.97:6389"
+  address: "redis://10.243.170.97:6379"
   subscriptionConnectionMinimumIdleSize: 1
   subscriptionConnectionPoolSize: 5
   connectionMinimumIdleSize: 5
@@ -44,7 +44,7 @@ clusterServersConfig:
   readMode: "MASTER"
   subscriptionMode: "SLAVE"
   nodeAddresses:
-  - "redis://10.243.170.97:6389"
+  - "redis://10.243.170.97:6379"
   scanInterval: 1000
   pingConnectionInterval: 0
   keepAlive: false
