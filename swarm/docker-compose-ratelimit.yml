@@ -18,7 +18,7 @@ services:
       - REDIS_PASSWORD=NsqZy3qJEvArtKLuHpO+OpKjxXBCRjHLqtIPAwIp4bE=
       - STATSD_HOST=neutral_statsd_exporter
       - STATSD_PORT=9125
-      - MAGIC="2503"
+      - MAGIC="6734"
     ports:
       # - 8080:8080
       # - 8081:8081

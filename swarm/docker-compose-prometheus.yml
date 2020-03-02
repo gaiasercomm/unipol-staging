@@ -9,7 +9,7 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      - MAGIC="9332"
+      - MAGIC="8329"
     volumes:
       - prometheus-data-volume:/prometheus
     command:
@@ -36,7 +36,7 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      - MAGIC="2778"
+      - MAGIC="304"
     command:
       - '--statsd.mapping-config=/etc/statsd-exporter/statsd_mapping.conf'
     ports:
@@ -55,7 +55,7 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      - MAGIC="884"
+      - MAGIC="4820"
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
@@ -80,7 +80,7 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_USERS_ALLOW_SIGN_UP=false
-      - MAGIC="5942"
+      - MAGIC="8631"
     ports:
       - 3000:3000
     depends_on:
