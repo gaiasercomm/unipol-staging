@@ -58,7 +58,7 @@ config:
     hKey:
       ipDeviceState: HKEY_IP_DEVICE_STATE
     key:
-      namespace: ''
+      namespace: 'gaia:'
       portionIpDevice: 'device:'
       portionRfDeviceId: 'rfdevice:rfid:'
       portionRfDeviceZid: 'rfdevice:zid:'
